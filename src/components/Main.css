@@ -1,0 +1,70 @@
+.parent {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  top: 0;
+}
+
+.logo-color {
+  stroke: #0affa7;
+  animation: color-change 12s ease infinite;
+}
+
+@keyframes color-change {
+  15% {
+    stroke: aqua;
+  }
+
+  30% {
+    stroke: blue;
+  }
+
+  45% {
+    stroke: red;
+  }
+
+  60% {
+    stroke: orange;
+  }
+
+  75% {
+    stroke: purple;
+  }
+
+  90% {
+    stroke: yellow;
+  }
+
+  105% {
+    stroke: #0affa7;
+  }
+}
+
+.burger-color-div:hover > svg > .burger-color {
+  animation: color-change-2 3s ease infinite;
+}
+
+@keyframes color-change-2 {
+  25% {
+    stroke: #0affa7;
+  }
+
+  50% {
+    stroke: yellow;
+  }
+
+  75% {
+    stroke: red;
+  }
+
+  100% {
+    stroke: aqua;
+  }
+}
+
+.burger-color-div {
+  height: 47px;
+  width: 60px;
+  margin-top: 30px;
+  margin-right: 10vh;
+}
