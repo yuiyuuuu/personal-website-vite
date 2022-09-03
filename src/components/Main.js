@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Main.scss";
 import { gsap, Power3 } from "gsap";
+import KUTE from "kute.js";
 
 const Main = () => {
   const burgerAnimationRef1 = useRef(null);
@@ -14,14 +15,6 @@ const Main = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const burgerAnimation = () => {
     gsap.to(burgerAnimationRef1.current, {
@@ -80,18 +73,37 @@ const Main = () => {
     }, 1000);
   };
 
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const tween = KUTE.fromTo(
+      "#blob1",
+      { path: "#blob1" },
+      { path: "#blob2" },
+      { repeat: 999, duration: 3000, yoyo: true }
+    );
+    tween.start();
+  }, []);
+
   return (
     <div className='main-container'>
       <div
         style={{
           height: "100vh",
           width: "100%",
-          backgroundColor: "#463E3F",
+          backgroundColor: "plum",
           position: "absolute",
           transform: "translateX(-100%)",
           top: scrollPosition,
           display: isBurger ? "" : "none",
-          // zIndex: 1000,
+          zIndex: 3,
         }}
         ref={burgerAnimationRef1}
       />
@@ -108,6 +120,7 @@ const Main = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          zIndex: 4,
         }}
         ref={burgerAnimationRef2}
       >
@@ -126,6 +139,7 @@ const Main = () => {
             display: "flex",
             flexDirection: "row",
             position: "fixed",
+            zIndex: 10000,
           }}
         >
           <svg
@@ -138,7 +152,6 @@ const Main = () => {
               marginTop: "20px",
               cursor: "pointer",
               marginLeft: "10vh",
-              zIndex: 100000,
             }}
           >
             <path
@@ -206,6 +219,7 @@ const Main = () => {
               viewBox='0 0 52 44'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
+              style={{ zIndex: 6 }}
             >
               <g clip-path='url(#clip0_20_2)'>
                 <rect
@@ -238,9 +252,59 @@ const Main = () => {
             </svg>
           </div>
         </div>
-        <div style={{ color: "white" }} className='textt'>
-          Hi, my name is Yingson and I am a Full-stack software engineer from
-          Chicago
+        <div
+          style={{
+            color: "white",
+            display: "flex",
+            height: "100vh",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          className='textt'
+        >
+          <div
+            style={{
+              fontSize: "46px",
+              fontWeight: "600",
+              zIndex: 2,
+              height: "10vh",
+              width: "60vw",
+              marginRight: "15vw",
+            }}
+            id='text-intro'
+          >
+            Hey! My name is Yingson. <br />I am a Full-stack software engineer
+            from Chicago that graduated from Fullstack Academy
+          </div>
+          <svg
+            id='visual'
+            viewBox='0 0 900 600'
+            width='900'
+            height='600'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlnsXlink='http://www.w3.org/1999/xlink'
+            version='1.1'
+            style={{ position: "absolute", right: 150 }}
+          >
+            <g transform='translate(475.0204534580877 297.1349620302673)'>
+              <path
+                id='blob1'
+                d='M160.5 -173.6C194.1 -126.8 198.1 -63.4 184 -14C170 35.4 138 70.7 104.4 120.7C70.7 170.7 35.4 235.4 -17.2 252.6C-69.8 269.8 -139.5 239.5 -183 189.5C-226.5 139.5 -243.8 69.8 -241.5 2.2C-239.3 -65.3 -217.6 -130.6 -174.1 -177.4C-130.6 -224.2 -65.3 -252.6 -0.9 -251.7C63.4 -250.7 126.8 -220.5 160.5 -173.6'
+                fill='#b92379'
+              ></path>
+            </g>
+            <g
+              transform='translate(508.6613108091376 275.91589513044124)'
+              style={{ visibility: "hidden" }}
+            >
+              <path
+                id='blob2'
+                d='M115.5 -116.3C140.5 -90.5 145.3 -45.3 143 -2.2C140.8 40.8 131.6 81.6 106.6 119.2C81.6 156.9 40.8 191.4 -11.7 203.1C-64.1 214.8 -128.2 203.6 -178.2 165.9C-228.2 128.2 -264.1 64.1 -260.6 3.5C-257 -57 -214.1 -114.1 -164.1 -139.9C-114.1 -165.7 -57 -160.4 -5.9 -154.5C45.3 -148.6 90.5 -142.2 115.5 -116.3'
+                fill='#b92379'
+              ></path>
+            </g>
+          </svg>
         </div>
       </div>
       <div style={{ height: "100vh" }} />

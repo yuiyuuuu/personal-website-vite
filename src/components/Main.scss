@@ -95,6 +95,10 @@
   }
 }
 
+#text-intro::selection {
+  background: plum;
+}
+
 // @keyframes menuitem-background {
 //   from {
 //     background-color: black;
