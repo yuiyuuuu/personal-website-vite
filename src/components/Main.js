@@ -104,11 +104,21 @@ const Main = () => {
           position: "absolute",
           transform: "translateX(100%)",
           top: scrollPosition,
-          display: isBurger ? "" : "none",
-          // zIndex: 1001,
+          display: isBurger ? "flex" : "none",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         }}
         ref={burgerAnimationRef2}
-      />
+      >
+        <a className='menu-items'>Home</a>
+
+        <a className='menu-items'>Projects</a>
+
+        <a className='menu-items'>About</a>
+
+        <a className='menu-items'>Contact</a>
+      </div>
       <div className='parent'>
         <div
           style={{
@@ -228,7 +238,7 @@ const Main = () => {
             </svg>
           </div>
         </div>
-        <div style={{ color: "white" }}>
+        <div style={{ color: "white" }} className='textt'>
           Hi, my name is Yingson and I am a Full-stack software engineer from
           Chicago
         </div>
