@@ -76,7 +76,8 @@
 }
 
 .main-container {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 .menu-items {
@@ -100,11 +101,10 @@
   background: plum;
 }
 
-// @keyframes menuitem-background {
-//   from {
-//     background-color: black;
-//   }
-//   to {
-//     background-color: plum;
-//   }
-// }
+#burger-animation-first::-webkit-scrollbar {
+  display: none;
+}
+
+#burger-animation-first {
+  overflow-x: hidden;
+}
