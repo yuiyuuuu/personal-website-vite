@@ -1,87 +1,239 @@
-import React from "react";
-import "./Main.css";
+import React, { useRef, useState, useEffect } from "react";
+import "./Main.scss";
+import { gsap, Power3 } from "gsap";
 
 const Main = () => {
+  const burgerAnimationRef1 = useRef(null);
+  const burgerAnimationRef2 = useRef(null);
+
+  const [isBurger, setIsBurger] = useState(false);
+  const [isBurger2, setIsBurger2] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const burgerAnimation = () => {
+    gsap.to(burgerAnimationRef1.current, {
+      x: 0,
+      duration: 0.5,
+      ease: "power4",
+    });
+
+    gsap.to(burgerAnimationRef2.current, {
+      x: 0,
+      duration: 0.5,
+      delay: 0.5,
+      ease: "power4",
+    });
+
+    gsap.to("#burger-stroke-1", {
+      rotation: 47,
+      y: "100%",
+    });
+
+    gsap.to("#burger-stroke-2", {
+      rotation: -47,
+    });
+
+    setIsBurger(true);
+    setIsBurger2(true);
+  };
+
+  const burgerAnimationClose = () => {
+    gsap.to(burgerAnimationRef2.current, {
+      x: "100%",
+      duration: 0.5,
+      ease: "power4",
+    });
+
+    gsap.to(burgerAnimationRef1.current, {
+      x: "-100%",
+      duration: 0.5,
+      ease: "power4",
+      delay: 0.5,
+    });
+
+    gsap.to("#burger-stroke-1", {
+      rotation: 0,
+    });
+
+    gsap.to("#burger-stroke-2", {
+      rotation: 0,
+    });
+
+    setTimeout(() => {
+      setIsBurger2(false);
+    }, 300);
+    setTimeout(() => {
+      setIsBurger(false);
+    }, 1000);
+  };
+
   return (
-    <div className='parent'>
-      <div style={{ width: "100%", display: "flex", flexDirection: "row" }}>
-        <svg
-          width='180'
-          height='154'
-          viewBox='0 0 180 154'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          style={{ marginTop: "-10px" }}
+    <div className='main-container'>
+      <div
+        style={{
+          height: "100vh",
+          width: "100%",
+          backgroundColor: "#463E3F",
+          position: "absolute",
+          transform: "translateX(-100%)",
+          top: scrollPosition,
+          display: isBurger ? "" : "none",
+          // zIndex: 1000,
+        }}
+        ref={burgerAnimationRef1}
+      />
+
+      <div
+        style={{
+          height: "100vh",
+          width: "100%",
+          backgroundColor: "black",
+          position: "absolute",
+          transform: "translateX(100%)",
+          top: scrollPosition,
+          display: isBurger ? "" : "none",
+          // zIndex: 1001,
+        }}
+        ref={burgerAnimationRef2}
+      />
+      <div className='parent'>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            position: "fixed",
+          }}
         >
-          <rect width='180' height='154' fill='white' />
-          <rect width='180' height='154' fill='#000000' />
-          <path d='M58.874 42.7889L88.7285 68.1886' className='logo-color' />
-          <path d='M88.3653 68.2092L102.133 52.08' className='logo-color' />
-          <path d='M62.2295 67.8616L80.2975 79.8756' className='logo-color' />
-          <path d='M80.0394 79.8756L80.0394 112' className='logo-color' />
-          <path d='M97.8493 81.965L98.2709 100.8' className='logo-color' />
-          <path d='M97.8493 82.1175L125.216 46.4631' className='logo-color' />
-          <path d='M58.874 42.7889L62.2295 68.1228' className='logo-color' />
-          <path d='M80.0394 112L98.568 100.8' className='logo-color' />
-          <path d='M101.979 52.1911L125.474 46.2282' className='logo-color' />
-          <path d='M88.8159 76.2365L88.8159 67.8616' className='logo-color' />
-          <path d='M88.8153 76.2191L79.8748 80.119' className='logo-color' />
-          <path d='M88.8153 76.2191L97.9895 81.7457' className='logo-color' />
-          <path d='M79.5446 79.4574L72.5541 63.4216' className='logo-color' />
-          <path d='M88.4659 68.04L72.296 63.4216' className='logo-color' />
-          <path d='M62.1293 67.6209L72.5541 63.4216' className='logo-color' />
-          <path d='M59.3477 43.1677L72.5541 63.4216' className='logo-color' />
-          <line
-            y1='-0.5'
-            x2='16.0817'
-            y2='-0.5'
-            transform='matrix(-0.224703 0.974427 -0.973242 -0.229781 101.979 52.1912)'
-            className='logo-color'
-          />
-          <path d='M98.3655 68.3839L125.216 46.4631' className='logo-color' />
-          <path d='M98.6624 67.8727L97.9738 81.48' className='logo-color' />
-          <path d='M98.5 68.4865L88.4991 68.0135' className='logo-color' />
-          <line
-            y1='-0.5'
-            x2='12.4977'
-            y2='-0.5'
-            transform='matrix(-0.743507 0.668728 -0.659983 -0.751281 98.3655 67.8616)'
-            className='logo-color'
-          />
-          <path d='M72.2959 63.4216L88.7192 76.0158' className='logo-color' />
-          <path d='M88.8152 76.2124L88.8152 95.76' className='logo-color' />
-          <path d='M89.0734 96.3296L80.0696 79.9981' className='logo-color' />
-          <path d='M89.0734 96.3295L97.6287 81.8294' className='logo-color' />
-          <path d='M89.0734 96.0684L80.0006 111.877' className='logo-color' />
-          <line
-            y1='-0.5'
-            x2='10.1885'
-            y2='-0.5'
-            transform='matrix(0.91202 0.410146 -0.402154 0.915572 89.0734 96.5907)'
-            className='logo-color'
-          />
-        </svg>
-        <div style={{ flexGrow: 1 }} />
-        <div className='burger-color-div'>
           <svg
-            width='60'
-            height='49'
-            viewBox='0 0 60 49'
+            width='80'
+            height='80'
+            viewBox='0 0 68 71'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             style={{
+              marginTop: "20px",
               cursor: "pointer",
+              marginLeft: "10vh",
+              zIndex: 100000,
             }}
           >
-            <rect width='60' height='49' fill='black' />
             <path
-              d='M0.417444 25.3556L59.6772 25.083M0.49583 0.895681L59.7556 0.623108M0.345033 48.0036L59.6048 47.7311'
-              stroke='white'
-              className='burger-color'
+              d='M0.873977 0.788862L30.7285 26.1886'
+              className='logo-color'
+            />
+            <path d='M30.3653 26.2092L44.1335 10.08' className='logo-color' />
+            <path d='M4.22946 25.8616L22.2975 37.8756' className='logo-color' />
+            <path d='M22.0394 37.8756L22.0394 70' className='logo-color' />
+            <path d='M39.8493 39.965L40.2709 58.8' className='logo-color' />
+            <path d='M39.8493 40.1175L67.2165 4.46313' className='logo-color' />
+            <path
+              d='M0.873993 0.788879L4.22949 26.1228'
+              className='logo-color'
+            />
+            <path d='M22.0394 70L40.568 58.8' className='logo-color' />
+            <path d='M43.9792 10.1911L67.4745 4.22819' className='logo-color' />
+            <path d='M30.8159 34.2365L30.8159 25.8616' className='logo-color' />
+            <path d='M30.8153 34.2191L21.8748 38.119' className='logo-color' />
+            <path d='M30.8153 34.2191L39.9895 39.7457' className='logo-color' />
+            <path d='M21.5446 37.4574L14.5541 21.4216' className='logo-color' />
+            <path d='M30.4659 26.04L14.296 21.4216' className='logo-color' />
+            <path d='M4.12933 25.6209L14.5541 21.4216' className='logo-color' />
+            <path d='M1.34773 1.16767L14.5541 21.4216' className='logo-color' />
+            <line
+              y1='-0.5'
+              x2='16.0817'
+              y2='-0.5'
+              transform='matrix(-0.224703 0.974427 -0.973242 -0.229781 43.9792 10.1912)'
+              className='logo-color'
+            />
+            <path d='M40.3655 26.3839L67.2165 4.46308' className='logo-color' />
+            <path d='M40.6624 25.8727L39.9738 39.48' className='logo-color' />
+            <path d='M40.5 26.4865L30.4991 26.0135' className='logo-color' />
+            <line
+              y1='-0.5'
+              x2='12.4977'
+              y2='-0.5'
+              transform='matrix(-0.743507 0.668728 -0.659983 -0.751281 40.3655 25.8616)'
+              className='logo-color'
+            />
+            <path d='M14.2959 21.4216L30.7192 34.0158' className='logo-color' />
+            <path d='M30.8152 34.2124L30.8152 53.76' className='logo-color' />
+            <path d='M31.0734 54.3296L22.0696 37.9981' className='logo-color' />
+            <path d='M31.0734 54.3295L39.6287 39.8294' className='logo-color' />
+            <path d='M31.0734 54.0684L22.0006 69.8766' className='logo-color' />
+            <line
+              y1='-0.5'
+              x2='10.1885'
+              y2='-0.5'
+              transform='matrix(0.91202 0.410146 -0.402154 0.915572 31.0734 54.5907)'
+              className='logo-color'
             />
           </svg>
+          <div style={{ flexGrow: 1 }} />
+          <div
+            className='burger-color-div'
+            onClick={(e) => {
+              !isBurger ? burgerAnimation() : burgerAnimationClose();
+            }}
+          >
+            <svg
+              width='52'
+              height='44'
+              viewBox='0 0 52 44'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <g clip-path='url(#clip0_20_2)'>
+                <rect
+                  x='-1'
+                  width='53'
+                  height='2'
+                  className='burger-color'
+                  style={{ transform: "translateY(41deg)" }}
+                  id='burger-stroke-1'
+                />
+                <rect
+                  x='-1'
+                  y='21'
+                  width='53'
+                  height='2'
+                  className='burger-color'
+                  style={{ display: isBurger2 ? "none" : "" }}
+                />
+                <path
+                  d='M-1 42H52V44H25.5H-1V42Z'
+                  className='burger-color'
+                  id='burger-stroke-2'
+                />
+              </g>
+              <defs>
+                <clipPath id='clip0_20_2'>
+                  <rect width='52' height='44' />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div style={{ color: "white" }}>
+          Hi, my name is Yingson and I am a Full-stack software engineer from
+          Chicago
         </div>
       </div>
+      <div style={{ height: "100vh" }} />
     </div>
   );
 };
