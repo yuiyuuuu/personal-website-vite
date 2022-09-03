@@ -1,1 +1,1 @@
-web: nodemon server
+web: npm run start-dev2
