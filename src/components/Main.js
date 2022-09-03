@@ -279,8 +279,9 @@ const Main = () => {
             }}
             id="text-intro"
           >
-            Hey! My name is Yingson. <br />I am a Full-stack software engineer
-            from Chicago that graduated from Fullstack Academy
+            Hey! My name is Yingson.
+            <br />I am a Full-stack software engineer from Chicago that
+            graduated from Fullstack Academy
           </div>
           <svg
             id="visual"
