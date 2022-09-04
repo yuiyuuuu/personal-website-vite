@@ -115,138 +115,189 @@ const Main = () => {
   }, [parentDiv?.clientHeight, parentDiv?.clientWidth]);
 
   useEffect(() => {
-    if (vpHeight === 0 || vpWidth === 0) return;
+    let previous = "moveDownRight";
+    let previousX = 50;
+    let previousY = 50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
 
-    const moveDownRight = (posy, posx) => {
-      console.log("down right");
-      const offsets = document
-        .getElementById("blob-animated")
-        .getBoundingClientRect();
-      const offsetX = offsets.x;
-      const offsetY = offsets.y;
+      const moveDownRight = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
 
-      gsap.to("#blob-animated", {
-        x: posx,
-        y: posy,
-        duration: 3,
-        ease: "none",
-      });
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
 
-      if (offsetY > vpHeight - 500) {
-        return setTimeout(() => {
-          moveUpRight(posy - 100, posx + 100);
-        }, 3000);
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          console.log("ran2");
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 1700) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetY > vpHeight - 400) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
       }
-
-      if (offsetX >= vpWidth - 501) {
-        return setTimeout(() => {
-          moveDownLeft(posy + 100, posx - 100);
-        }, 3000);
-      }
-
-      return setTimeout(() => {
-        moveDownRight(posy + 100, posx + 100);
-      }, 3000);
     };
-
-    const moveUpRight = (posy, posx) => {
-      console.log("up right");
-      const offsets = document
-        .getElementById("blob-animated")
-        .getBoundingClientRect();
-      const offsetX = offsets.x;
-      const offsetY = offsets.y;
-
-      gsap.to("#blob-animated", {
-        x: posx,
-        y: posy,
-        duration: 3,
-        ease: "none",
-      });
-
-      if (offsetX >= vpWidth - 501) {
-        return setTimeout(() => {
-          moveUpLeft(posy - 100, posx - 100);
-        }, 3000);
-      }
-
-      if (offsetY <= vpHeight - 1170) {
-        return setTimeout(() => {
-          moveDownRight(posy + 100, posx + 100);
-        }, 3000);
-      }
-
-      return setTimeout(() => {
-        moveUpRight(posy - 100, posx + 100);
-      }, 3000);
-    };
-
-    const moveUpLeft = (posy, posx) => {
-      console.log("up left");
-      const offsets = document
-        .getElementById("blob-animated")
-        .getBoundingClientRect();
-      const offsetX = offsets.x;
-      const offsetY = offsets.y;
-
-      gsap.to("#blob-animated", {
-        x: posx,
-        y: posy,
-        duration: 3,
-        ease: "none",
-      });
-
-      if (offsetY <= vpHeight - 1170) {
-        return setTimeout(() => {
-          moveDownLeft(posy + 100, posx - 100);
-        }, 3000);
-      }
-
-      if (offsetX <= vpWidth - 1870) {
-        return setTimeout(() => {
-          moveUpRight(posy - 100, posx + 100);
-        }, 3000);
-      }
-
-      return setTimeout(() => {
-        moveUpLeft(posy - 100, posx - 100);
-      }, 3000);
-    };
-
-    const moveDownLeft = (posy, posx) => {
-      console.log("down left");
-      const offsets = document
-        .getElementById("blob-animated")
-        .getBoundingClientRect();
-      const offsetX = offsets.x;
-      const offsetY = offsets.y;
-
-      gsap.to("#blob-animated", {
-        x: posx,
-        y: posy,
-        duration: 3,
-        ease: "none",
-      });
-
-      if (offsetX <= vpWidth - 1700) {
-        return setTimeout(() => {
-          moveDownRight(posy + 100, posx + 100);
-        }, 3000);
-      }
-
-      if (offsetY > vpHeight - 400) {
-        return setTimeout(() => {
-          moveUpLeft(posy - 100, posx - 100);
-        }, 3000);
-      }
-
-      return setTimeout(() => {
-        moveDownLeft(posy + 100, posx - 100);
-      }, 3000);
-    };
-
-    moveDownRight(50, 50);
-  }, [vpHeight, vpWidth]);
+    init();
+  }, [vpHeight, vpWidth, document.hidden]);
 
   return (
     <div className='main-container'>
@@ -314,6 +365,7 @@ const Main = () => {
               cursor: "pointer",
               marginLeft: "10vh",
             }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <path
               d='M0.873977 0.788862L30.7285 26.1886'
