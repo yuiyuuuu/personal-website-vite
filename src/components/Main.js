@@ -44,6 +44,9 @@ const Main = () => {
       rotation: -47,
     });
 
+    gsap.to("#linkedin-logo", { y: 0, duration: 1, ease: "power4" });
+    gsap.to("#github-logo", { y: 0, duration: 1, ease: "power4" });
+
     setIsBurger(true);
     setIsBurger2(true);
   };
@@ -69,6 +72,9 @@ const Main = () => {
     gsap.to("#burger-stroke-2", {
       rotation: 0,
     });
+
+    gsap.to("#linkedin-logo", { y: "-200%", duration: 1, ease: "power4" });
+    gsap.to("#github-logo", { y: "-200%", duration: 1, ease: "power4" });
 
     setTimeout(() => {
       setIsBurger2(false);
@@ -112,6 +118,7 @@ const Main = () => {
     if (vpHeight === 0 || vpWidth === 0) return;
 
     const moveDownRight = (posy, posx) => {
+      console.log("down right");
       const offsets = document
         .getElementById("blob-animated")
         .getBoundingClientRect();
@@ -125,24 +132,25 @@ const Main = () => {
         ease: "none",
       });
 
-      if (offsetY > vpHeight - 400) {
+      if (offsetY > vpHeight - 500) {
         return setTimeout(() => {
           moveUpRight(posy - 100, posx + 100);
-        }, 4000);
+        }, 3000);
       }
 
-      if (offsetX >= vpWidth - 401) {
+      if (offsetX >= vpWidth - 501) {
         return setTimeout(() => {
           moveDownLeft(posy + 100, posx - 100);
-        }, 4000);
+        }, 3000);
       }
 
       return setTimeout(() => {
         moveDownRight(posy + 100, posx + 100);
-      }, 4000);
+      }, 3000);
     };
 
     const moveUpRight = (posy, posx) => {
+      console.log("up right");
       const offsets = document
         .getElementById("blob-animated")
         .getBoundingClientRect();
@@ -156,24 +164,25 @@ const Main = () => {
         ease: "none",
       });
 
-      if (offsetX >= vpWidth - 401) {
+      if (offsetX >= vpWidth - 501) {
         return setTimeout(() => {
           moveUpLeft(posy - 100, posx - 100);
-        }, 4000);
+        }, 3000);
       }
 
-      if (offsetY <= vpHeight - 1370) {
+      if (offsetY <= vpHeight - 1170) {
         return setTimeout(() => {
           moveDownRight(posy + 100, posx + 100);
-        }, 4000);
+        }, 3000);
       }
 
       return setTimeout(() => {
         moveUpRight(posy - 100, posx + 100);
-      }, 4000);
+      }, 3000);
     };
 
     const moveUpLeft = (posy, posx) => {
+      console.log("up left");
       const offsets = document
         .getElementById("blob-animated")
         .getBoundingClientRect();
@@ -187,24 +196,25 @@ const Main = () => {
         ease: "none",
       });
 
-      if (offsetY <= vpHeight - 1370) {
+      if (offsetY <= vpHeight - 1170) {
         return setTimeout(() => {
           moveDownLeft(posy + 100, posx - 100);
-        }, 4000);
+        }, 3000);
       }
 
       if (offsetX <= vpWidth - 1870) {
         return setTimeout(() => {
           moveUpRight(posy - 100, posx + 100);
-        }, 4000);
+        }, 3000);
       }
 
       return setTimeout(() => {
         moveUpLeft(posy - 100, posx - 100);
-      }, 4000);
+      }, 3000);
     };
 
     const moveDownLeft = (posy, posx) => {
+      console.log("down left");
       const offsets = document
         .getElementById("blob-animated")
         .getBoundingClientRect();
@@ -217,23 +227,22 @@ const Main = () => {
         duration: 3,
         ease: "none",
       });
-      console.log(offsetX);
 
-      if (offsetX <= vpWidth - 1870) {
+      if (offsetX <= vpWidth - 1700) {
         return setTimeout(() => {
           moveDownRight(posy + 100, posx + 100);
-        }, 4000);
+        }, 3000);
       }
 
       if (offsetY > vpHeight - 400) {
         return setTimeout(() => {
           moveUpLeft(posy - 100, posx - 100);
-        }, 4000);
+        }, 3000);
       }
 
       return setTimeout(() => {
         moveDownLeft(posy + 100, posx - 100);
-      }, 4000);
+      }, 3000);
     };
 
     moveDownRight(50, 50);
@@ -358,6 +367,44 @@ const Main = () => {
               className='logo-color'
             />
           </svg>
+          <div style={{ flexGrow: 1 }} />
+          <a
+            href='https://github.com/yuiyuuuu'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='50'
+              height='50'
+              viewBox='0 0 24 24'
+              id='github-logo'
+            >
+              <path
+                d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'
+                id='github-path'
+              />
+            </svg>
+          </a>
+
+          <a
+            href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='50'
+              height='50'
+              viewBox='0 0 430.117 430.117'
+              id='linkedin-logo'
+            >
+              <path
+                d='M430.117 261.543V420.56H337.93V272.193c0-37.27-13.335-62.707-46.704-62.707-25.473 0-40.632 17.142-47.3 33.724-2.433 5.928-3.06 14.18-3.06 22.477V420.56H148.65s1.242-251.285 0-277.32h92.21v39.31c-.187.293-.43.61-.606.895h.606v-.896c12.25-18.87 34.13-45.825 83.102-45.825 60.673 0 106.157 39.636 106.157 124.818zM52.183 9.558C20.635 9.558 0 30.25 0 57.463c0 26.62 20.038 47.94 50.96 47.94h.615c32.16 0 52.16-21.317 52.16-47.94-.607-27.212-20-47.905-51.552-47.905zM5.477 420.56H97.66V143.24H5.478v277.32z'
+                id='linkedin-path'
+              ></path>
+            </svg>
+          </a>
           <div style={{ flexGrow: 1 }} />
           <div
             className='burger-color-div'
