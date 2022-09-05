@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./Main.scss";
 import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
+import YellowBlob from "./YellowBLob";
 const parentDiv = document.getElementsByClassName("parent")[0];
 
 const Main = () => {
@@ -100,7 +101,23 @@ const Main = () => {
       { path: "#blob2" },
       { repeat: 999, duration: 3000, yoyo: true }
     );
+
+    const tween2 = KUTE.fromTo(
+      "#yellow-blob1",
+      { path: "#yellow-blob1" },
+      { path: "#yellow-blob2" },
+      { repeat: 999, duration: 3000, yoyo: true }
+    );
+
+    const tween3 = KUTE.fromTo(
+      "#blue-blob1",
+      { path: "#blue-blob1" },
+      { path: "#blue-blob2" },
+      { repeat: 999, duration: 3000, yoyo: true }
+    );
     tween.start();
+    tween2.start();
+    tween3.start();
   }, []);
 
   useEffect(() => {
@@ -164,7 +181,6 @@ const Main = () => {
 
       const moveUpRight = (posy, posx) => {
         if (!document.hidden) {
-          console.log("ran2");
           const offsets = document
             .getElementById("blob-animated")
             .getBoundingClientRect();
@@ -254,6 +270,374 @@ const Main = () => {
           const offsetY = offsets.y;
 
           gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 1700) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetY > vpHeight - 400) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
+  }, [vpHeight, vpWidth, document.hidden]);
+
+  useEffect(() => {
+    let previous = "moveUpRight";
+    let previousX = 50;
+    let previousY = -50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 1700) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetY > vpHeight - 400) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
+  }, [vpHeight, vpWidth, document.hidden]);
+
+  useEffect(() => {
+    let previous = "moveDownRight";
+    let previousX = 50;
+    let previousY = 50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 500);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
             x: posx,
             y: posy,
             duration: 3,
@@ -555,6 +939,62 @@ const Main = () => {
                   id='blob2'
                   d='M115.5 -116.3C140.5 -90.5 145.3 -45.3 143 -2.2C140.8 40.8 131.6 81.6 106.6 119.2C81.6 156.9 40.8 191.4 -11.7 203.1C-64.1 214.8 -128.2 203.6 -178.2 165.9C-228.2 128.2 -264.1 64.1 -260.6 3.5C-257 -57 -214.1 -114.1 -164.1 -139.9C-114.1 -165.7 -57 -160.4 -5.9 -154.5C45.3 -148.6 90.5 -142.2 115.5 -116.3'
                   fill='#b92379'
+                ></path>
+              </g>
+            </svg>
+
+            <svg
+              id='yellow-blob-svg'
+              viewBox='0 0 900 600'
+              width='900'
+              height='600'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+              version='1.1'
+              style={{ position: "absolute", left: -1, top: -50 }}
+            >
+              <g transform='translate(465.27723997269925 335.6427759040981)'>
+                <path
+                  d='M179 -188.2C218.5 -139.5 227.8 -69.8 210.6 -17.2C193.4 35.4 149.7 70.7 110.2 97.9C70.7 125 35.4 144 -17.7 161.7C-70.7 179.4 -141.4 195.8 -188.6 168.6C-235.8 141.4 -259.4 70.7 -245.4 14C-231.3 -42.7 -179.7 -85.3 -132.5 -134C-85.3 -182.7 -42.7 -237.3 13.6 -250.9C69.8 -264.4 139.5 -236.9 179 -188.2'
+                  fill='#f1d056'
+                  id='yellow-blob1'
+                ></path>
+              </g>
+
+              <g transform='translate(456.6842695026673 334.1164563455272)'>
+                <path
+                  d='M120.7 -116.9C170.7 -70.7 235.4 -35.4 235.5 0.1C235.6 35.6 171.2 71.2 121.2 104.8C71.2 138.5 35.6 170.3 -0.5 170.7C-36.5 171.2 -73.1 140.4 -121.7 106.7C-170.4 73.1 -231.2 36.5 -245.5 -14.3C-259.7 -65.1 -227.4 -130.1 -178.8 -176.3C-130.1 -222.4 -65.1 -249.7 -14.8 -234.9C35.4 -220 70.7 -163 120.7 -116.9'
+                  fill='#f1d056'
+                  id='yellow-blob2'
+                  style={{ visibility: "hidden" }}
+                ></path>
+              </g>
+            </svg>
+
+            <svg
+              id='blue-blob-svg'
+              viewBox='0 0 900 600'
+              width='900'
+              height='600'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+              version='1.1'
+              style={{ position: "absolute", top: 30, right: 30 }}
+            >
+              <g transform='translate(470.02425535291934 256.4533814357629)'>
+                <path
+                  d='M118.2 -111.7C149.7 -86.7 169.4 -43.4 175.7 6.4C182.1 56.1 175.2 112.2 143.7 162.2C112.2 212.2 56.1 256.1 9.7 246.4C-36.8 236.8 -73.5 173.5 -115.2 123.5C-156.9 73.5 -203.4 36.8 -215 -11.5C-226.5 -59.9 -203.1 -119.7 -161.4 -144.7C-119.7 -169.7 -59.9 -159.9 -8.2 -151.6C43.4 -143.4 86.7 -136.7 118.2 -111.7'
+                  fill='#00d8ee'
+                  id='blue-blob1'
+                ></path>
+              </g>
+
+              <g transform='translate(478.44208859469927 291.7866695273314)'>
+                <path
+                  d='M125.4 -114.4C161.8 -89.1 189.9 -44.5 186.2 -3.7C182.6 37.2 147.1 74.5 110.8 102.8C74.5 131.1 37.2 150.6 -6.4 156.9C-50 163.3 -99.9 156.6 -149.9 128.3C-199.9 99.9 -250 50 -242.7 7.3C-235.4 -35.4 -170.7 -70.7 -120.7 -96C-70.7 -121.4 -35.4 -136.7 4.6 -141.3C44.5 -145.9 89.1 -139.8 125.4 -114.4'
+                  fill='#00d8ee'
+                  id='blue-blob2'
+                  style={{ visibility: "hidden" }}
                 ></path>
               </g>
             </svg>
