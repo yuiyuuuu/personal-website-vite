@@ -174,7 +174,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -215,7 +215,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -256,7 +256,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -297,7 +297,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
       switch (previous) {
@@ -314,9 +314,10 @@ const Main = () => {
     init();
   }, [vpHeight, vpWidth, document.hidden]);
 
+  //YELLOW BLOB
   useEffect(() => {
-    let previous = "moveUpRight";
-    let previousX = 50;
+    let previous = "moveUpLeft";
+    let previousX = -50;
     let previousY = -50;
     const init = () => {
       if (vpHeight === 0 || vpWidth === 0) return;
@@ -358,7 +359,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -399,7 +400,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 50);
         }
       };
 
@@ -440,7 +441,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -481,7 +482,7 @@ const Main = () => {
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 50);
         }
       };
       switch (previous) {
@@ -498,10 +499,11 @@ const Main = () => {
     init();
   }, [vpHeight, vpWidth, document.hidden]);
 
+  //BLUE BLOB
   useEffect(() => {
-    let previous = "moveDownRight";
+    let previous = "moveUpRight";
     let previousX = 50;
-    let previousY = 50;
+    let previousY = -50;
     const init = () => {
       if (vpHeight === 0 || vpWidth === 0) return;
 
@@ -516,7 +518,7 @@ const Main = () => {
           gsap.to("#blue-blob-svg", {
             x: posx,
             y: posy,
-            duration: 3,
+            duration: 2,
             ease: "none",
           });
 
@@ -527,22 +529,22 @@ const Main = () => {
           if (offsetY > vpHeight - 500) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
-            }, 3000);
+            }, 2000);
           }
 
           if (offsetX >= vpWidth - 501) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
-            }, 3000);
+            }, 2000);
           }
 
           return setTimeout(() => {
             moveDownRight(posy + 100, posx + 100);
-          }, 3000);
+          }, 2000);
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 300);
         }
       };
 
@@ -557,7 +559,7 @@ const Main = () => {
           gsap.to("#blue-blob-svg", {
             x: posx,
             y: posy,
-            duration: 3,
+            duration: 2,
             ease: "none",
           });
 
@@ -568,22 +570,22 @@ const Main = () => {
           if (offsetX >= vpWidth - 501) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
-            }, 3000);
+            }, 2000);
           }
 
           if (offsetY <= vpHeight - 1170) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
-            }, 3000);
+            }, 2000);
           }
 
           return setTimeout(() => {
             moveUpRight(posy - 100, posx + 100);
-          }, 3000);
+          }, 2000);
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 300);
         }
       };
 
@@ -598,7 +600,7 @@ const Main = () => {
           gsap.to("#blue-blob-svg", {
             x: posx,
             y: posy,
-            duration: 3,
+            duration: 2,
             ease: "none",
           });
 
@@ -609,22 +611,22 @@ const Main = () => {
           if (offsetY <= vpHeight - 1170) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
-            }, 3000);
+            }, 2000);
           }
 
           if (offsetX <= vpWidth - 1870) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
-            }, 3000);
+            }, 2000);
           }
 
           return setTimeout(() => {
             moveUpLeft(posy - 100, posx - 100);
-          }, 3000);
+          }, 2000);
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
 
@@ -639,7 +641,7 @@ const Main = () => {
           gsap.to("#blue-blob-svg", {
             x: posx,
             y: posy,
-            duration: 3,
+            duration: 2,
             ease: "none",
           });
 
@@ -650,22 +652,22 @@ const Main = () => {
           if (offsetX <= vpWidth - 1700) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
-            }, 3000);
+            }, 2000);
           }
 
           if (offsetY > vpHeight - 400) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
-            }, 3000);
+            }, 2000);
           }
 
           return setTimeout(() => {
             moveDownLeft(posy + 100, posx - 100);
-          }, 3000);
+          }, 2000);
         } else {
           setTimeout(() => {
             init();
-          }, 500);
+          }, 250);
         }
       };
       switch (previous) {
