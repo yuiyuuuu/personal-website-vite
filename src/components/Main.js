@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import "./Main.scss";
 import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
-import YellowBlob from "./YellowBLob";
 const parentDiv = document.getElementsByClassName("parent")[0];
 
 const Main = () => {
