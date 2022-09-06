@@ -45,7 +45,7 @@
 }
 
 .burger-color {
-  fill: white;
+  fill: darkgray;
 }
 
 .burger-color-div:hover > svg > g > .burger-color {
@@ -115,7 +115,7 @@
 #linkedin-logo {
   cursor: pointer;
   margin-top: 3.5vh;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 #linkedin-path {
   fill: lightgray;
@@ -130,7 +130,7 @@
   margin-top: 3.5vh;
   cursor: pointer;
   margin-right: 30px;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 
 #github-path {
