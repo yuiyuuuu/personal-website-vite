@@ -3,6 +3,7 @@ import "./Main.scss";
 import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
 const parentDiv = document.getElementsByClassName("parent")[0];
+import Projects from "./Projects";
 
 const Main = () => {
   const [vpHeight, setvpHeight] = useState(0);
@@ -889,7 +890,7 @@ const Main = () => {
           top: scrollPosition,
           left: 0,
           display: isBurger ? "" : "none",
-          zIndex: 3,
+          zIndex: 4,
           overflow: "hidden",
         }}
         id='burger-animation-first'
@@ -1223,13 +1224,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: "100vh",
-          backgroundColor: "white",
-          width: "100%",
-        }}
-      />
+      <Projects />
     </div>
   );
 };

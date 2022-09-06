@@ -141,3 +141,61 @@
 #github-logo:hover > #github-path {
   fill: white;
 }
+
+.container-projects-img {
+  background-color: black;
+  height: 39vh;
+  width: 48vw;
+  margin-bottom: 10vh;
+}
+
+#first-project {
+  box-shadow: 0 0 20px gray;
+  transition: box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+#first-project:hover {
+  box-shadow: 0 0 40px gray;
+}
+
+#name-bullseye {
+  font-size: 44px;
+  font-weight: 600;
+  transition: font-size 0.5s ease;
+}
+
+#first-project:hover > #name-bullseye {
+  font-size: 47.5px;
+}
+
+#desc-bullseye {
+  font-size: 22px;
+  transition: font-size 0.5s ease;
+}
+
+#first-project:hover > #desc-bullseye {
+  font-size: 24px;
+}
+
+.view-project-button {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #fb9696, #e66465);
+  position: absolute;
+  right: 50;
+  bottom: 90;
+  color: white;
+  z-index: 3;
+  cursor: pointer;
+  font-size: 19px;
+  transition: all 0.5s ease;
+}
+
+#first-project:hover > #bullseye-view-but {
+  width: 165px;
+  height: 45px;
+}
