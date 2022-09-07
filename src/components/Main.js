@@ -17,6 +17,25 @@ const Main = () => {
   const [isBurger2, setIsBurger2] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  const navigateHome = () => {
+    const parent = document.getElementsByClassName("parent")[0];
+    burgerAnimationClose();
+
+    setTimeout(() => {
+      parent.scrollIntoView({ behavior: "smooth" }, true);
+    }, 800);
+  };
+
+  const nagivateProjects = () => {
+    const parent = document.getElementById("test");
+    burgerAnimationClose();
+    console.log("test");
+
+    setTimeout(() => {
+      parent.scrollIntoView({ behavior: "smooth" }, true);
+    }, 800);
+  };
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -932,9 +951,13 @@ const Main = () => {
         id='burger-animation-first'
         ref={burgerAnimationRef2}
       >
-        <a className='menu-items'>Home</a>
+        <a className='menu-items' onClick={() => navigateHome()}>
+          Home
+        </a>
 
-        <a className='menu-items'>Projects</a>
+        <a className='menu-items' onClick={() => nagivateProjects()}>
+          Projects
+        </a>
 
         <a className='menu-items'>About</a>
 
