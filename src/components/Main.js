@@ -139,6 +139,7 @@ const Main = () => {
     setvpWidth(width);
   }, [parentDiv?.clientHeight, parentDiv?.clientWidth]);
 
+  //red blob
   useEffect(() => {
     let previous = "moveDownRight";
     let previousX = 50;
@@ -147,6 +148,7 @@ const Main = () => {
       if (vpHeight === 0 || vpWidth === 0) return;
 
       const moveDownRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
         if (!document.hidden) {
           const offsets = document
             .getElementById("blob-animated")
@@ -165,7 +167,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY > vpHeight - 500) {
+          if (offsetY > vpHeight - 500 - scrollPos) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
             }, 3000);
@@ -188,6 +190,7 @@ const Main = () => {
       };
 
       const moveUpRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
         if (!document.hidden) {
           const offsets = document
             .getElementById("blob-animated")
@@ -212,7 +215,7 @@ const Main = () => {
             }, 3000);
           }
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
             }, 3000);
@@ -229,6 +232,7 @@ const Main = () => {
       };
 
       const moveUpLeft = (posy, posx) => {
+        const scrollPos = window.scrollY;
         if (!document.hidden) {
           const offsets = document
             .getElementById("blob-animated")
@@ -247,7 +251,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
             }, 3000);
@@ -270,6 +274,7 @@ const Main = () => {
       };
 
       const moveDownLeft = (posy, posx) => {
+        const scrollPos = window.scrollY;
         if (!document.hidden) {
           const offsets = document
             .getElementById("blob-animated")
@@ -294,7 +299,7 @@ const Main = () => {
             }, 3000);
           }
 
-          if (offsetY > vpHeight - 400) {
+          if (offsetY > vpHeight - 400 - scrollPos) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
             }, 3000);
@@ -332,6 +337,7 @@ const Main = () => {
       if (vpHeight === 0 || vpWidth === 0) return;
 
       const moveDownRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
         if (!document.hidden) {
           const offsets = document
             .getElementById("yellow-blob-svg")
@@ -350,7 +356,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY > vpHeight - 500) {
+          if (offsetY > vpHeight - 500 - scrollPos) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
             }, 3000);
@@ -374,6 +380,7 @@ const Main = () => {
 
       const moveUpRight = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("yellow-blob-svg")
             .getBoundingClientRect();
@@ -397,7 +404,7 @@ const Main = () => {
             }, 3000);
           }
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
             }, 3000);
@@ -415,6 +422,7 @@ const Main = () => {
 
       const moveUpLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("yellow-blob-svg")
             .getBoundingClientRect();
@@ -432,7 +440,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
             }, 3000);
@@ -456,6 +464,7 @@ const Main = () => {
 
       const moveDownLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("yellow-blob-svg")
             .getBoundingClientRect();
@@ -479,7 +488,7 @@ const Main = () => {
             }, 3000);
           }
 
-          if (offsetY > vpHeight - 400) {
+          if (offsetY > vpHeight - 400 - scrollPos) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
             }, 3000);
@@ -518,6 +527,7 @@ const Main = () => {
 
       const moveDownRight = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("blue-blob-svg")
             .getBoundingClientRect();
@@ -535,7 +545,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY > vpHeight - 500) {
+          if (offsetY > vpHeight - 500 - scrollPos) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
             }, 2000);
@@ -559,6 +569,7 @@ const Main = () => {
 
       const moveUpRight = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("blue-blob-svg")
             .getBoundingClientRect();
@@ -582,7 +593,7 @@ const Main = () => {
             }, 2000);
           }
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
             }, 2000);
@@ -600,6 +611,7 @@ const Main = () => {
 
       const moveUpLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("blue-blob-svg")
             .getBoundingClientRect();
@@ -617,7 +629,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
             }, 2000);
@@ -641,6 +653,7 @@ const Main = () => {
 
       const moveDownLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("blue-blob-svg")
             .getBoundingClientRect();
@@ -664,7 +677,7 @@ const Main = () => {
             }, 2000);
           }
 
-          if (offsetY > vpHeight - 400) {
+          if (offsetY > vpHeight - 400 - scrollPos) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
             }, 2000);
@@ -703,6 +716,7 @@ const Main = () => {
 
       const moveDownRight = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("green-blob-svg")
             .getBoundingClientRect();
@@ -720,7 +734,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY > vpHeight - 500) {
+          if (offsetY > vpHeight - 500 - scrollPos) {
             return setTimeout(() => {
               moveUpRight(posy - 100, posx + 100);
             }, 2000);
@@ -744,6 +758,7 @@ const Main = () => {
 
       const moveUpRight = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("green-blob-svg")
             .getBoundingClientRect();
@@ -767,7 +782,7 @@ const Main = () => {
             }, 2000);
           }
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownRight(posy + 100, posx + 100);
             }, 2000);
@@ -785,6 +800,7 @@ const Main = () => {
 
       const moveUpLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("green-blob-svg")
             .getBoundingClientRect();
@@ -802,7 +818,7 @@ const Main = () => {
           previousX = posx;
           previousY = posy;
 
-          if (offsetY <= vpHeight - 1170) {
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
             return setTimeout(() => {
               moveDownLeft(posy + 100, posx - 100);
             }, 2000);
@@ -826,6 +842,7 @@ const Main = () => {
 
       const moveDownLeft = (posy, posx) => {
         if (!document.hidden) {
+          const scrollPos = window.scrollY;
           const offsets = document
             .getElementById("green-blob-svg")
             .getBoundingClientRect();
@@ -849,7 +866,7 @@ const Main = () => {
             }, 2000);
           }
 
-          if (offsetY > vpHeight - 400) {
+          if (offsetY > vpHeight - 400 - scrollPos) {
             return setTimeout(() => {
               moveUpLeft(posy - 100, posx - 100);
             }, 2000);
