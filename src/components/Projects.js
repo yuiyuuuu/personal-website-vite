@@ -103,10 +103,66 @@ const Projects = () => {
             </div>
           </div>
         </a>
-        <div className='container-projects-img' style={{ marginLeft: "10vh" }}>
-          .
-        </div>
-        <div className='container-projects-img' style={{ marginRight: "10vh" }}>
+        <a href='/happilist'>
+          <div
+            className='container-projects-img boxshadow-projects '
+            style={{ marginLeft: "10vh", position: "relative" }}
+            id='second-project'
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                zIndex: 2,
+                opacity: 0.5,
+                position: "absolute",
+                backgroundColor: "black",
+                top: 0,
+              }}
+            />
+            <img
+              src='https://cdn.discordapp.com/attachments/779278654714675232/1016934260101353512/cat.png'
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            <div
+              id='name-happy'
+              style={{ left: 50, bottom: 140, position: "absolute" }}
+            >
+              HappiList
+            </div>
+            <div
+              id='desc-happy'
+              style={{
+                position: "absolute",
+                left: 50,
+                bottom: 115,
+                color: "white",
+                zIndex: 3,
+                userSelect: "none",
+                fontStyle: "italic",
+              }}
+            >
+              Social media app that promotes producivity and positivity
+            </div>
+
+            <div
+              className='view-project-button2'
+              style={{
+                position: "absolute",
+                left: 50,
+                bottom: 60,
+                userSelect: "none",
+              }}
+              id='bullseye-view-but2'
+            >
+              View Project
+            </div>
+          </div>
+        </a>
+        <div
+          className='container-projects-img boxshadow-projects'
+          style={{ marginRight: "10vh" }}
+        >
           .
         </div>
       </div>

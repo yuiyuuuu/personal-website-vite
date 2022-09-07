@@ -99,28 +99,28 @@ const Main = () => {
       "#blob1",
       { path: "#blob1" },
       { path: "#blob2" },
-      { repeat: 999, duration: 2300, yoyo: true }
+      { repeat: 9999, duration: 2300, yoyo: true }
     );
 
     const tween2 = KUTE.fromTo(
       "#yellow-blob1",
       { path: "#yellow-blob1" },
       { path: "#yellow-blob2" },
-      { repeat: 999, duration: 2000, yoyo: true }
+      { repeat: 9999, duration: 2000, yoyo: true }
     );
 
     const tween3 = KUTE.fromTo(
       "#blue-blob1",
       { path: "#blue-blob1" },
       { path: "#blue-blob2" },
-      { repeat: 999, duration: 2700, yoyo: true }
+      { repeat: 9999, duration: 2700, yoyo: true }
     );
 
     const tween4 = KUTE.fromTo(
       "#green-blob1",
       { path: "#green-blob1" },
       { path: "#green-blob2" },
-      { repeat: 999, duration: 3300, yoyo: true }
+      { repeat: 9999, duration: 3300, yoyo: true }
     );
     tween.start();
     tween2.start();

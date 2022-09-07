@@ -158,13 +158,37 @@
   box-shadow: 0 0 40px gray;
 }
 
+.boxshadow-projects {
+  box-shadow: 0 0 20px gray;
+  transition: box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.boxshadow-projects:hover {
+  box-shadow: 0 0 40px gray;
+}
+
 #name-bullseye {
   font-size: 44px;
   font-weight: 600;
   transition: font-size 0.5s ease;
 }
 
+#name-happy {
+  font-size: 44px;
+  font-weight: 600;
+  transition: font-size 0.5s ease;
+  color: white;
+  text-decoration: none;
+  z-index: 3;
+  user-select: none;
+}
+
 #first-project:hover > #name-bullseye {
+  font-size: 47.5px;
+}
+
+#second-project:hover > #name-happy {
   font-size: 47.5px;
 }
 
@@ -173,7 +197,17 @@
   transition: font-size 0.5s ease;
 }
 
+#desc-happy {
+  font-size: 22px;
+  transition: font-size 0.5s ease;
+  text-decoration: none;
+}
+
 #first-project:hover > #desc-bullseye {
+  font-size: 24px;
+}
+
+#second-project:hover > #desc-happy {
   font-size: 24px;
 }
 
@@ -194,7 +228,29 @@
   transition: all 0.5s ease;
 }
 
+.view-project-button2 {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #d4d086, #bfc207);
+  position: absolute;
+  right: 50;
+  bottom: 90;
+  color: white;
+  z-index: 3;
+  cursor: pointer;
+  font-size: 19px;
+  transition: all 0.5s ease;
+}
+
 #first-project:hover > #bullseye-view-but {
+  width: 165px;
+  height: 45px;
+}
+
+#second-project:hover > #bullseye-view-but2 {
   width: 165px;
   height: 45px;
 }
