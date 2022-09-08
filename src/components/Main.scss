@@ -152,6 +152,7 @@
   box-shadow: 0 0 20px gray;
   transition: box-shadow 0.5s ease;
   cursor: pointer;
+  position: relative;
 }
 
 #first-project:hover {
@@ -253,4 +254,72 @@
 #second-project:hover > #bullseye-view-but2 {
   width: 165px;
   height: 45px;
+}
+
+#number-1 {
+  font-size: 170px;
+  text-decoration: none;
+  z-index: 4;
+  color: white;
+  font-weight: 600;
+  font-family: "League Spartan", Helvetica, Arial, sans-serif;
+  transition: transform 0.5s ease 0.25s, opacity 0.5s ease;
+  position: relative;
+  transform: translateY(15px);
+  overflow: hidden;
+  opacity: 0;
+}
+
+#number-1::before {
+  transition: height 0.4s ease 0.4s;
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  color: rgb(148, 144, 144);
+  height: 100%;
+}
+
+#first-project:hover > #number-1::before {
+  height: 0;
+}
+
+#first-project:hover > #number-1 {
+  opacity: 1;
+  transform: translateY(-15px);
+}
+
+#number-2 {
+  font-size: 170px;
+  text-decoration: none;
+  z-index: 4;
+  color: white;
+  font-weight: 600;
+  font-family: "League Spartan", Helvetica, Arial, sans-serif;
+  transition: transform 0.5s ease 0.25s, opacity 0.5s ease;
+  position: relative;
+  transform: translateY(15px);
+  overflow: hidden;
+  opacity: 0;
+}
+
+#number-2::before {
+  transition: height 0.4s ease 0.4s;
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  color: rgb(148, 144, 144);
+  height: 100%;
+}
+
+#second-project:hover > #number-2::before {
+  height: 0;
+}
+
+#second-project:hover > #number-2 {
+  opacity: 1;
+  transform: translateY(-15px);
 }

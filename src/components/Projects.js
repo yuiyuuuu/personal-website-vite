@@ -101,6 +101,14 @@ const Projects = () => {
             >
               View Project
             </div>
+
+            <div
+              id='number-1'
+              style={{ position: "absolute", top: -40, left: -10 }}
+              data-text='01'
+            >
+              01
+            </div>
           </div>
         </a>
         <a href='/happilist'>
@@ -156,6 +164,14 @@ const Projects = () => {
               id='bullseye-view-but2'
             >
               View Project
+            </div>
+
+            <div
+              id='number-2'
+              style={{ position: "absolute", top: -40, right: -10 }}
+              data-text='02'
+            >
+              02
             </div>
           </div>
         </a>
