@@ -21,12 +21,14 @@ const Projects = () => {
       <div
         style={{
           height: "165vh",
-          backgroundColor: "white",
+          backgroundColor: "ghostwhite",
           width: "100%",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: "10vh",
+          paddingTop: "10vh",
+          position: "relative",
+          overflow: "hidden",
         }}
         id='test'
       >
@@ -96,6 +98,7 @@ const Projects = () => {
                 right: 50,
                 bottom: 60,
                 userSelect: "none",
+                zIndex: 3,
               }}
               id='bullseye-view-but'
             >
@@ -182,7 +185,7 @@ const Projects = () => {
         </a>
         <div
           className='container-projects-img boxshadow-projects'
-          style={{ marginRight: "10vh", position: "relative" }}
+          style={{ marginRight: "10vh", position: "relative", zIndex: 3 }}
           id='third-project'
         >
           <img
