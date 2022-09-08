@@ -3,3 +3,27 @@
   font-weight: 600;
   font-size: 18px;
 }
+
+.visit-website-project {
+  border-width: 1px;
+  border: solid white;
+  background: transparent;
+  width: 200px;
+  height: 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 3;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: white;
+    color: #464d62;
+  }
+}

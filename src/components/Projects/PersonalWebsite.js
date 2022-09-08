@@ -50,7 +50,7 @@ const PersonalWebsite = () => {
             }}
             className='font-projects'
           >
-            Content:{" "}
+            Context:{" "}
             <span
               style={{
                 color: "white",

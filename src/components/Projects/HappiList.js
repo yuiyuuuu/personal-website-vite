@@ -49,7 +49,7 @@ const HappiList = () => {
             }}
             className='font-projects'
           >
-            Content: <span style={{ color: "white" }}>Group Project</span>
+            Context: <span style={{ color: "white" }}>Group Project</span>
           </div>
 
           <div style={{ color: "#00BFFF" }} className='font-projects'>
