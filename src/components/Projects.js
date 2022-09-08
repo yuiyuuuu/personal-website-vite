@@ -183,83 +183,85 @@ const Projects = () => {
             </div>
           </div>
         </a>
-        <div
-          className='container-projects-img boxshadow-projects'
-          style={{ marginRight: "10vh", position: "relative", zIndex: 3 }}
-          id='third-project'
-        >
-          <img
-            src='https://media.discordapp.net/attachments/779278654714675232/1017291390998290462/edit3.png'
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              userSelect: "none",
-            }}
-          />
-
+        <a href='/personal'>
           <div
-            style={{
-              width: "100%",
-              height: "100%",
-              zIndex: 2,
-              opacity: 0.5,
-              position: "absolute",
-              backgroundColor: "black",
-              top: 0,
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              right: 50,
-              bottom: 140,
-              color: "white",
-              zIndex: 3,
-              userSelect: "none",
-            }}
-            id='name-personal'
+            className='container-projects-img boxshadow-projects'
+            style={{ marginRight: "10vh", position: "relative", zIndex: 3 }}
+            id='third-project'
           >
-            My Mesmerizing Personal Website
-          </div>
+            <img
+              src='https://media.discordapp.net/attachments/779278654714675232/1017291390998290462/edit3.png'
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                userSelect: "none",
+              }}
+            />
 
-          <div
-            style={{
-              position: "absolute",
-              right: 50,
-              bottom: 115,
-              color: "white",
-              zIndex: 3,
-              userSelect: "none",
-              fontStyle: "italic",
-            }}
-            id='desc-personal'
-          >
-            The website you're looking at right now
-          </div>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                zIndex: 2,
+                opacity: 0.5,
+                position: "absolute",
+                backgroundColor: "black",
+                top: 0,
+              }}
+            />
 
-          <div
-            className='view-project-button3'
-            style={{
-              position: "absolute",
-              right: 50,
-              bottom: 60,
-              userSelect: "none",
-            }}
-            id='personal-view-but'
-          >
-            View Project
-          </div>
+            <div
+              style={{
+                position: "absolute",
+                right: 50,
+                bottom: 140,
+                color: "white",
+                zIndex: 3,
+                userSelect: "none",
+              }}
+              id='name-personal'
+            >
+              My Mesmerizing Personal Website
+            </div>
 
-          <div
-            id='number-3'
-            style={{ position: "absolute", top: -40, left: -10 }}
-            data-text='03'
-          >
-            03
+            <div
+              style={{
+                position: "absolute",
+                right: 50,
+                bottom: 115,
+                color: "white",
+                zIndex: 3,
+                userSelect: "none",
+                fontStyle: "italic",
+              }}
+              id='desc-personal'
+            >
+              The website you're looking at right now
+            </div>
+
+            <div
+              className='view-project-button3'
+              style={{
+                position: "absolute",
+                right: 50,
+                bottom: 60,
+                userSelect: "none",
+              }}
+              id='personal-view-but'
+            >
+              View Project
+            </div>
+
+            <div
+              id='number-3'
+              style={{ position: "absolute", top: -40, left: -10 }}
+              data-text='03'
+            >
+              03
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );
