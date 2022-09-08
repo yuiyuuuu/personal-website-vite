@@ -186,11 +186,21 @@
   user-select: none;
 }
 
+#name-personal {
+  font-size: 44px;
+  font-weight: 600;
+  transition: font-size 0.5s ease;
+}
+
 #first-project:hover > #name-bullseye {
   font-size: 47.5px;
 }
 
 #second-project:hover > #name-happy {
+  font-size: 47.5px;
+}
+
+#third-project:hover > #name-personal {
   font-size: 47.5px;
 }
 
@@ -205,11 +215,21 @@
   text-decoration: none;
 }
 
+#desc-personal {
+  font-size: 22px;
+  transition: font-size 0.5s ease;
+  text-decoration: none;
+}
+
 #first-project:hover > #desc-bullseye {
   font-size: 24px;
 }
 
 #second-project:hover > #desc-happy {
+  font-size: 24px;
+}
+
+#third-project:hover > #desc-personal {
   font-size: 24px;
 }
 
@@ -220,9 +240,6 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(to left, #fb9696, #e66465);
-  position: absolute;
-  right: 50;
-  bottom: 90;
   color: white;
   z-index: 3;
   cursor: pointer;
@@ -237,9 +254,20 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(to left, #d4d086, #bfc207);
-  position: absolute;
-  right: 50;
-  bottom: 90;
+  color: white;
+  z-index: 3;
+  cursor: pointer;
+  font-size: 19px;
+  transition: all 0.5s ease;
+}
+
+.view-project-button3 {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #0bb5e4, #09e909);
   color: white;
   z-index: 3;
   cursor: pointer;
@@ -253,6 +281,11 @@
 }
 
 #second-project:hover > #bullseye-view-but2 {
+  width: 165px;
+  height: 45px;
+}
+
+#third-project:hover > #personal-view-but {
   width: 165px;
   height: 45px;
 }
@@ -321,6 +354,40 @@
 }
 
 #second-project:hover > #number-2 {
+  opacity: 1;
+  transform: translateY(-15px);
+}
+
+#number-3 {
+  font-size: 170px;
+  text-decoration: none;
+  z-index: 4;
+  color: white;
+  font-weight: 600;
+  font-family: "League Spartan", Helvetica, Arial, sans-serif;
+  transition: transform 0.5s ease 0.25s, opacity 0.5s ease;
+  position: relative;
+  transform: translateY(15px);
+  overflow: hidden;
+  opacity: 0;
+}
+
+#number-3::before {
+  transition: height 0.4s ease 0.4s;
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  color: rgb(148, 144, 144);
+  height: 100%;
+}
+
+#third-project:hover > #number-3::before {
+  height: 0;
+}
+
+#third-project:hover > #number-3 {
   opacity: 1;
   transform: translateY(-15px);
 }
