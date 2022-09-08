@@ -29,7 +29,6 @@ const Main = () => {
   const nagivateProjects = () => {
     const parent = document.getElementById("test");
     burgerAnimationClose();
-    console.log("test");
 
     setTimeout(() => {
       parent.scrollIntoView({ behavior: "smooth" }, true);

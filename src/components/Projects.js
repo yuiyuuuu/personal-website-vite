@@ -46,7 +46,7 @@ const Projects = () => {
           >
             <img
               src='https://cdn.discordapp.com/attachments/779278654714675232/1016802611824955472/edited_2.png'
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%", userSelect: "none" }}
             />
 
             <div
@@ -130,7 +130,12 @@ const Projects = () => {
             />
             <img
               src='https://cdn.discordapp.com/attachments/779278654714675232/1016934260101353512/cat.png'
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                userSelect: "none",
+              }}
             />
             <div
               id='name-happy'
