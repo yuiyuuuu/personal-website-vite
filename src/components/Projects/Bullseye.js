@@ -155,7 +155,7 @@ const Bullseye = () => {
         >
           Bullseye is an E-commerce store inspired by the famous Gopuff's
           website and business model. Originally a project built by a team of 4
-          including me, I decided to rebuild the frontend to strengthen by HTML
+          including me, I decided to rebuild the frontend to strengthen my HTML
           and CSS skills and not depend on a frontend library, such as
           MaterialUI.
         </div>
