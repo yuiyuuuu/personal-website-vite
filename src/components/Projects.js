@@ -44,6 +44,7 @@ const Projects = () => {
             style={{
               marginRight: "10vh",
               position: "relative",
+              zIndex: 3,
             }}
           >
             <img
@@ -117,7 +118,7 @@ const Projects = () => {
         <a href='/happilist'>
           <div
             className='container-projects-img boxshadow-projects '
-            style={{ marginLeft: "10vh", position: "relative" }}
+            style={{ marginLeft: "10vh", position: "relative", zIndex: 3 }}
             id='second-project'
           >
             <div

@@ -925,7 +925,7 @@ const Main = () => {
           top: scrollPosition,
           left: 0,
           display: isBurger ? "" : "none",
-          zIndex: 4,
+          zIndex: 6,
           overflow: "hidden",
         }}
         id='burger-animation-first'
@@ -945,7 +945,7 @@ const Main = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          zIndex: 4,
+          zIndex: 6,
         }}
         id='burger-animation-first'
         ref={burgerAnimationRef2}
