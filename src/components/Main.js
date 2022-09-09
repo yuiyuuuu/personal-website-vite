@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import "./Main.scss";
 import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
@@ -40,6 +40,49 @@ const Main = () => {
     setScrollPosition(position);
   };
 
+  const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+  const preventDefault = useCallback((e) => {
+    e.preventDefault();
+  }, []);
+
+  const preventDefaultForScrollKeys = useCallback((e) => {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  });
+
+  const supportsPassive = false;
+  try {
+    window.addEventListener(
+      "test",
+      null,
+      Object.defineProperty({}, "passive", {
+        get: function () {
+          supportsPassive = true;
+        },
+      })
+    );
+  } catch (e) {}
+
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelEvent =
+    "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
+
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener(wheelEvent, preventDefault, { passive: false }); // modern desktop
+    window.addEventListener("touchmove", preventDefault, { passive: false }); // mobile
+    window.addEventListener("keydown", preventDefaultForScrollKeys, false);
+  }
+
+  function enableScroll() {
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener("touchmove", preventDefault, wheelOpt);
+    window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
+  }
+
   const burgerAnimation = () => {
     gsap.to(burgerAnimationRef1.current, {
       x: 0,
@@ -65,7 +108,8 @@ const Main = () => {
 
     gsap.to("#linkedin-logo", { y: 0, duration: 1, ease: "power4" });
     gsap.to("#github-logo", { y: 0, duration: 1, ease: "power4" });
-
+    disableScroll();
+    console.log("function ran");
     setIsBurger(true);
     setIsBurger2(true);
   };
@@ -101,6 +145,8 @@ const Main = () => {
     setTimeout(() => {
       setIsBurger(false);
     }, 1000);
+
+    enableScroll();
   };
 
   useEffect(() => {
