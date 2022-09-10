@@ -31,3 +31,85 @@
 .happilist-intro {
   background: linear-gradient(to left, #001000, #1c1d25);
 }
+
+.all-projects-p {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: lightgray;
+  transition: color 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    transform: translateX(-110%);
+    transition: transform 0.3s ease;
+    animation: sliding-out 0.3s;
+  }
+  &:hover::before {
+    animation: sliding-in 0.3s;
+    transform: translateX(0);
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+@keyframes sliding-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sliding-out {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animation-fade-bot {
+  opacity: 0;
+  animation: fadein 0.5s 1s;
+}
+
+.animation-fade-top {
+  opacity: 0;
+  animation: fadeintop 0.5s 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeintop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
