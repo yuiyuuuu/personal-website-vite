@@ -28,6 +28,43 @@
   }
 }
 
+.visit-website-project-1 {
+  border-width: 1px;
+  background: linear-gradient(to left, #fab8b8, #e66465, #fab8b8, #e66465);
+  background-size: 400% 400%;
+  width: 200px;
+  height: 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 3;
+  text-decoration: none;
+  // transition: background-position 5s ease;
+
+  &:hover {
+    animation: linear-fade 1.5s ease infinite;
+  }
+}
+
+@keyframes linear-fade {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 .happilist-intro {
   background: linear-gradient(to left, #001000, #1c1d25);
 }
@@ -112,4 +149,26 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.all-projects-div {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: transparent;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior-inline: contain;
+}
+
+.all-projects-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60vh;
+  background-color: black;
+  margin-top: 5vh;
 }

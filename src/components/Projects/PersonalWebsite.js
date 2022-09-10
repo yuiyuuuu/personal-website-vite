@@ -62,7 +62,8 @@ const PersonalWebsite = () => {
           </div>
 
           <div style={{ color: "#00BFFF" }} className='font-projects'>
-            Period: <span style={{ color: "white" }}> September 2022</span>
+            Period:{" "}
+            <span style={{ color: "white" }}> September 2022 - Current</span>
           </div>
         </div>
       </div>
