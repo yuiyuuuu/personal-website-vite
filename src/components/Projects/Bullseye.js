@@ -48,7 +48,7 @@ const Bullseye = () => {
       <div
         className='all-projects-div'
         style={{
-          position: "absolute",
+          position: "fixed",
           top: 0,
           zIndex: 10,
           display: show ? "" : "none",
@@ -59,9 +59,26 @@ const Bullseye = () => {
             display: "flex",
             flexDirection: "column",
             width: "80%",
+            marginBottom: "30vh",
+            alignItems: "center",
           }}
         >
-          <div className='all-projects-content' style={{ marginTop: "7vh" }}>
+          <div
+            onClick={() => {
+              document.body.style.overflow = "auto";
+              setShow(false);
+            }}
+            style={{
+              width: "150px",
+              height: "65px",
+              position: "fixed",
+              top: -50,
+            }}
+            className='visit-website-project-1'
+          >
+            Close
+          </div>
+          <div className='all-projects-content' style={{ marginTop: "9vh" }}>
             <div style={{ height: "100%", width: "38%", position: "relative" }}>
               <img
                 src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
@@ -79,6 +96,7 @@ const Bullseye = () => {
                   height: "100%",
                   opacity: 0.5,
                 }}
+                className='shadow-img'
               />
             </div>
             <div
@@ -217,6 +235,7 @@ const Bullseye = () => {
                   height: "100%",
                   opacity: 0.5,
                 }}
+                className='shadow-img'
               />
             </div>
             <div
@@ -355,6 +374,7 @@ const Bullseye = () => {
                   height: "100%",
                   opacity: 0.5,
                 }}
+                className='shadow-img'
               />
             </div>
             <div
@@ -476,6 +496,8 @@ const Bullseye = () => {
           </div>
         </div>
       </div>
+
+      {/* start of main*/}
       <div
         style={{
           width: "100%",
@@ -584,7 +606,10 @@ const Bullseye = () => {
             style={{ fontSize: "23px", marginRight: "8vw" }}
             className='all-projects-p animation-fade-top'
             id='all-projects-bullseye'
-            onClick={() => setShow(true)}
+            onClick={() => {
+              setShow(true);
+              document.body.style.overflow = "hidden";
+            }}
           >
             All Projects
           </div>
