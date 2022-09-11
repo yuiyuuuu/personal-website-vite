@@ -273,7 +273,12 @@ const HappiList = () => {
             style={{ marginTop: "9vh" }}
           >
             <div
-              style={{ height: "100%", width: "38%", position: "relative" }}
+              style={{
+                height: "100%",
+                width: "38%",
+                position: "relative",
+                zIndex: 20,
+              }}
               id='image1-allpj'
             >
               <img
@@ -531,8 +536,14 @@ const HappiList = () => {
             <div style={{ height: "100%", width: "38%", position: "relative" }}>
               <img
                 src='https://cdn.discordapp.com/attachments/779278654714675232/1018375001449177128/ggsgsg.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  userSelect: "none",
+                  zIndex: 20,
+                }}
                 id='image2-allpj'
+                className='shadow-img'
               />
             </div>
           </div>
@@ -543,7 +554,12 @@ const HappiList = () => {
             id='div3-content'
           >
             <div
-              style={{ height: "100%", width: "38%", position: "relative" }}
+              style={{
+                height: "100%",
+                width: "38%",
+                position: "relative",
+                zIndex: 20,
+              }}
               id='image3-allpj'
             >
               <img

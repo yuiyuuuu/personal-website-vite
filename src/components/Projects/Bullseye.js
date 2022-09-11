@@ -271,7 +271,12 @@ const Bullseye = () => {
             style={{ marginTop: "9vh" }}
           >
             <div
-              style={{ height: "100%", width: "38%", position: "relative" }}
+              style={{
+                height: "100%",
+                width: "38%",
+                position: "relative",
+                zIndex: 20,
+              }}
               id='image1-allpj'
             >
               <img
@@ -286,7 +291,7 @@ const Bullseye = () => {
                   left: 0,
                   top: 0,
                   backgroundColor: "black",
-                  zIndex: 2,
+                  zIndex: 20,
                   height: "100%",
                   opacity: 0.5,
                 }}
@@ -529,8 +534,14 @@ const Bullseye = () => {
             <div style={{ height: "100%", width: "38%", position: "relative" }}>
               <img
                 src='https://cdn.discordapp.com/attachments/779278654714675232/1018375001449177128/ggsgsg.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  userSelect: "none",
+                  zIndex: 20,
+                }}
                 id='image2-allpj'
+                className='shadow-img'
               />
             </div>
           </div>
@@ -541,7 +552,12 @@ const Bullseye = () => {
             id='div3-content'
           >
             <div
-              style={{ height: "100%", width: "38%", position: "relative" }}
+              style={{
+                height: "100%",
+                width: "38%",
+                position: "relative",
+                zIndex: 20,
+              }}
               id='image3-allpj'
             >
               <img
