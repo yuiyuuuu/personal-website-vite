@@ -21,7 +21,6 @@ const Projects = () => {
       <div
         style={{
           height: "165vh",
-          backgroundColor: "ghostwhite",
           width: "100%",
           display: "flex",
           alignItems: "center",

@@ -150,6 +150,32 @@
   z-index: 5;
 }
 
+#test {
+  background: linear-gradient(
+    to left,
+    rgb(222, 222, 247),
+    white,
+    rgb(222, 222, 247),
+    white
+  );
+  background-size: 400% 400%;
+  animation: linear-fade1 8s ease infinite;
+}
+
+@keyframes linear-fade1 {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 #first-project {
   box-shadow: 0 0 20px gray;
   transition: box-shadow 0.5s ease;
