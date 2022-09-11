@@ -31,6 +31,18 @@ const Bullseye = () => {
     );
 
     gsap.fromTo(
+      "#close-button-allpj",
+      { opacity: 0, y: "-100%" },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "power1",
+        duration: 0.4,
+        delay: 0.2,
+      }
+    );
+
+    gsap.fromTo(
       "#div1-allpj",
       {
         opacity: 0,
@@ -120,6 +132,14 @@ const Bullseye = () => {
       delay: 0.3,
     });
 
+    gsap.to("#close-button-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      y: "-100%",
+      delay: 0.2,
+    });
+
     gsap.to("#image3-allpj", {
       opacity: 0,
       duration: 0.4,
@@ -200,7 +220,7 @@ const Bullseye = () => {
               fadeOutAllProjects();
               setTimeout(() => {
                 setShow(false);
-              }, 1500);
+              }, 1000);
             }}
             style={{
               width: "150px",
@@ -209,6 +229,7 @@ const Bullseye = () => {
               top: -50,
             }}
             className='visit-website-project-1'
+            id='close-button-allpj'
           >
             <svg
               width='18'
