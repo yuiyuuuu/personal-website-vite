@@ -3,25 +3,156 @@ import { useNavigate } from "react-router";
 import "./Projects.scss";
 import "../Main.scss";
 
+import { gsap } from "gsap";
+
 const Bullseye = () => {
   const history = useNavigate();
 
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [show, setShow] = useState(false);
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
+  function fadeInAllProjects() {
+    const a = document.getElementById("div1-content");
+    const b = document.getElementById("div2-content");
+    const c = document.getElementById("div3-content");
 
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    a.classList.add("shadow-pj");
+    b.classList.add("shadow-pj");
+    c.classList.add("shadow-pj");
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    gsap.fromTo(
+      "#image1-allpj",
+      { opacity: 0, x: "-100%" },
+      {
+        opacity: 1,
+        x: 0,
+        ease: "power1",
+        duration: 0.4,
+      }
+    );
+
+    gsap.fromTo(
+      "#div1-allpj",
+      {
+        opacity: 0,
+        x: "100%",
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.4,
+        delay: 0.1,
+        ease: "power1",
+      }
+    );
+
+    gsap.fromTo(
+      "#image2-allpj",
+      {
+        opacity: 0,
+        x: "100%",
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.4,
+        delay: 0.3,
+        ease: "power1",
+      }
+    );
+
+    gsap.fromTo(
+      "#div2-allpj",
+      { opacity: 0, x: "-100%" },
+      {
+        opacity: 1,
+        x: 0,
+        ease: "power1",
+        duration: 0.4,
+        delay: 0.5,
+      }
+    );
+
+    gsap.fromTo(
+      "#image3-allpj",
+      { opacity: 0, x: "-100%" },
+      {
+        opacity: 1,
+        x: 0,
+        ease: "power1",
+        duration: 0.4,
+        delay: 0.7,
+      }
+    );
+
+    gsap.fromTo(
+      "#div3-allpj",
+      { opacity: 0, x: "100%" },
+      {
+        opacity: 1,
+        x: 0,
+        ease: "power1",
+        duration: 0.3,
+        delay: 0.9,
+      }
+    );
+  }
+
+  function fadeOutAllProjects() {
+    const a = document.getElementById("div1-content");
+    const b = document.getElementById("div2-content");
+    const c = document.getElementById("div3-content");
+
+    a.classList.remove("shadow-pj");
+    b.classList.remove("shadow-pj");
+    c.classList.remove("shadow-pj");
+    gsap.to("#image1-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "-100%",
+    });
+
+    gsap.to("#div2-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "-100%",
+      delay: 0.3,
+    });
+
+    gsap.to("#image3-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "-100%",
+      delay: 0.7,
+    });
+
+    //right
+    gsap.to("#div1-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "100%",
+      delay: 0.1,
+    });
+
+    gsap.to("#image2-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "100%",
+      delay: 0.5,
+    });
+
+    gsap.to("#div3-allpj", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power1",
+      x: "100%",
+      delay: 0.9,
+    });
+  }
 
   useEffect(() => {
     const v = document.getElementById("name--bullseye");
@@ -66,7 +197,10 @@ const Bullseye = () => {
           <div
             onClick={() => {
               document.body.style.overflow = "auto";
-              setShow(false);
+              fadeOutAllProjects();
+              setTimeout(() => {
+                setShow(false);
+              }, 1500);
             }}
             style={{
               width: "150px",
@@ -110,11 +244,18 @@ const Bullseye = () => {
             </svg>
             Close
           </div>
-          <div className='all-projects-content' style={{ marginTop: "9vh" }}>
-            <div style={{ height: "100%", width: "38%", position: "relative" }}>
+          <div
+            className='all-projects-content shadow-pj'
+            id='div1-content'
+            style={{ marginTop: "9vh" }}
+          >
+            <div
+              style={{ height: "100%", width: "38%", position: "relative" }}
+              id='image1-allpj'
+            >
               <img
                 src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%" }}
+                style={{ height: "100%", width: "100%", userSelect: "none" }}
               />
 
               <div
@@ -140,6 +281,7 @@ const Bullseye = () => {
                 flexDirection: "column",
                 position: "relative",
               }}
+              id='div1-allpj'
             >
               <div
                 style={{
@@ -160,6 +302,7 @@ const Bullseye = () => {
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
+                  userSelect: "none",
                 }}
               >
                 Fullstack Developer{" "}
@@ -254,7 +397,11 @@ const Bullseye = () => {
             </div>
           </div>
 
-          <div className='all-projects-content' style={{ marginTop: "7vh" }}>
+          <div
+            className='all-projects-content shadow-pj'
+            style={{ marginTop: "7vh" }}
+            id='div2-content'
+          >
             <div
               style={{
                 width: "62%",
@@ -265,6 +412,7 @@ const Bullseye = () => {
                 position: "relative",
                 overflowY: "hidden",
               }}
+              id='div2-allpj'
             >
               <div
                 style={{
@@ -285,6 +433,7 @@ const Bullseye = () => {
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
+                  userSelect: "none",
                 }}
               >
                 Fullstack Developer{" "}
@@ -326,7 +475,7 @@ const Bullseye = () => {
               </div>
 
               <div
-                className='visit-website-project-1'
+                className='visit-website-project-2'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   history("/happilist");
@@ -358,31 +507,25 @@ const Bullseye = () => {
             </div>
             <div style={{ height: "100%", width: "38%", position: "relative" }}>
               <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%" }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  left: 0,
-                  top: 0,
-                  backgroundColor: "black",
-                  zIndex: 2,
-                  height: "100%",
-                  opacity: 0.5,
-                }}
-                className='shadow-img'
+                src='https://cdn.discordapp.com/attachments/779278654714675232/1018375001449177128/ggsgsg.png'
+                style={{ height: "100%", width: "100%", userSelect: "none" }}
+                id='image2-allpj'
               />
             </div>
           </div>
 
-          <div className='all-projects-content' style={{ marginTop: "7vh" }}>
-            <div style={{ height: "100%", width: "38%", position: "relative" }}>
+          <div
+            className='all-projects-content shadow-pj'
+            style={{ marginTop: "7vh" }}
+            id='div3-content'
+          >
+            <div
+              style={{ height: "100%", width: "38%", position: "relative" }}
+              id='image3-allpj'
+            >
               <img
                 src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%" }}
+                style={{ height: "100%", width: "100%", userSelect: "none" }}
               />
 
               <div
@@ -408,6 +551,7 @@ const Bullseye = () => {
                 flexDirection: "column",
                 position: "relative",
               }}
+              id='div3-allpj'
             >
               <div
                 style={{
@@ -428,6 +572,7 @@ const Bullseye = () => {
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
+                  userSelect: "none",
                 }}
               >
                 Fullstack Developer{" "}
@@ -639,6 +784,7 @@ const Bullseye = () => {
             onClick={() => {
               setShow(true);
               document.body.style.overflow = "hidden";
+              fadeInAllProjects();
             }}
           >
             All Projects
