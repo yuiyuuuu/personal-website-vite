@@ -221,3 +221,29 @@
 .shadow-img {
   box-shadow: 0 0 50px black;
 }
+
+.p-desc-projects {
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman,
+    serif;
+  font-size: 23.5px;
+  color: #545454;
+}
+
+.line-divider {
+  width: 10%;
+  background-color: black;
+  height: 3px;
+  margin-top: 30px;
+}
+
+.sub-title-project {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.tech-stack-icon {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  cursor: pointer;
+}
