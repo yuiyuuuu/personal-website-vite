@@ -1313,6 +1313,7 @@ const Bullseye = () => {
             display: "flex",
             flexDirection: "row",
             zIndex: 2,
+            marginTop: "10px",
           }}
         >
           <div
