@@ -1154,7 +1154,7 @@ const HappiList = () => {
           </div>
         </div>
       </div>
-      <div className='next-project-2' onClick={() => history("/happilist")}>
+      <div className='next-project-2' onClick={() => history("/personal")}>
         <div
           style={{
             width: "70%",
