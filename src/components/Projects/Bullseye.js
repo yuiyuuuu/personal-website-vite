@@ -197,6 +197,10 @@ const Bullseye = () => {
       k.classList.remove("animation-fade-bot");
     }, 1500);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -1083,7 +1087,7 @@ const Bullseye = () => {
               className='p-desc-projects'
               style={{ width: "70%", marginTop: "30px" }}
             >
-              Originally built I build this project with a team of 4 as my Grace
+              Originally I built this project with a team of 4 as my Grace
               Shopper project for Fullstack Academy. Though acceptable for a
               week worth of work, I was unsatisfied with the final product as a
               presentable product.

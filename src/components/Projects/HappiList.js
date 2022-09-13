@@ -199,8 +199,13 @@ const HappiList = () => {
       m.classList.remove("animation-fade-bot");
     }, 1500);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div style={{ position: "relative" }}>
+      {/*start of all projects overlay */}
       <div
         className='all-projects-div'
         style={{
@@ -369,14 +374,17 @@ const HappiList = () => {
                   marginTop: "20px",
                 }}
               >
-                Bullseye is an E-commerce store inspired by the famous Gopuff's
+                Bullseye is an E-commerce store inspired by the famous Gopuff
                 website and business model. Originally a project built by a team
                 of 4 including me, I decided to rebuild the frontend...
               </div>
 
               <div
                 className='visit-website-project-1'
-                onClick={() => setShow(false)}
+                onClick={() => {
+                  document.body.style.overflow = "auto";
+                  history("/bullseye");
+                }}
               >
                 View Project
               </div>
@@ -509,7 +517,7 @@ const HappiList = () => {
                 className='visit-website-project-2'
                 onClick={() => {
                   document.body.style.overflow = "auto";
-                  history("/happilist");
+                  setShow(false);
                 }}
               >
                 View Project
@@ -650,7 +658,7 @@ const HappiList = () => {
                   marginTop: "20px",
                 }}
               >
-                Bullseye is an E-commerce store inspired by the famous Gopuff's
+                Bullseye is an E-commerce store inspired by the famous Gopuff
                 website and business model. Originally a project built by a team
                 of 4 including me, I decided to rebuild the frontend..
               </div>
@@ -713,7 +721,7 @@ const HappiList = () => {
           </div>
         </div>
       </div>
-
+      {/*end of all projects overlay */}
       {/*start of main*/}
       <div
         style={{
@@ -1044,7 +1052,7 @@ const HappiList = () => {
           <div className='line-divider' />
 
           <div className='sub-title-project' style={{ marginTop: "30px" }}>
-            UI and Components
+            UI Components
           </div>
 
           <img
