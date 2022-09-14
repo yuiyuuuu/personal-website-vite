@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 const TestSVg = () => {
   //   useEffect(() => {
@@ -11,22 +12,43 @@ const TestSVg = () => {
 
   useEffect(() => {
     const v = document.getElementsByClassName("logo-color-a");
-    console.log(v);
 
     setTimeout(() => {
       Array.from(v).forEach((e) => {
         e.classList.remove("logo-color");
         e.classList.add("fadein");
       });
-    }, 2750);
+    }, 3050);
+
+    setTimeout(() => {
+      gsap.to("#logo-bullseye-animate", {
+        x: "-350%",
+        y: "-250%",
+        scaleX: 0,
+        scaleY: 0,
+        ease: "power4",
+        duration: 2,
+      });
+    }, 4050);
+
+    setTimeout(() => {
+      gsap.to("#logo-bullseye-animate", {
+        opacity: 0,
+      });
+    }, 4300);
   }, []);
+
   return (
     <div
       style={{
         height: "100vh",
         backgroundColor: "black",
         position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
+      //   className='fadetopleft'
     >
       <svg
         width='320'
@@ -35,14 +57,11 @@ const TestSVg = () => {
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         style={{
-          marginTop: "20px",
           cursor: "pointer",
-          marginLeft: "10vh",
           zIndex: 2,
         }}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         // className='animation-fade-top'
-        id='logo-bullseye'
       >
         <path d='M0.873977 0.788862L30.7285 26.1886' className='logo-color6' />
         <path d='M30.3653 26.2092L44.1335 10.08' className='logo-color8' />
@@ -99,12 +118,11 @@ const TestSVg = () => {
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         style={{
-          marginTop: "20px",
           cursor: "pointer",
-          marginLeft: "10vh",
           position: "absolute",
-          top: 0,
-          left: 0,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
         }}
         onClick={() =>
           window.scrollTo({
@@ -116,7 +134,7 @@ const TestSVg = () => {
           })
         }
         // className='animation-fade-top'
-        id='logo-bullseye'
+        id='logo-bullseye-animate'
       >
         <path d='M0.873977 0.788862L30.7285 26.1886' className='logo-color-a' />
         <path d='M30.3653 26.2092L44.1335 10.08' className='logo-color-a' />
