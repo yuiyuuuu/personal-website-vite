@@ -9,6 +9,11 @@
 }
 
 .logo-color {
+  stroke: red;
+  animation: color-change 12s ease infinite;
+}
+
+.logo-color-a {
   opacity: 0;
 }
 
