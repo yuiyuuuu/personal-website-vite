@@ -204,7 +204,7 @@ const HappiList = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflowX: "hidden" }}>
       {/*start of all projects overlay */}
       <div
         className='all-projects-div'

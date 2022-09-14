@@ -9,8 +9,199 @@
 }
 
 .logo-color {
-  stroke: #0affa7;
-  animation: color-change 12s ease infinite;
+  opacity: 0;
+}
+
+.fadein {
+  stroke: red;
+  opacity: 1;
+  transition: opacity 4.5s ease;
+}
+
+.logo-color2 {
+  stroke: red;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 0;
+  animation: dash2 4s ease-in;
+  opacity: 0;
+}
+
+@keyframes dash2 {
+  from {
+    stroke-dashoffset: -1400;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color3 {
+  stroke: red;
+  stroke-dasharray: 10;
+  stroke-dashoffset: 0;
+  animation: dash3 0.5s ease-in;
+  opacity: 0;
+}
+
+@keyframes dash3 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 10;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color4 {
+  stroke: red;
+  stroke-dasharray: 21;
+  stroke-dashoffset: 0;
+  animation: dash4 0.5s ease-in;
+  opacity: 0;
+}
+
+@keyframes dash4 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: -21;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color5 {
+  stroke: red;
+  stroke-dasharray: 20;
+  stroke-dashoffset: 0;
+  animation: dash5 0.5s ease-in;
+  opacity: 0;
+}
+
+@keyframes dash5 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color6 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 0;
+  animation: dash6 0.5s ease-in 0.5s;
+  opacity: 0;
+}
+
+@keyframes dash6 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color7 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 0;
+  animation: dash7 0.5s ease-in 0.4s;
+  opacity: 0;
+}
+
+@keyframes dash7 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color8 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 0;
+  animation: dash8 0.5s ease-in 0.9s;
+  opacity: 0;
+}
+
+@keyframes dash8 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 22;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color9 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 33;
+  stroke-dashoffset: 0;
+  animation: dash9 0.5s ease-in 1.4s;
+  opacity: 0;
+}
+
+@keyframes dash9 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 33;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color10 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 21;
+  stroke-dashoffset: 0;
+  animation: dash10 0.5s ease-in 2.4s;
+  opacity: 0;
+}
+
+@keyframes dash10 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 21;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-color11 {
+  //opacity 0
+  stroke: red;
+  stroke-dasharray: 35;
+  stroke-dashoffset: 0;
+  animation: dash11 0.5s ease-in 1.9s;
+  opacity: 0;
+}
+
+@keyframes dash11 {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 35;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes color-change {

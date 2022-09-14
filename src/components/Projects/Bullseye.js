@@ -202,7 +202,7 @@ const Bullseye = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflowX: "hidden" }}>
       <div
         className='all-projects-div'
         style={{
@@ -774,7 +774,10 @@ const Bullseye = () => {
             />
             <path d='M22.0394 70L40.568 58.8' className='logo-color' />
             <path d='M43.9792 10.1911L67.4745 4.22819' className='logo-color' />
-            <path d='M30.8159 34.2365L30.8159 25.8616' className='logo-color' />
+            <path
+              d='M30.8159 34.2365L30.8159 25.8616'
+              className='logo-color2'
+            />
             <path d='M30.8153 34.2191L21.8748 38.119' className='logo-color' />
             <path d='M30.8153 34.2191L39.9895 39.7457' className='logo-color' />
             <path d='M21.5446 37.4574L14.5541 21.4216' className='logo-color' />

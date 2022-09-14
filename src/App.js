@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Bullseye from "./components/Projects/Bullseye";
 import HappiList from "./components/Projects/HappiList";
 import PersonalWebsite from "./components/Projects/PersonalWebsite";
+import TestSVg from "./components/Projects/TestSVg";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path='/bullseye' element={<Bullseye />} />
           <Route exact path='/happilist' element={<HappiList />} />
           <Route exact path='/personal' element={<PersonalWebsite />} />
+          <Route exact path='/test' element={<TestSVg />} />
         </Routes>
       </BrowserRouter>
     </div>
