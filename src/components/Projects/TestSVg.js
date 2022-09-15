@@ -22,20 +22,22 @@ const TestSVg = () => {
 
     setTimeout(() => {
       gsap.to("#logo-bullseye-animate", {
-        x: "-350%",
-        y: "-250%",
+        // x: "-350%",
+        // y: "-250%",
+        left: -50,
+        top: -20,
         scaleX: 0,
         scaleY: 0,
         ease: "power4",
         duration: 2,
       });
-    }, 4050);
+    }, 4550);
 
     setTimeout(() => {
       gsap.to("#logo-bullseye-animate", {
         opacity: 0,
       });
-    }, 4300);
+    }, 4950);
   }, []);
 
   return (
