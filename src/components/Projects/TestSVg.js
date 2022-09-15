@@ -2,14 +2,6 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 
 const TestSVg = () => {
-  //   useEffect(() => {
-  //     const a = document.getElementById("off4");
-
-  //     setTimeout(() => {
-  //       a.classList.add("logo-color-off4");
-  //     }, 900);
-  //   }, []);
-
   useEffect(() => {
     const v = document.getElementsByClassName("logo-color-a");
 
@@ -18,12 +10,10 @@ const TestSVg = () => {
         e.classList.remove("logo-color");
         e.classList.add("fadein");
       });
-    }, 3050);
+    }, 5050);
 
     setTimeout(() => {
-      gsap.to("#logo-bullseye-animate", {
-        // x: "-350%",
-        // y: "-250%",
+      gsap.to("#intrologo-parent", {
         left: -50,
         top: -20,
         scaleX: 0,
@@ -31,26 +21,24 @@ const TestSVg = () => {
         ease: "power4",
         duration: 2,
       });
-    }, 4550);
+    }, 6550);
 
     setTimeout(() => {
-      gsap.to("#logo-bullseye-animate", {
+      gsap.to("#intrologo-parent", {
         opacity: 0,
       });
-    }, 4950);
+    }, 6950);
   }, []);
 
   return (
     <div
       style={{
-        height: "100vh",
-        backgroundColor: "black",
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
       }}
-      //   className='fadetopleft'
+      id='intrologo-parent'
     >
       <svg
         width='320'

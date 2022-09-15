@@ -8,6 +8,78 @@
   position: relative;
 }
 
+.scale-logo-animation {
+  animation: scalea 2s ease;
+}
+
+.blob-scalea {
+  animation: scalea2 1.8s ease;
+}
+
+@keyframes scalea {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scalea2 {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.text-animation-intro {
+  animation: bottomup 1.5s ease;
+}
+
+@keyframes bottomup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.opacity0-topnav {
+  opacity: 0;
+  transform: translateY(-150%);
+}
+
+.topnav-animation {
+  animation: fromtop 1.7s ease;
+}
+
+@keyframes fromtop {
+  from {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.opacity0 {
+  opacity: 0;
+  display: none;
+}
+
+.opacity0-blob {
+  opacity: 0;
+}
+
 .logo-color {
   stroke: red;
   animation: color-change 12s ease infinite;
@@ -27,7 +99,7 @@
   stroke: red;
   stroke-dasharray: 10;
   stroke-dashoffset: 0;
-  animation: dash3 0.8s ease-in;
+  animation: dash3 0.8s ease-in 2s;
   opacity: 0;
 }
 
@@ -45,7 +117,7 @@
   stroke: red;
   stroke-dasharray: 21;
   stroke-dashoffset: 0;
-  animation: dash4 0.8s ease-in;
+  animation: dash4 0.8s ease-in 2s;
   opacity: 0;
 }
 
@@ -63,7 +135,7 @@
   stroke: red;
   stroke-dasharray: 20;
   stroke-dashoffset: 0;
-  animation: dash5 0.8s ease-in;
+  animation: dash5 0.8s ease-in 2s;
   opacity: 0;
 }
 
@@ -82,7 +154,7 @@
   stroke: red;
   stroke-dasharray: 40;
   stroke-dashoffset: 0;
-  animation: dash6 0.8s ease-in 0.5s;
+  animation: dash6 0.8s ease-in 2.5s;
   opacity: 0;
 }
 
@@ -101,7 +173,7 @@
   stroke: red;
   stroke-dasharray: 48;
   stroke-dashoffset: 0;
-  animation: dash7 0.8s ease-in 0.5s;
+  animation: dash7 0.8s ease-in 2.5s;
   opacity: 0;
 }
 
@@ -120,7 +192,7 @@
   stroke: red;
   stroke-dasharray: 22;
   stroke-dashoffset: 0;
-  animation: dash8 0.8s ease-in 1s;
+  animation: dash8 0.8s ease-in 3s;
   opacity: 0;
 }
 
@@ -139,7 +211,7 @@
   stroke: red;
   stroke-dasharray: 33;
   stroke-dashoffset: 0;
-  animation: dash9 0.8s ease-in 1.5s;
+  animation: dash9 0.8s ease-in 3.5s;
   opacity: 0;
 }
 
@@ -158,7 +230,7 @@
   stroke: red;
   stroke-dasharray: 21;
   stroke-dashoffset: 0;
-  animation: dash10 0.8s ease-in 2.5s;
+  animation: dash10 0.8s ease-in 4.5s;
   opacity: 0;
 }
 
@@ -177,7 +249,7 @@
   stroke: red;
   stroke-dasharray: 35;
   stroke-dashoffset: 0;
-  animation: dash11 0.8s ease-in 2s;
+  animation: dash11 0.8s ease-in 4s;
   opacity: 0;
 }
 

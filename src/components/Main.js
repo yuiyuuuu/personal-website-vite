@@ -4,6 +4,7 @@ import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
 const parentDiv = document.getElementsByClassName("parent")[0];
 import Projects from "./Projects";
+import TestSVg from "./Projects/TestSVg";
 
 const Main = () => {
   const [vpHeight, setvpHeight] = useState(0);
@@ -11,6 +12,7 @@ const Main = () => {
 
   const burgerAnimationRef1 = useRef(null);
   const burgerAnimationRef2 = useRef(null);
+  const [shouldStart, setShouldStart] = useState(false);
   const blobref = useRef(null);
 
   const [isBurger, setIsBurger] = useState(false);
@@ -158,7 +160,44 @@ const Main = () => {
     };
   }, []);
 
+  //remove opacity0 classes
   useEffect(() => {
+    const a = document.getElementById("text-intro");
+    const b = document.getElementById("burgerking");
+    const c = document.getElementById("logo-topleft");
+    const d = document.getElementById("blob-animated");
+    const e = document.getElementById("yellow-blob-svg");
+    const f = document.getElementById("blue-blob-svg");
+    const g = document.getElementById("green-blob-svg");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      b.classList.remove("opacity0-topnav");
+      b.classList.add("topnav-animation");
+      c.classList.remove("opacity0");
+      c.classList.add("scale-logo-animation");
+      a.classList.remove("opacity0");
+      a.classList.add("text-animation-intro");
+      d.classList.remove("opacity0-blob");
+      d.classList.add("blob-scalea");
+      e.classList.remove("opacity0-blob");
+      e.classList.add("blob-scalea");
+      f.classList.remove("opacity0-blob");
+      f.classList.add("blob-scalea");
+      g.classList.remove("opacity0-blob");
+      g.classList.add("blob-scalea");
+    }, 6850);
+
+    setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 7400);
+
+    setTimeout(() => {
+      setShouldStart(true);
+    }, 8500);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldStart) return;
     const tween = KUTE.fromTo(
       "#blob1",
       { path: "#blob1" },
@@ -187,10 +226,10 @@ const Main = () => {
       { repeat: 9999, duration: 3300, yoyo: true }
     );
     tween.start();
+    tween4.start();
     tween2.start();
     tween3.start();
-    tween4.start();
-  }, []);
+  }, [shouldStart]);
 
   useEffect(() => {
     const height = document
@@ -205,6 +244,7 @@ const Main = () => {
 
   //red blob
   useEffect(() => {
+    if (!shouldStart) return;
     let previous = "moveDownRight";
     let previousX = 50;
     let previousY = 50;
@@ -390,10 +430,11 @@ const Main = () => {
       }
     };
     init();
-  }, [vpHeight, vpWidth, document.hidden]);
+  }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   //YELLOW BLOB
   useEffect(() => {
+    if (!shouldStart) return;
     let previous = "moveUpLeft";
     let previousX = -50;
     let previousY = -50;
@@ -579,10 +620,11 @@ const Main = () => {
       }
     };
     init();
-  }, [vpHeight, vpWidth, document.hidden]);
+  }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
-  //BLUE BLOB
+  // //BLUE BLOB
   useEffect(() => {
+    if (!shouldStart) return;
     let previous = "moveUpRight";
     let previousX = 50;
     let previousY = -50;
@@ -768,10 +810,11 @@ const Main = () => {
       }
     };
     init();
-  }, [vpHeight, vpWidth, document.hidden]);
+  }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
-  //GREEN BLOB
+  // //GREEN BLOB
   useEffect(() => {
+    if (!shouldStart) return;
     let previous = "moveDownLeft";
     let previousX = -50;
     let previousY = 50;
@@ -957,7 +1000,7 @@ const Main = () => {
       }
     };
     init();
-  }, [vpHeight, vpWidth, document.hidden]);
+  }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   return (
     <div className='main-container'>
@@ -1009,6 +1052,7 @@ const Main = () => {
         <a className='menu-items'>Contact</a>
       </div>
       <div className='parent'>
+        <TestSVg />
         <div
           style={{
             width: "100%",
@@ -1030,6 +1074,8 @@ const Main = () => {
               marginLeft: "10vh",
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className='opacity0'
+            id='logo-topleft'
           >
             <path
               d='M0.873977 0.788862L30.7285 26.1886'
@@ -1123,10 +1169,11 @@ const Main = () => {
           </a>
           <div style={{ flexGrow: 1 }} />
           <div
-            className='burger-color-div'
+            className='burger-color-div opacity0-topnav'
             onClick={(e) => {
               !isBurger ? burgerAnimation() : burgerAnimationClose();
             }}
+            id='burgerking'
           >
             <svg
               width='52'
@@ -1188,6 +1235,7 @@ const Main = () => {
               marginRight: "15vw",
             }}
             id='text-intro'
+            className='opacity0'
           >
             Hey! My name is Yingson.
             <br />I am a Full-stack software engineer from Chicago that
@@ -1203,6 +1251,7 @@ const Main = () => {
               xmlnsXlink='http://www.w3.org/1999/xlink'
               version='1.1'
               style={{ position: "absolute", right: 150 }}
+              className='opacity0-blob'
             >
               <g transform='translate(475.0204534580877 297.1349620302673)'>
                 <path
@@ -1232,6 +1281,7 @@ const Main = () => {
               xmlnsXlink='http://www.w3.org/1999/xlink'
               version='1.1'
               style={{ position: "absolute", left: -1, top: -50 }}
+              className='opacity0-blob'
             >
               <g transform='translate(465.27723997269925 335.6427759040981)'>
                 <path
@@ -1260,6 +1310,7 @@ const Main = () => {
               xmlnsXlink='http://www.w3.org/1999/xlink'
               version='1.1'
               style={{ position: "absolute", top: 30, right: 30 }}
+              className='opacity0-blob'
             >
               <g transform='translate(470.02425535291934 256.4533814357629)'>
                 <path
@@ -1288,6 +1339,7 @@ const Main = () => {
               xmlnsXlink='http://www.w3.org/1999/xlink'
               version='1.1'
               style={{ position: "absolute", bottom: 30, left: 30 }}
+              className='opacity0-blob'
             >
               <g transform='translate(447.7870854592553 266.08738422510714)'>
                 <path
