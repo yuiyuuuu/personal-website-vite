@@ -153,6 +153,7 @@ const Main = () => {
 
   useEffect(() => {
     handleScroll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     window.addEventListener("scroll", handleScroll);
 
     return () => {
