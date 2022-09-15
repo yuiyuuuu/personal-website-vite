@@ -173,8 +173,6 @@ const Main = () => {
     setTimeout(() => {
       b.classList.remove("opacity0-topnav");
       b.classList.add("topnav-animation");
-      c.classList.remove("opacity0");
-      c.classList.add("scale-logo-animation");
       a.classList.remove("opacity0");
       a.classList.add("text-animation-intro");
       d.classList.remove("opacity0-blob");
@@ -186,6 +184,11 @@ const Main = () => {
       g.classList.remove("opacity0-blob");
       g.classList.add("blob-scalea");
     }, 6850);
+
+    setTimeout(() => {
+      c.classList.remove("opacity0");
+      c.classList.add("scale-logo-animation");
+    }, 7250);
 
     setTimeout(() => {
       document.body.style.overflow = "auto";
