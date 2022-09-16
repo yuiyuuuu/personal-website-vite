@@ -3,7 +3,7 @@ import "./Main.scss";
 import { gsap, Power3 } from "gsap";
 import KUTE from "kute.js";
 const parentDiv = document.getElementsByClassName("parent")[0];
-import Projects from "./Projects";
+import Projects from "./Projects.jsx";
 import TestSVg from "./Projects/TestSVg";
 
 const Main = () => {
@@ -55,7 +55,7 @@ const Main = () => {
     }
   });
 
-  const supportsPassive = false;
+  let supportsPassive = false;
   try {
     window.addEventListener(
       "test",
