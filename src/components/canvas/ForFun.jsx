@@ -21,8 +21,8 @@ const skills = [
 
 const ForFun = () => {
   useEffect(() => {
-    console.log("Loading TagCanvas...");
     const TagCanvas = window.TagCanvas;
+    console.log(TagCanvas);
     const tagCanvasOptions = {
       textColour: "#08FDD8",
       outlineThickness: 0.5,
