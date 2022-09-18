@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "vite --mode=production",
+    "build": "vite build",
     "start": "node server",
     "start-dev123": "webpack -w & nodemon server",
     "start-dev2": "nodemon server",
