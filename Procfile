@@ -1,1 +1,1 @@
-web: npm run devhero
+web: npm run preview

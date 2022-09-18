@@ -31,12 +31,7 @@ const About = () => {
             width: "50%",
             color: "white",
           }}
-        >
-          I originally went to Illinois Institute of Technology, but decided to
-          pursue Fulstack Academy. I have a passion for computer science and
-          software engineering, but not general education classes tht doesn't
-          relate to my major.
-        </div>
+        ></div>
 
         <div
           style={{
