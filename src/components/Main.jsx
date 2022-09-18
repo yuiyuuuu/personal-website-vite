@@ -5,6 +5,7 @@ import KUTE from "kute.js";
 const parentDiv = document.getElementsByClassName("parent")[0];
 import Projects from "./Projects.jsx";
 import TestSVg from "./Projects/TestSVg";
+import About from "./About";
 
 const Main = () => {
   const [vpHeight, setvpHeight] = useState(0);
@@ -162,43 +163,43 @@ const Main = () => {
   }, []);
 
   //remove opacity0 classes
-  useEffect(() => {
-    const a = document.getElementById("text-intro");
-    const b = document.getElementById("burgerking");
-    const c = document.getElementById("logo-topleft");
-    const d = document.getElementById("blob-animated");
-    const e = document.getElementById("yellow-blob-svg");
-    const f = document.getElementById("blue-blob-svg");
-    const g = document.getElementById("green-blob-svg");
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      b.classList.remove("opacity0-topnav");
-      b.classList.add("topnav-animation");
-      a.classList.remove("opacity0");
-      a.classList.add("text-animation-intro");
-      d.classList.remove("opacity0-blob");
-      d.classList.add("blob-scalea");
-      e.classList.remove("opacity0-blob");
-      e.classList.add("blob-scalea");
-      f.classList.remove("opacity0-blob");
-      f.classList.add("blob-scalea");
-      g.classList.remove("opacity0-blob");
-      g.classList.add("blob-scalea");
-    }, 6850);
+  // useEffect(() => {
+  //   const a = document.getElementById("text-intro");
+  //   const b = document.getElementById("burgerking");
+  //   const c = document.getElementById("logo-topleft");
+  //   const d = document.getElementById("blob-animated");
+  //   const e = document.getElementById("yellow-blob-svg");
+  //   const f = document.getElementById("blue-blob-svg");
+  //   const g = document.getElementById("green-blob-svg");
+  //   document.body.style.overflow = "hidden";
+  //   setTimeout(() => {
+  //     b.classList.remove("opacity0-topnav");
+  //     b.classList.add("topnav-animation");
+  //     a.classList.remove("opacity0");
+  //     a.classList.add("text-animation-intro");
+  //     d.classList.remove("opacity0-blob");
+  //     d.classList.add("blob-scalea");
+  //     e.classList.remove("opacity0-blob");
+  //     e.classList.add("blob-scalea");
+  //     f.classList.remove("opacity0-blob");
+  //     f.classList.add("blob-scalea");
+  //     g.classList.remove("opacity0-blob");
+  //     g.classList.add("blob-scalea");
+  //   }, 6850);
 
-    setTimeout(() => {
-      c.classList.remove("opacity0");
-      c.classList.add("scale-logo-animation");
-    }, 7250);
+  //   setTimeout(() => {
+  //     c.classList.remove("opacity0");
+  //     c.classList.add("scale-logo-animation");
+  //   }, 7250);
 
-    setTimeout(() => {
-      document.body.style.overflow = "auto";
-    }, 7400);
+  //   setTimeout(() => {
+  //     document.body.style.overflow = "auto";
+  //   }, 7400);
 
-    setTimeout(() => {
-      setShouldStart(true);
-    }, 8500);
-  }, []);
+  //   setTimeout(() => {
+  //     setShouldStart(true);
+  //   }, 8500);
+  // }, []);
 
   useEffect(() => {
     if (!shouldStart) return;
@@ -1366,6 +1367,7 @@ const Main = () => {
         </div>
       </div>
       <Projects />
+      <About />
     </div>
   );
 };
