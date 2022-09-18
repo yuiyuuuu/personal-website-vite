@@ -34,8 +34,7 @@ const About = () => {
         >
           I'm a fullstack developer with one year of experience. I decided to
           pursue a bootcamp route due to my passion for computer science and
-          software engineering rather than spending my time on Gened classes in
-          college
+          software engineering rather than
         </div>
 
         <div
