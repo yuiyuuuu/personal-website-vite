@@ -9,6 +9,7 @@
     "start-dev123": "webpack -w & nodemon server",
     "start-dev2": "nodemon server",
     "dev": "vite --mode=development",
+    "devhero": "vite --mode=production",
     "build2": "vite build --mode=development",
     "preview": "vite preview"
   },

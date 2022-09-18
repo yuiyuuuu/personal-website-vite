@@ -1,1 +1,1 @@
-web: npm run start-dev2
+web: npm run devhero
