@@ -11,10 +11,10 @@ const About = () => {
         alignItems: "center",
         flexDirection: "column",
         backgroundColor: "black",
-        paddingTop: "50px",
+        paddingTop: "10vh",
       }}
     >
-      <div style={{ color: "white", fontSize: "40px", fontWeight: "600" }}>
+      <div style={{ color: "#08FDD8", fontSize: "40px", fontWeight: "600" }}>
         Who I am
       </div>
       <div
@@ -36,7 +36,7 @@ const About = () => {
         >
           <div
             style={{
-              color: "#06cadc",
+              color: "#f89757",
               fontStyle: "italic",
             }}
             className='text-aboutme'
@@ -69,7 +69,7 @@ const About = () => {
 
           <div
             style={{
-              color: "#06cadc",
+              color: "#f89757",
             }}
             className='text-aboutme'
           >
