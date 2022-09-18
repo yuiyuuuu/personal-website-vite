@@ -31,7 +31,12 @@ const About = () => {
             width: "50%",
             color: "white",
           }}
-        ></div>
+        >
+          I'm a fullstack developer with one year of experience. I decided to
+          pursue a bootcamp route due to my passion for computer science and
+          software engineering rather than spending my time on Gened classes in
+          college
+        </div>
 
         <div
           style={{
