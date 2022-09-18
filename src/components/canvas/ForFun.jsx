@@ -22,6 +22,7 @@ const skills = [
 const ForFun = () => {
   useEffect(() => {
     const TagCanvas = window.TagCanvas;
+    if (!TagCanvas) return;
     console.log(TagCanvas);
     const tagCanvasOptions = {
       textColour: "#08FDD8",
@@ -45,7 +46,7 @@ const ForFun = () => {
       console.log("Canvas error.");
       console.log(e);
     }
-  }, []);
+  }, [window.TagCanvas]);
   return (
     <div className='container-sphere' style={{ width: "100%" }}>
       <canvas
