@@ -17,6 +17,8 @@ const skills = [
   { href: "#GSAP", title: "GSAP" },
   { href: "#NoSQL", title: "NoSQL" },
   { href: "#npm", title: "npm" },
+  { href: "#figma", title: "Figma" },
+  { href: "#svg", title: "SVG" },
 ];
 
 const ForFun = () => {
@@ -56,7 +58,7 @@ const ForFun = () => {
         style={{
           maxWidth: "1000px",
           width: "100%",
-          zIndex: "99",
+          zIndex: "4",
           position: "relative",
           margin: "0 auto",
           // paddingTop: "10vh",
