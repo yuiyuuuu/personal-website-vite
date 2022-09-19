@@ -51,10 +51,20 @@ const About = () => {
             }}
             className='text-aboutme'
           >
-            I coded most of my projects so far in React along with HTML5,
-            CSS/SASS, and Javascript. This website is my first attempt at a
-            project with SVG and CSS animations with pseudo elements, GSAP, and
-            other animation libraries.
+            I coded most of my project's frontend so far in React along with
+            HTML5, CSS/SASS, and Javascript. For backend, I have used on
+            Express.js along with SQL (PostgreSQL) and NoSQL (Google Firebase).
+          </div>
+
+          <div
+            style={{
+              color: "#08FDD8",
+            }}
+            className='text-aboutme'
+          >
+            This website is my first attempt at a project with SVG and CSS
+            animations with pseudo elements, GSAP, and other animation
+            libraries.
           </div>
 
           <div
@@ -74,8 +84,23 @@ const About = () => {
             className='text-aboutme'
           >
             In a pursuit of becoming more knowledgable in every aspect of my
-            life, I read non-fiction books. One of my favorite is Predictably
-            Irrational by Dan Ariely.
+            life, I read non-fiction books. One of my favorite is{" "}
+            <span>
+              {" "}
+              <a
+                href='https://danariely.com/books/predictably-irrational/'
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{
+                  color: "#f89757",
+                  textDecoration: "underline",
+                  fontStyle: "italic",
+                }}
+              >
+                Predictably Irrational
+              </a>{" "}
+            </span>
+            by Dan Ariely.
           </div>
         </div>
 

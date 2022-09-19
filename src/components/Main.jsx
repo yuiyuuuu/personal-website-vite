@@ -38,6 +38,15 @@ const Main = () => {
     }, 800);
   };
 
+  const navigateAbout = () => {
+    const parent = document.getElementsByClassName("aboutme")[0];
+    burgerAnimationClose();
+
+    setTimeout(() => {
+      parent.scrollIntoView({ behavior: "smooth" }, true);
+    }, 800);
+  };
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -1052,7 +1061,9 @@ const Main = () => {
           Projects
         </a>
 
-        <a className='menu-items'>About</a>
+        <a className='menu-items' onClick={() => navigateAbout()}>
+          About
+        </a>
 
         <a className='menu-items'>Contact</a>
       </div>
@@ -1367,7 +1378,9 @@ const Main = () => {
         </div>
       </div>
       <Projects />
-      <About />
+      <div className='aboutme'>
+        <About />
+      </div>
     </div>
   );
 };
