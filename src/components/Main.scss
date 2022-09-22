@@ -671,8 +671,93 @@
 }
 
 .text-aboutme {
-  font-size: 29px;
+  font-size: 27px;
   margin-top: 30px;
   width: 68%;
   color: #f89757;
+  line-height: 1.2;
+}
+
+.form-group {
+  height: 5vh;
+  width: 70%;
+  position: relative;
+  margin-bottom: 4vh;
+}
+
+.input-contactform {
+  background: transparent;
+  border-bottom: 1px solid #08fdd8 !important;
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-contactform:focus {
+  outline-width: 0;
+}
+
+.input-contactform + #name-label-contact {
+  font-size: 16px;
+}
+
+.label-contactform {
+  position: absolute;
+  bottom: 2;
+  left: 0;
+  z-index: 2;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  cursor: text;
+  user-select: none;
+}
+
+.label-contactform-textarea {
+  position: absolute;
+  bottom: 2;
+  left: 0;
+  z-index: 2;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  cursor: text;
+  user-select: none;
+}
+
+.focused > .label-contactform {
+  font-size: 16px;
+  transform: translateY(-100%);
+}
+
+.focused > .label-contactform-textarea {
+  font-size: 16px;
+  transform: translateY(-140%);
+}
+
+textarea {
+  resize: none;
+}
+
+.message-top {
+  font-size: 40px;
+  margin-bottom: 2vh;
+}
+
+#submit-contactform {
+  cursor: pointer;
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+  transition: all 0.3s ease;
+  font-size: 22px;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 }

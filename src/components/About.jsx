@@ -52,8 +52,8 @@ const About = () => {
             className='text-aboutme'
           >
             I coded most of my project's frontend so far in React along with
-            HTML5, CSS/SASS, and Javascript. For backend, I have used on
-            Express.js along with SQL (PostgreSQL) and NoSQL (Google Firebase).
+            HTML5, CSS/SASS, and Javascript. For backend, I have used Express.js
+            along with SQL (PostgreSQL) and NoSQL (Google Firebase).
           </div>
 
           <div

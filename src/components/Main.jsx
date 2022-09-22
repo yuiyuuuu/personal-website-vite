@@ -6,6 +6,7 @@ const parentDiv = document.getElementsByClassName("parent")[0];
 import Projects from "./Projects.jsx";
 import TestSVg from "./Projects/TestSVg";
 import About from "./About";
+import Contact from "./Contact";
 
 const Main = () => {
   const [vpHeight, setvpHeight] = useState(0);
@@ -1381,6 +1382,7 @@ const Main = () => {
       <div className='aboutme'>
         <About />
       </div>
+      <Contact />
     </div>
   );
 };
