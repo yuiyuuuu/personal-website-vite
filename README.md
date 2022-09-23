@@ -1,3 +1,5 @@
+Frontend design could be better and more thoughout, but this project was for more for me to learn animations and frontend libraries.
+
 ## Deployed Project
 
 https://yingsonyu.herokuapp.com/</br>
