@@ -122,7 +122,6 @@ const Main = () => {
     gsap.to("#linkedin-logo", { y: 0, duration: 1, ease: "power4" });
     gsap.to("#github-logo", { y: 0, duration: 1, ease: "power4" });
     disableScroll();
-    console.log("function ran");
     setIsBurger(true);
     setIsBurger2(true);
   };

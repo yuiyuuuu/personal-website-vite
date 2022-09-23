@@ -25,7 +25,6 @@ const ForFun = () => {
   useEffect(() => {
     const TagCanvas = window.TagCanvas;
     if (!TagCanvas) return;
-    console.log(TagCanvas);
     const tagCanvasOptions = {
       textColour: "#08FDD8",
       outlineThickness: 0.5,
@@ -46,7 +45,6 @@ const ForFun = () => {
       TagCanvas.Start("tagcanvas", "taglist", tagCanvasOptions);
     } catch (e) {
       console.log("Canvas error.");
-      console.log(e);
     }
   }, [window.TagCanvas]);
   return (
