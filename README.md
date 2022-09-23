@@ -1,8 +1,22 @@
-# personal-
+## Deployed Project
 
-hi from yingson to the world
-</br>
-original repo - https://github.com/yuiyuuuu/personal-
-I decided to transfer from webpack to vite because I have plans to make 3d animations on this project and its overall faster <3
+https://yingsonyu.herokuapp.com/</br>
+http://www.yingsonyu.com/
 
-https://yingsonyu.herokuapp.com/
+## Tech Stack :books:
+
+Below is a non-exhaustive list of technologies used throughout the project.
+
+| Front End | Libraries/Frameworks | External Services | Compiler |
+| :-------: | :------------------: | :---------------: | :------: |
+|   React   |         GSAP         |     formspree     |   Vite   |
+|   HTML5   |       Kute.js        |                   |          |
+|   SASS    |      TagCanvas       |                   |          |
+|           |        JQuery        |                   |          |
+
+## Setup :rocket:
+
+```
+npm install
+npm run dev
+```
