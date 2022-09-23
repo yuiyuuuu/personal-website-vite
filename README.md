@@ -1,4 +1,6 @@
-Frontend design could be better and more thoughout, but this project was for more for me to learn animations and frontend libraries.
+## Notes
+
+Frontend design could be better and more thoughout, but this project was for more for me to learn animations and frontend libraries. Had alot of fun and learned alot throughout testing new libraries. Three.js was my favorite by far, but I didn't add it to the final product. I do plan on adding Three.js to a future project due to how insanely easy it is to use to build insane 3D animations.
 
 ## Deployed Project
 
