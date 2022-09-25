@@ -52,6 +52,53 @@
 
 .text-animation-intro {
   animation: bottomup 1.5s ease;
+  font-size: 46px;
+  width: 55vw;
+  margin-right: 10vw;
+
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    font-size: 40px;
+    width: 70vw;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 34px;
+    width: 75vw;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 30px;
+    width: 75vw;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 26px;
+    width: 75vw;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 24px;
+    width: 75vw;
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 22px;
+    width: 75vw;
+    margin-right: 0;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 20px;
+    width: 60vw;
+    margin-right: 0;
+  }
+
+  @media only screen and (max-width: 372px) {
+    font-size: 18px;
+    width: 80vw;
+    margin-right: 0;
+  }
 }
 
 @keyframes bottomup {
@@ -340,6 +387,22 @@
   margin-top: 3.5vh;
   margin-right: 10vh;
   cursor: pointer;
+
+  @media only screen and (max-width: 600px) {
+    margin-right: 3vw;
+  }
+}
+
+#logo-topleft {
+  margin-left: 10vh;
+  width: 80px;
+  height: 80px;
+
+  @media only screen and (max-width: 550px) {
+    margin-left: 3vw;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .main-container {
@@ -362,6 +425,10 @@
   transition: box-shadow 1s;
   &:hover {
     box-shadow: inset 65vw 20vh plum;
+  }
+
+  @media only screen and (max-width: 650px) {
+    font-size: 40px;
   }
 }
 

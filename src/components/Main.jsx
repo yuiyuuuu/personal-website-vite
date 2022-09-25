@@ -1079,15 +1079,12 @@ const Main = () => {
           }}
         >
           <svg
-            width='80'
-            height='80'
             viewBox='0 0 68 71'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             style={{
               marginTop: "20px",
               cursor: "pointer",
-              marginLeft: "10vh",
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className='opacity0'
@@ -1243,12 +1240,8 @@ const Main = () => {
         >
           <div
             style={{
-              fontSize: "46px",
               fontWeight: "600",
               zIndex: 2,
-              height: "10vh",
-              width: "55vw",
-              marginRight: "15vw",
             }}
             id='text-intro'
             className='opacity0'
