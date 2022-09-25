@@ -20,11 +20,9 @@ const About = () => {
       <div
         style={{
           width: "95%",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
           marginTop: "10vh",
         }}
+        className='container-about'
       >
         <div
           style={{

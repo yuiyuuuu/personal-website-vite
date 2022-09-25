@@ -1448,8 +1448,9 @@
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 452px) {
+  @media only screen and (max-width: 470px) {
     font-size: 12px;
+    width: 130%;
   }
 }
 
@@ -1775,5 +1776,16 @@ textarea {
 
   @media only screen and (max-width: 452px) {
     font-size: 19px;
+  }
+}
+
+.container-about {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  @media only screen and (max-width: 470px) {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
