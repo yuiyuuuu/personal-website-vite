@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import "./tagcanvas.scss";
 
 const skills = [
   { href: "#git_", title: "React.js" },
@@ -48,20 +49,18 @@ const ForFun = () => {
     }
   }, [window.TagCanvas]);
   return (
-    <div className='container-sphere' style={{ width: "100%" }}>
+    <div className='container-sphere oneandonly' style={{ width: "100%" }}>
       <canvas
         id='tagcanvas'
         width='600'
         height='500'
         style={{
-          maxWidth: "1000px",
-          width: "100%",
+          // maxWidth: "1000px",
           zIndex: "4",
           position: "relative",
-          margin: "0 auto",
           // paddingTop: "10vh",
         }}
-        className='to-fade-in fast-anim'
+        className='to-fade-in fast-anim oneandonly'
       ></canvas>
       <div id='taglist' style={{ display: "none" }}>
         <ul>

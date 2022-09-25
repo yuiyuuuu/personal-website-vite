@@ -1,0 +1,10 @@
+.oneandonly {
+  width: 100%;
+
+  @media only screen and (max-width: 470px) {
+    width: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
