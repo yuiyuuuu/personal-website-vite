@@ -1395,34 +1395,66 @@
 
 .label-contactform {
   position: absolute;
-  bottom: 2;
+  bottom: 10px;
   left: 0;
   z-index: 2;
   font-size: 25px;
   transition: all 0.3s ease;
   cursor: text;
   user-select: none;
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 23px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 21px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 19px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 17px;
+  }
 }
 
 .label-contactform-textarea {
   position: absolute;
-  bottom: 2;
+  bottom: 15px;
   left: 0;
   z-index: 2;
   font-size: 25px;
   transition: all 0.3s ease;
   cursor: text;
   user-select: none;
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 23px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 21px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 19px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 17px;
+  }
 }
 
 .focused > .label-contactform {
   font-size: 16px;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
 }
 
 .focused > .label-contactform-textarea {
   font-size: 16px;
-  transform: translateY(-140%);
+  transform: translateY(-200%);
 }
 
 textarea {
@@ -1599,8 +1631,7 @@ textarea {
   }
 }
 
-.message-top,
-.message-top2 {
+.message-top {
   @media only screen and (min-width: 1001px) and (max-width: 1300px) {
     font-size: 28px;
   }
@@ -1627,5 +1658,35 @@ textarea {
 
   @media only screen and (max-width: 452px) {
     font-size: 12px;
+  }
+}
+
+.message-top2 {
+  @media only screen and (min-width: 1001px) and (max-width: 1300px) {
+    font-size: 36px;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 33px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 30px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 27px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 19px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 19px;
   }
 }
