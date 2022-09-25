@@ -134,7 +134,10 @@ const Contact = () => {
         }}
       >
         <div className='message-top2'>Contact Me</div>
-        <div className='message-top' style={{ fontStyle: "italic" }}>
+        <div
+          className='message-top'
+          style={{ fontStyle: "italic", textAlign: "center" }}
+        >
           Feel Free to send an email to{" "}
           <a
             href='mailto:yingsonyu@gmail.com'

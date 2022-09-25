@@ -477,6 +477,7 @@
 .container-projects-img {
   background-color: black;
   height: 43vh;
+  aspect-ratio: 19/9;
   margin-bottom: 10vh;
   z-index: 5;
 }
@@ -1298,8 +1299,7 @@
 
 #number-1::before {
   transition: height 0.4s ease 0.4s;
-  // content: attr(data-text);
-  content: "";
+  content: attr(data-text);
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -1349,7 +1349,7 @@
 
 #number-2::before {
   transition: height 0.4s ease 0.4s;
-  content: "";
+  content: attr(data-text);
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -1399,7 +1399,7 @@
 
 #number-3::before {
   transition: height 0.4s ease 0.4s;
-  content: "";
+  content: attr(data-text);
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -1683,6 +1683,10 @@ textarea {
   color: red;
   font-size: 20px;
   margin-top: 20px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 14px;
+  }
 }
 
 .overlay-projects {

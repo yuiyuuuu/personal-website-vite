@@ -10,6 +10,73 @@ img {
   font-family: League Spartan, Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 18px;
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    font-size: 9px;
+  }
+}
+
+#role-bullseye {
+  @media only screen and (max-width: 550px) {
+    margin-left: 2vh;
+  }
+}
+
+#introduction-bullseye {
+  font-size: 65px;
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 44px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 35px;
+  }
+}
+
+#intro-desc-bullseye {
+  font-size: 22px;
+  width: 40%;
+
+  @media only screen and (max-width: 1050px) {
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    font-size: 20px;
+    width: 60%;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 750px) {
+    font-size: 18px;
+    width: 65%;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 16px;
+    width: 65%;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 14px;
+    width: 70%;
+  }
 }
 
 .visit-website-project {
@@ -33,6 +100,18 @@ img {
   &:hover {
     background: white;
     color: #464d62;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    width: 180px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    width: 160px;
+    height: 40px;
+    font-size: 18px;
   }
 }
 
@@ -93,6 +172,56 @@ img {
 
   100% {
     background-position: 0 50%;
+  }
+}
+
+#name--bullseye {
+  font-size: 65px;
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+#desc--bullseye {
+  font-size: 22px;
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+#theproject {
+  font-size: 40px;
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 35px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 30px;
   }
 }
 
@@ -248,6 +377,175 @@ img {
 .sub-title-project {
   font-size: 27px;
   font-weight: 600;
+}
+
+.subtitle-bullseye {
+  font-size: 27px;
+
+  @media only screen and (max-width: 870px) {
+    font-size: 23px;
+    width: 120%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+    width: 150%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 16px;
+    width: 150%;
+    text-align: center;
+  }
+}
+
+.subtitle-bullseye2 {
+  font-size: 27px;
+
+  @media only screen and (max-width: 870px) {
+    font-size: 23px;
+    width: 120%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+    width: 150%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 16px;
+    width: 150%;
+    text-align: center;
+  }
+}
+
+.images-bullseye {
+  height: 300px;
+  width: 700px;
+  position: absolute;
+
+  @media only screen and (max-width: 1030px) {
+    width: 600px;
+    height: 280px;
+    position: static;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 500px;
+    height: 230px;
+    position: static;
+  }
+
+  @media only screen and (max-width: 590px) {
+    width: 420px;
+    height: 170px;
+    position: static;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 350px;
+    height: 160px;
+    position: static;
+  }
+
+  @media only screen and (max-width: 415px) {
+    width: 300px;
+    height: 130px;
+    position: static;
+  }
+
+  @media only screen and (max-width: 370px) {
+    width: 250px;
+    height: 110px;
+    position: static;
+  }
+}
+
+#image1-bull {
+  right: 0;
+  bottom: -50px;
+
+  @media only screen and (max-width: 1030px) {
+    margin-bottom: 40px;
+  }
+}
+
+#container-2-bullseye {
+  width: 130%;
+  display: flex;
+  flex-direction: row;
+
+  @media only screen and (max-width: 1470px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#container-2child {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 1470px) {
+    width: 57%;
+    align-items: center;
+  }
+}
+
+.line-divider2 {
+  width: 10%;
+  background-color: black;
+  height: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#paragraph-container-bullseye {
+  width: 100%;
+}
+
+.top2 {
+  width: 70%;
+
+  @media only screen and (max-width: 900px) {
+    width: 110%;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    width: 130%;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 14px;
+    width: 140%;
+    text-align: center;
+  }
+}
+
+.bottom2 {
+  width: 100%;
+
+  @media only screen and (max-width: 900px) {
+    width: 145%;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    width: 170%;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 14px;
+    width: 175%;
+    text-align: center;
+  }
 }
 
 .tech-stack-icon {

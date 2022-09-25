@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import "./Projects.scss";
 import "../Main.scss";
@@ -11,8 +11,12 @@ import Css from "../longsvgs/Css";
 
 const Bullseye = () => {
   const history = useNavigate();
+  const image1ref = useRef(null);
+  const image2ref = useRef(null);
 
   const [show, setShow] = useState(false);
+
+  const [imageDivHeight, setImageDivheight] = useState(null);
 
   function fadeInAllProjects() {
     const a = document.getElementById("div1-content");
@@ -203,6 +207,20 @@ const Bullseye = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     console.log("ran");
   });
+
+  window.addEventListener("resize", () => {
+    const image1 = image1ref.current.offsetHeight;
+    const image2 = image2ref.current.offsetHeight;
+
+    setImageDivheight(image1 + image2);
+    console.log(imageDivHeight);
+  });
+
+  useEffect(() => {
+    const image1 = image1ref.current.offsetHeight;
+    const image2 = image2ref.current.offsetHeight;
+    setImageDivheight(image1 + image2);
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -846,7 +864,7 @@ const Bullseye = () => {
         <div style={{ flexGrow: 1 }} />
         <div style={{ display: "flex", flexDirection: "column", zIndex: 2 }}>
           <div
-            style={{ fontSize: "65px", fontWeight: "600", color: "white" }}
+            style={{ fontWeight: "600", color: "white" }}
             className='animation-fade-bot'
             id='name--bullseye'
           >
@@ -854,7 +872,7 @@ const Bullseye = () => {
           </div>
 
           <div
-            style={{ fontStyle: "italic", fontSize: "22px", color: "white" }}
+            style={{ fontStyle: "italic", color: "white" }}
             className='animation-fade-bot'
             id='desc--bullseye'
           >
@@ -970,7 +988,7 @@ const Bullseye = () => {
       <div
         style={{
           width: "100%",
-          height: "44vh",
+          height: "auto",
           backgroundColor: "#2d3963",
           display: "flex",
           flexDirection: "column",
@@ -980,27 +998,27 @@ const Bullseye = () => {
           position: "relative",
           zIndex: 3,
           overflow: "hidden",
+          paddingBottom: "5vh",
         }}
       >
         <div
           style={{
-            fontSize: "65px",
             fontWeight: "600",
             color: "white",
             userSelect: "none",
           }}
+          id='introduction-bullseye'
         >
           Introduction
         </div>
 
         <div
           style={{
-            width: "40%",
             color: "white",
-            fontSize: "22px",
             marginTop: "38px",
             lineHeight: 1.5,
           }}
+          id='intro-desc-bullseye'
         >
           Bullseye is an E-commerce store inspired by the famous Gopuff's
           website and business model. Order daily essentials and snacks in
@@ -1072,40 +1090,35 @@ const Bullseye = () => {
             flexDirection: "column",
           }}
         >
-          <div style={{ fontSize: "40px", fontWeight: "600" }}>The Project</div>
+          <div style={{ fontWeight: "600" }} id='theproject'>
+            The Project
+          </div>
           <div
             style={{
               marginTop: "7vh",
-              fontSize: "27px",
               fontWeight: "600",
             }}
-            className='sub-title-project'
+            className='sub-title-project subtitle-bullseye'
           >
             Frontend Rebuild with Additional Features
           </div>
           <div className='line-divider' />
           <div
             style={{
-              width: "100%",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
+            id='paragraph-container-bullseye'
           >
-            <div
-              className='p-desc-projects'
-              style={{ width: "70%", marginTop: "30px" }}
-            >
+            <div className='p-desc-projects top2' style={{ marginTop: "30px" }}>
               Originally I built this project with a team of 4 as my Grace
               Shopper project for Fullstack Academy. Though acceptable for a
               week worth of work, I was unsatisfied with the final product as a
               presentable product.
             </div>
 
-            <div
-              className='p-desc-projects'
-              style={{ width: "70%", marginTop: "30px" }}
-            >
+            <div className='p-desc-projects top2' style={{ marginTop: "30px" }}>
               I decided to rebuild the project to create a deployed and
               presentable final product without depending on a frontend library
               with prebuilt components, such as MaterialUI, and to strengthen my
@@ -1114,29 +1127,16 @@ const Bullseye = () => {
             <div className='line-divider' />
             <div
               style={{
-                width: "130%",
-                display: "flex",
-                flexDirection: "row",
                 marginTop: "7vh",
               }}
+              id='container-2-bullseye'
             >
-              <div
-                style={{
-                  width: "40%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <div className='sub-title-project'>Bullseye!</div>
-                <div
-                  className='line-divider'
-                  style={{
-                    marginTop: "20px",
-                    marginBottom: "20px",
-                    width: "20%",
-                  }}
-                />
-                <div className='p-desc-projects'>
+              <div id='container-2child'>
+                <div className='sub-title-project subtitle-bullseye2'>
+                  Bullseye!
+                </div>
+                <div className='line-divider2' />
+                <div className='p-desc-projects bottom2'>
                   I rewrote and resigned the whole frontend of Bullseye and
                   connected the new frontend to the backend. The new frontend
                   featured{" "}
@@ -1146,7 +1146,10 @@ const Bullseye = () => {
                   </span>
                 </div>
 
-                <div className='p-desc-projects' style={{ marginTop: "30px" }}>
+                <div
+                  className='p-desc-projects bottom2'
+                  style={{ marginTop: "30px" }}
+                >
                   Alongside the rebuilt frontend, I added more features. For
                   more payment options, I added paypal checkout. For easier
                   product navigation, I added a search feature, allowing
@@ -1158,31 +1161,32 @@ const Bullseye = () => {
                 style={{
                   position: "relative",
                   width: "60%",
-                  marginLeft: "50px",
+                  marginTop: "3vh",
+                  height: `${imageDivHeight}px`,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
               >
                 <img
                   src='https://cdn.discordapp.com/attachments/779278654714675232/1018796390622707712/unknown.png'
                   style={{
-                    position: "absolute",
-                    aspectRatio: 19 / 8,
-                    height: "60%",
-                    zIndex: 2,
-                    bottom: -50,
-                    right: 0,
                     boxShadow: "0 0 10px lightgray",
                   }}
+                  className='images-bullseye'
+                  id='image1-bull'
+                  ref={image1ref}
                 />
 
                 <img
                   src='https://cdn.discordapp.com/attachments/779278654714675232/1018796935697666089/unknown.png'
                   style={{
-                    position: "absolute",
-                    aspectRatio: 19 / 8,
-                    height: "60%",
                     top: 0,
                     boxShadow: "0 0 10px lightgray",
                   }}
+                  className='images-bullseye'
+                  id='image2-bull'
+                  ref={image2ref}
                 />
               </div>
             </div>

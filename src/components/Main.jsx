@@ -48,6 +48,15 @@ const Main = () => {
     }, 800);
   };
 
+  const navigateContact = () => {
+    const parent = document.getElementById("parentcontact");
+    burgerAnimationClose();
+
+    setTimeout(() => {
+      parent.scrollIntoView({ behavior: "smooth" }, true);
+    }, 800);
+  };
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -1065,7 +1074,9 @@ const Main = () => {
           About
         </a>
 
-        <a className='menu-items'>Contact</a>
+        <a className='menu-items' onClick={() => navigateContact()}>
+          Contact
+        </a>
       </div>
       <div className='parent'>
         <TestSVg />
