@@ -1,25 +1,47 @@
 import React, { useEffect } from "react";
 import "./Main.scss";
+import $ from "jquery";
 
 const Projects = () => {
-  const test = document.querySelector("#test");
+  const test = document.querySelector("#overlay-intersector1");
+  const test2 = document.querySelector("#overlay-intersector2");
+  const test3 = document.querySelector("#overlay-intersector3");
 
   useEffect(() => {
     if (!test) return;
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          $("#bullseye-overlay").addClass("overlay-transform-left");
+        }
+      });
+    });
+
+    const observer2 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $("#happilist-overlay").addClass("overlay-transform-right");
+        }
+      });
+    });
+
+    const observer3 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $("#personal-overlay").addClass("overlay-transform-left");
         }
       });
     });
 
     observer.observe(test);
+    observer2.observe(test2);
+    observer3.observe(test3);
   }, [test]);
   return (
     <div>
       <div
         style={{
-          height: "165vh",
+          height: "auto",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -45,6 +67,19 @@ const Projects = () => {
               zIndex: 3,
             }}
           >
+            <div className='overlay-projects' id='bullseye-overlay' />
+            <div
+              style={{
+                height: "1px",
+                width: "1px",
+                position: "absolute",
+                top: "20%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                opacity: 0,
+              }}
+              id='overlay-intersector1'
+            />
             <img
               src='https://cdn.discordapp.com/attachments/779278654714675232/1016802611824955472/edited_2.png'
               style={{ width: "100%", height: "100%", userSelect: "none" }}
@@ -64,28 +99,24 @@ const Projects = () => {
 
             <div
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 140,
                 color: "white",
                 zIndex: 3,
                 userSelect: "none",
               }}
               id='name-bullseye'
+              className='title-projects'
             >
               Bullseye Store
             </div>
             <div
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 115,
                 color: "white",
                 zIndex: 3,
                 userSelect: "none",
                 fontStyle: "italic",
               }}
               id='desc-bullseye'
+              className='description-projects'
             >
               Fullstack E-commerce store built from scratch
             </div>
@@ -93,9 +124,6 @@ const Projects = () => {
             <div
               className='view-project-button'
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 60,
                 userSelect: "none",
                 zIndex: 3,
               }}
@@ -116,9 +144,26 @@ const Projects = () => {
         <a href='/happilist'>
           <div
             className='container-projects-img boxshadow-projects '
-            style={{ marginLeft: "10vh", position: "relative", zIndex: 3 }}
+            style={{
+              marginLeft: "10vh",
+              position: "relative",
+              zIndex: 3,
+            }}
             id='second-project'
           >
+            <div className='overlay-projects' id='happilist-overlay' />
+            <div
+              style={{
+                height: "1px",
+                width: "1px",
+                position: "absolute",
+                top: "20%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                opacity: 0,
+              }}
+              id='overlay-intersector2'
+            />
             <div
               style={{
                 width: "100%",
@@ -130,6 +175,7 @@ const Projects = () => {
                 top: 0,
               }}
             />
+
             <img
               src='https://cdn.discordapp.com/attachments/779278654714675232/1016934260101353512/cat.png'
               style={{
@@ -139,33 +185,26 @@ const Projects = () => {
                 userSelect: "none",
               }}
             />
-            <div
-              id='name-happy'
-              style={{ left: 50, bottom: 140, position: "absolute" }}
-            >
+            <div id='name-happy' className='title-projects'>
               HappiList
             </div>
             <div
               id='desc-happy'
               style={{
-                position: "absolute",
-                left: 50,
-                bottom: 115,
                 color: "white",
                 zIndex: 3,
                 userSelect: "none",
                 fontStyle: "italic",
+                left: 50,
               }}
+              className='description-projects'
             >
-              Social media app that promotes producivity and positivity
+              Social media app that promotes producivity
             </div>
 
             <div
               className='view-project-button2'
               style={{
-                position: "absolute",
-                left: 50,
-                bottom: 60,
                 userSelect: "none",
               }}
               id='bullseye-view-but2'
@@ -188,6 +227,20 @@ const Projects = () => {
             style={{ marginRight: "10vh", position: "relative", zIndex: 3 }}
             id='third-project'
           >
+            <div className='overlay-projects' id='personal-overlay' />
+            <div
+              style={{
+                height: "1px",
+                width: "1px",
+                position: "absolute",
+                top: "20%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                opacity: 0,
+              }}
+              id='overlay-intersector3'
+            />
+
             <img
               src='https://media.discordapp.net/attachments/779278654714675232/1017291390998290462/edit3.png'
               style={{
@@ -212,29 +265,25 @@ const Projects = () => {
 
             <div
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 140,
                 color: "white",
                 zIndex: 3,
                 userSelect: "none",
               }}
               id='name-personal'
+              className='title-projects'
             >
-              My Mesmerizing Personal Website
+              My Personal Website
             </div>
 
             <div
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 115,
                 color: "white",
                 zIndex: 3,
                 userSelect: "none",
                 fontStyle: "italic",
               }}
               id='desc-personal'
+              className='description-projects'
             >
               The website you're looking at right now
             </div>
@@ -242,9 +291,6 @@ const Projects = () => {
             <div
               className='view-project-button3'
               style={{
-                position: "absolute",
-                right: 50,
-                bottom: 60,
                 userSelect: "none",
               }}
               id='personal-view-but'

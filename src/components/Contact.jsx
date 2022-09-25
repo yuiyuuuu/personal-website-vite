@@ -133,11 +133,8 @@ const Contact = () => {
           color: "white",
         }}
       >
-        <div className='message-top'>Contact Me</div>
-        <div
-          className='message-top'
-          style={{ fontStyle: "italic", fontSize: "30px" }}
-        >
+        <div className='message-top2'>Contact Me</div>
+        <div className='message-top' style={{ fontStyle: "italic" }}>
           Feel Free to send an email to{" "}
           <a
             href='mailto:yingsonyu@gmail.com'
@@ -150,10 +147,7 @@ const Contact = () => {
             yingsonyu@gmail.com
           </a>
         </div>
-        <div
-          className='message-top'
-          style={{ marginBottom: "4vh", fontSize: "30px" }}
-        >
+        <div className='message-top' style={{ marginBottom: "4vh" }}>
           Otherwise, you can send a message below!
         </div>
 

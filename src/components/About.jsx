@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "auto",
         width: "100%",
         display: "flex",
         alignItems: "center",

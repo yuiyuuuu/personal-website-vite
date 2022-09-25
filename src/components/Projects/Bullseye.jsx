@@ -4,6 +4,7 @@ import "./Projects.scss";
 import "../Main.scss";
 import Nodejs from "../longsvgs/Nodejs";
 import Html from "../longsvgs/Html";
+import $ from "jquery";
 
 import { gsap } from "gsap";
 import Css from "../longsvgs/Css";
@@ -197,6 +198,11 @@ const Bullseye = () => {
       k.classList.remove("animation-fade-bot");
     }, 1500);
   }, []);
+
+  $(window).on("popstate", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    console.log("ran");
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

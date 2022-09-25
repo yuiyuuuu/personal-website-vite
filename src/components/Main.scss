@@ -413,6 +413,108 @@
   animation: linear-fade1 8s ease infinite;
 }
 
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 38vh;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 33vh;
+  }
+}
+
+@media only screen and (min-width: 616px) and (max-width: 699px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 29vh;
+  }
+}
+
+@media only screen and (min-width: 523px) and (max-width: 615px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 24vh;
+  }
+}
+
+@media only screen and (min-width: 453px) and (max-width: 522px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 20vh;
+  }
+}
+
+@media only screen and (max-width: 452px) {
+  .container-projects-img {
+    aspect-ratio: 16/9;
+    height: 16vh;
+  }
+}
+
+.title-projects {
+  font-size: 44px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 140px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 37px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 33px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 30px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 25px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 20px;
+    bottom: 120px;
+  }
+}
+
+.description-projects {
+  font-size: 22px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 19px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 15px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 11px;
+  }
+}
+
 @keyframes linear-fade1 {
   0% {
     background-position: 0 50%;
@@ -449,66 +551,338 @@
 }
 
 #name-bullseye {
-  font-size: 44px;
-  font-weight: 600;
   transition: font-size 0.5s ease;
+  bottom: 140px;
+  right: 50px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 124px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 109px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 101px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 93px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 80px;
+  }
 }
 
 #name-happy {
-  font-size: 44px;
-  font-weight: 600;
   transition: font-size 0.5s ease;
   color: white;
   text-decoration: none;
   z-index: 3;
   user-select: none;
+  bottom: 140px;
+  left: 50px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 124px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 109px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 101px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 93px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 92px;
+  }
 }
 
 #name-personal {
-  font-size: 44px;
-  font-weight: 600;
   transition: font-size 0.5s ease;
+  bottom: 140px;
+  right: 50px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 124px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 109px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 101px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 93px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 80px;
+  }
 }
 
 #first-project:hover > #name-bullseye {
   font-size: 47.5px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 42px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 38px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 35px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 30px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 25px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 22px;
+  }
 }
 
 #second-project:hover > #name-happy {
   font-size: 47.5px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 42px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 38px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 35px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 30px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 25px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 22px;
+  }
 }
 
 #third-project:hover > #name-personal {
   font-size: 47.5px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 42px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 38px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 35px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 30px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 25px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 22px;
+  }
 }
 
 #desc-bullseye {
-  font-size: 22px;
   transition: font-size 0.5s ease;
+  position: absolute;
+  right: 50px;
+  bottom: 115px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 105px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 90px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 80px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 75px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 65px;
+  }
 }
 
 #desc-happy {
-  font-size: 22px;
   transition: font-size 0.5s ease;
   text-decoration: none;
+
+  position: absolute;
+  right: 50px;
+  bottom: 115px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 105px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 90px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 80px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 75px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 65px;
+  }
 }
 
 #desc-personal {
-  font-size: 22px;
   transition: font-size 0.5s ease;
   text-decoration: none;
+
+  position: absolute;
+  right: 50px;
+  bottom: 115px;
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    bottom: 105px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    bottom: 90px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    bottom: 80px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    bottom: 75px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    bottom: 65px;
+  }
 }
 
 #first-project:hover > #desc-bullseye {
   font-size: 24px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 22px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 21px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 20px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 18px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 16px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 12.2px;
+  }
 }
 
 #second-project:hover > #desc-happy {
   font-size: 24px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 22px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 21px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 20px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 18px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 16px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 12.2px;
+  }
 }
 
 #third-project:hover > #desc-personal {
   font-size: 24px;
+
+  @media screen and (hover: hover) and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 22px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 700px) and (max-width: 799px) {
+    font-size: 21px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 616px) and (max-width: 699px) {
+    font-size: 20px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 523px) and (max-width: 615px) {
+    font-size: 18px;
+  }
+
+  @media screen and (hover: hover) and (min-width: 453px) and (max-width: 522px) {
+    font-size: 16px;
+  }
+
+  @media screen and (hover: hover) and (max-width: 452px) {
+    font-size: 12.2px;
+  }
 }
 
 .view-project-button {
@@ -523,6 +897,49 @@
   cursor: pointer;
   font-size: 19px;
   transition: all 0.5s ease;
+  position: absolute;
+  right: 50px;
+  bottom: 60px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 140px;
+    height: 37px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    width: 130px;
+    height: 34.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    width: 120px;
+    height: 32px;
+    font-size: 15px;
+    bottom: 45px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    width: 110px;
+    height: 29.5px;
+    font-size: 14px;
+    bottom: 40px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    width: 100px;
+    height: 27px;
+    font-size: 13px;
+    bottom: 35px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    width: 90px;
+    height: 25.5px;
+    font-size: 12px;
+    bottom: 30px;
+  }
 }
 
 .view-project-button2 {
@@ -537,6 +954,49 @@
   cursor: pointer;
   font-size: 19px;
   transition: all 0.5s ease;
+  position: absolute;
+  left: 50px;
+  bottom: 60px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 140px;
+    height: 37px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    width: 130px;
+    height: 34.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    width: 120px;
+    height: 32px;
+    font-size: 15px;
+    bottom: 45px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    width: 110px;
+    height: 29.5px;
+    font-size: 14px;
+    bottom: 40px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    width: 100px;
+    height: 27px;
+    font-size: 13px;
+    bottom: 35px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    width: 90px;
+    height: 25.5px;
+    font-size: 12px;
+    bottom: 30px;
+  }
 }
 
 .view-project-button3 {
@@ -551,21 +1011,172 @@
   cursor: pointer;
   font-size: 19px;
   transition: all 0.5s ease;
+  position: absolute;
+  right: 50px;
+  bottom: 60px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 140px;
+    height: 37px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    width: 130px;
+    height: 34.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    width: 120px;
+    height: 32px;
+    font-size: 15px;
+    bottom: 45px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    width: 110px;
+    height: 29.5px;
+    font-size: 14px;
+    bottom: 40px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    width: 100px;
+    height: 27px;
+    font-size: 13px;
+    bottom: 35px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    width: 90px;
+    height: 25.5px;
+    font-size: 12px;
+    bottom: 30px;
+  }
 }
 
 #first-project:hover > #bullseye-view-but {
   width: 165px;
   height: 45px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) and (hover: hover) {
+    width: 150px;
+    height: 43.5px;
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) and (hover: hover) {
+    width: 135px;
+    height: 42.5px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) and (hover: hover) {
+    width: 130px;
+    height: 39.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) and (hover: hover) {
+    width: 115px;
+    height: 34.5px;
+    font-size: 15px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) and (hover: hover) {
+    width: 110px;
+    height: 33.5px;
+    font-size: 14px;
+  }
+
+  @media only screen and (hover: hover) and (max-width: 452px) {
+    width: 95px;
+    height: 28.5px;
+    font-size: 13px;
+  }
 }
 
 #second-project:hover > #bullseye-view-but2 {
   width: 165px;
   height: 45px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) and (hover: hover) {
+    width: 150px;
+    height: 43.5px;
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) and (hover: hover) {
+    width: 135px;
+    height: 42.5px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) and (hover: hover) {
+    width: 130px;
+    height: 39.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) and (hover: hover) {
+    width: 115px;
+    height: 34.5px;
+    font-size: 15px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) and (hover: hover) {
+    width: 110px;
+    height: 33.5px;
+    font-size: 14px;
+  }
+
+  @media only screen and (hover: hover) and (max-width: 452px) {
+    width: 95px;
+    height: 28.5px;
+    font-size: 13px;
+  }
 }
 
 #third-project:hover > #personal-view-but {
   width: 165px;
   height: 45px;
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) and (hover: hover) {
+    width: 150px;
+    height: 43.5px;
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) and (hover: hover) {
+    width: 135px;
+    height: 42.5px;
+    font-size: 17px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) and (hover: hover) {
+    width: 130px;
+    height: 39.5px;
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) and (hover: hover) {
+    width: 115px;
+    height: 34.5px;
+    font-size: 15px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) and (hover: hover) {
+    width: 110px;
+    height: 33.5px;
+    font-size: 14px;
+  }
+
+  @media only screen and (hover: hover) and (max-width: 452px) {
+    width: 95px;
+    height: 28.5px;
+    font-size: 13px;
+  }
 }
 
 #number-1 {
@@ -580,11 +1191,28 @@
   transform: translateY(15px);
   overflow: hidden;
   opacity: 0;
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 140px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 120px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 100px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 80px;
+  }
 }
 
 #number-1::before {
   transition: height 0.4s ease 0.4s;
-  content: attr(data-text);
+  // content: attr(data-text);
+  content: "";
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -614,11 +1242,27 @@
   transform: translateY(15px);
   overflow: hidden;
   opacity: 0;
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 140px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 120px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 100px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 80px;
+  }
 }
 
 #number-2::before {
   transition: height 0.4s ease 0.4s;
-  content: attr(data-text);
+  content: "";
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -648,11 +1292,27 @@
   transform: translateY(15px);
   overflow: hidden;
   opacity: 0;
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 140px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 120px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 100px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 80px;
+  }
 }
 
 #number-3::before {
   transition: height 0.4s ease 0.4s;
-  content: attr(data-text);
+  content: "";
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -676,6 +1336,34 @@
   width: 68%;
   color: #f89757;
   line-height: 1.2;
+
+  @media only screen and (min-width: 1001px) and (max-width: 1300px) {
+    font-size: 23px;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 18px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 15px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 12px;
+  }
 }
 
 .form-group {
@@ -742,6 +1430,11 @@ textarea {
 }
 
 .message-top {
+  font-size: 30px;
+  margin-bottom: 2vh;
+}
+
+.message-top2 {
   font-size: 40px;
   margin-bottom: 2vh;
 }
@@ -870,4 +1563,69 @@ textarea {
   color: red;
   font-size: 20px;
   margin-top: 20px;
+}
+
+.overlay-projects {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  z-index: 200;
+}
+
+.overlay-transform-left {
+  transform: translateX(-100%);
+  transition: all 1s ease;
+  animation: f 1s ease;
+  opacity: 0;
+}
+
+.overlay-transform-right {
+  transform: translateX(100%);
+  transition: all 1s ease;
+  animation: f 1s ease;
+  opacity: 0;
+}
+
+@keyframes f {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.message-top,
+.message-top2 {
+  @media only screen and (min-width: 1001px) and (max-width: 1300px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 799px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (min-width: 616px) and (max-width: 699px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (min-width: 523px) and (max-width: 615px) {
+    font-size: 18.5px;
+  }
+
+  @media only screen and (min-width: 453px) and (max-width: 522px) {
+    font-size: 15px;
+  }
+
+  @media only screen and (max-width: 452px) {
+    font-size: 12px;
+  }
 }
