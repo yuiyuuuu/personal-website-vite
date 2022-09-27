@@ -2,6 +2,11 @@
 
 This project was for more for me to learn animations, frontend libraries, and media queries. Had alot of fun and learned alot throughout testing new libraries. Three.js was my favorite by far, but I didn't add it to the final product. I do plan on adding Three.js to a future project due to how insanely easy it is to use to build insane 3D animations.
 
+Things to improve on for future projects: <br/>
+
+- Plan out themes/designs for the project instead of building without an end product in mind. <br/>
+- Use font sizes that are not px so there are not that many media queries for font sizes (rem/em).
+
 ## Deployed Project
 
 https://yingsonyu.herokuapp.com/</br>

@@ -235,6 +235,7 @@ img {
   overflow: hidden;
   color: lightgray;
   transition: color 0.3s ease;
+  font-size: 23px;
 
   &::before {
     content: "";
@@ -254,6 +255,10 @@ img {
 
   &:hover {
     color: white;
+  }
+
+  @media only screen and (max-width: 470px) {
+    font-size: 16px;
   }
 }
 
@@ -621,6 +626,11 @@ img {
   &:hover > div > .svg-arrow-container > svg > #path-fill-arrow {
     fill: white;
   }
+
+  @media only screen and (max-width: 350px) {
+    margin-left: -15%;
+    width: 115%;
+  }
 }
 
 .next-project-2 {
@@ -687,6 +697,9 @@ img {
   font-size: 18px;
   color: rgb(44, 160, 135);
   transition: color 0.8s ease 0.1s;
+  @media only screen and (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .color-change-next2 {
@@ -694,6 +707,10 @@ img {
   margin-top: 7px;
   font-family: League Spartan, Helvetica, Arial, sans-serif;
   transition: color 0.5s ease;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 40px;
+  }
 }
 
 .color-change-next3 {
@@ -757,5 +774,38 @@ img {
 
   &:hover::before {
     opacity: 1;
+  }
+}
+
+.techstack-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 5vh;
+  justify-content: center;
+  width: 100%;
+  @media only screen and (max-width: 750px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+    gap: 2% 2%;
+    width: 150%;
+  }
+
+  @media only screen and (max-width: 490px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    gap: 4% 2%;
+    width: 165%;
+  }
+}
+
+#logo-bullseye {
+  margin-left: 10vw;
+  width: 80px;
+  height: 80px;
+
+  @media only screen and (max-width: 470px) {
+    height: 55px;
+    width: 55px;
   }
 }

@@ -761,7 +761,6 @@ const Bullseye = () => {
             width: "100%",
             zIndex: 5,
             display: "flex",
-            flexDirection: "row",
             alignItems: "center",
             position: "absolute",
             top: 0,
@@ -769,15 +768,12 @@ const Bullseye = () => {
           className='nav-projects'
         >
           <svg
-            width='80'
-            height='80'
             viewBox='0 0 68 71'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             style={{
               marginTop: "20px",
               cursor: "pointer",
-              marginLeft: "10vh",
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className='animation-fade-top'
@@ -841,7 +837,7 @@ const Bullseye = () => {
           <div style={{ flexGrow: 1 }} />
 
           <div
-            style={{ fontSize: "23px", marginRight: "2vw" }}
+            style={{ marginRight: "2vw" }}
             className='all-projects-p animation-fade-top'
             id='home-bullseye'
             onClick={() => history("/")}
@@ -849,7 +845,7 @@ const Bullseye = () => {
             Home
           </div>
           <div
-            style={{ fontSize: "23px", marginRight: "8vw" }}
+            style={{ marginRight: "8vw" }}
             className='all-projects-p animation-fade-top'
             id='all-projects-bullseye'
             onClick={() => {
@@ -1195,14 +1191,7 @@ const Bullseye = () => {
             </h1>
 
             {/* tech stack start*/}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginTop: "20px",
-                marginBottom: "5vh",
-              }}
-            >
+            <div className='techstack-container'>
               <Nodejs />
               <a
                 href='https://reactjs.org/'
