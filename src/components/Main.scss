@@ -448,6 +448,7 @@
   cursor: pointer;
   margin-top: 3.5vh;
   transform: translateY(-250%);
+  margin-right: 25px;
 }
 #linkedin-path {
   fill: lightgray;
@@ -456,6 +457,17 @@
 
 #linkedin-logo:hover > #linkedin-path {
   fill: white;
+}
+
+#codepen-logo {
+  cursor: pointer;
+  margin-top: 3.8vh;
+  transform: translateY(-250%);
+}
+
+#codepen-path {
+  fill: lightgray;
+  transition: 0.5s ease;
 }
 
 #github-logo {
@@ -1792,4 +1804,13 @@ textarea {
     flex-direction: column-reverse;
     align-items: center;
   }
+}
+
+.bottommessage {
+  color: white;
+  font-size: 1.31em;
+}
+
+.optionbottom {
+  cursor: pointer;
 }

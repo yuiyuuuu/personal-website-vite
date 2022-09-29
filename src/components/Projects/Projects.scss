@@ -717,6 +717,10 @@ img {
   font-size: 18px;
   color: rgb(7, 169, 238);
   transition: color 0.8s ease 0.1s;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .color-change-next4 {
@@ -724,6 +728,10 @@ img {
   margin-top: 7px;
   font-family: League Spartan, Helvetica, Arial, sans-serif;
   transition: color 0.5s ease;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 40px;
+  }
 }
 
 .svg-arrow-container {

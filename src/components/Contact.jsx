@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import "./Projects/Projects.scss";
 
 const Contact = () => {
   $("input").focus(function () {
@@ -105,7 +106,7 @@ const Contact = () => {
 
   useEffect(() => {
     const height = sizeref.current.offsetHeight;
-    settaSize((100 * height) / window.innerHeight + 100);
+    settaSize((100 * height) / window.innerHeight + 65);
   }, [message]);
 
   useEffect(() => {
@@ -121,6 +122,7 @@ const Contact = () => {
         display: "flex",
         justifyContent: "center",
         paddingTop: "5vh",
+        paddingBottom: "6vh",
       }}
       id='parentcontact'
     >
@@ -264,6 +266,47 @@ const Contact = () => {
           id='thankyoumessage'
         >
           Thank you. Your message has been received.
+        </div>
+        <div style={{ flexGrow: 1 }} />
+        <div
+          className='bottommessage'
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            width: "50%",
+          }}
+        >
+          <a
+            className='optionbottom all-projects-p'
+            style={{ color: "white" }}
+            href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Linkedin
+          </a>
+          <a
+            className='optionbottom all-projects-p'
+            style={{ color: "white" }}
+            href='https://github.com/yuiyuuuu'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Github
+          </a>
+          <a
+            className='optionbottom all-projects-p'
+            style={{ color: "white" }}
+            href='https://codepen.io/scrubbydubby123'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Codepen
+          </a>
+        </div>
+        <div className='bottommessage' style={{ marginTop: "30px" }}>
+          © 2022, Developed by Yingson Yu
         </div>
       </div>
     </div>
