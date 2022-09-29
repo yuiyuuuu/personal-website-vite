@@ -191,7 +191,7 @@ const Main = () => {
     const e = document.getElementById("yellow-blob-svg");
     const f = document.getElementById("blue-blob-svg");
     const g = document.getElementById("green-blob-svg");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     setTimeout(() => {
       b.classList.remove("opacity0-topnav");
       b.classList.add("topnav-animation");
