@@ -268,15 +268,7 @@ const Contact = () => {
           Thank you. Your message has been received.
         </div>
         <div style={{ flexGrow: 1 }} />
-        <div
-          className='bottommessage'
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            width: "50%",
-          }}
-        >
+        <div className='bottommessage options-210'>
           <a
             className='optionbottom all-projects-p'
             style={{ color: "white" }}

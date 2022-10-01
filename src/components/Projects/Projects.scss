@@ -34,7 +34,7 @@ img {
   }
 }
 
-#introduction-bullseye {
+.intro-secondsection-title {
   font-size: 65px;
 
   @media only screen and (min-width: 523px) and (max-width: 615px) {
@@ -50,7 +50,7 @@ img {
   }
 }
 
-#intro-desc-bullseye {
+.intro-secondsection-desc {
   font-size: 22px;
   width: 40%;
 
@@ -79,18 +79,33 @@ img {
   }
 }
 
+.visitweb-but {
+  width: 200px;
+  height: 50px;
+  font-size: 22px;
+
+  @media only screen and (max-width: 600px) {
+    width: 160px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 130px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
 .visit-website-project {
   border-width: 1px;
   border: solid white;
   background: transparent;
-  width: 200px;
-  height: 50px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 22px;
   font-weight: 600;
   cursor: pointer;
   z-index: 3;
@@ -119,19 +134,15 @@ img {
   border-width: 1px;
   background: linear-gradient(to left, #fab8b8, #e66465, #fab8b8, #e66465);
   background-size: 400% 400%;
-  width: 200px;
-  height: 50px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 22px;
   font-weight: 600;
   cursor: pointer;
   z-index: 3;
   text-decoration: none;
-  // transition: background-position 5s ease;
 
   &:hover {
     animation: linear-fade 1.5s ease infinite;
@@ -142,19 +153,15 @@ img {
   border-width: 1px;
   background: linear-gradient(to left, #d4d086, #bfc207, #d4d086, #bfc207);
   background-size: 400% 400%;
-  width: 200px;
-  height: 50px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 22px;
   font-weight: 600;
   cursor: pointer;
   z-index: 3;
   text-decoration: none;
-  // transition: background-position 5s ease;
 
   &:hover {
     animation: linear-fade 1.5s ease infinite;
@@ -175,7 +182,7 @@ img {
   }
 }
 
-#name--bullseye {
+.namefor-projects {
   font-size: 65px;
 
   @media only screen and (min-width: 523px) and (max-width: 615px) {
@@ -194,7 +201,7 @@ img {
   }
 }
 
-#desc--bullseye {
+.desctop-forprojects {
   font-size: 22px;
 
   @media only screen and (min-width: 523px) and (max-width: 615px) {
@@ -213,7 +220,7 @@ img {
   }
 }
 
-#theproject {
+.title-thirdsection-projects {
   font-size: 40px;
 
   @media only screen and (min-width: 453px) and (max-width: 522px) {
@@ -227,6 +234,7 @@ img {
 
 .happilist-intro {
   background: linear-gradient(to left, #001000, #1c1d25);
+  height: auto;
 }
 
 .all-projects-p {
@@ -331,8 +339,7 @@ img {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 60vh;
-  margin-top: 5vh;
+  height: 100vh;
 }
 
 .shadow-pj {
@@ -729,8 +736,12 @@ img {
   font-family: League Spartan, Helvetica, Arial, sans-serif;
   transition: color 0.5s ease;
 
+  @media only screen and (max-width: 1300px) {
+    font-size: 35px;
+  }
+
   @media only screen and (max-width: 550px) {
-    font-size: 40px;
+    font-size: 27px;
   }
 }
 
@@ -763,7 +774,6 @@ img {
 
 .underline-fade-a {
   color: white;
-  font-size: 22px;
   font-weight: 600;
   margin-top: 20px;
   position: relative;
@@ -815,5 +825,215 @@ img {
   @media only screen and (max-width: 470px) {
     height: 55px;
     width: 55px;
+  }
+}
+
+#img-happilist {
+  height: 427px;
+  width: 230px;
+
+  @media only screen and (max-width: 570px) {
+    height: 350px;
+    width: 170px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    height: 250px;
+    width: 120px;
+  }
+}
+
+.video-showcase {
+  font-size: 22px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 18px;
+  }
+}
+
+#image1-happilist {
+  width: 1200px;
+  height: 600px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 900px;
+    height: 450px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 750px;
+    height: 375px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    width: 600px;
+    height: 300px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 500px;
+    height: 250px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 320px;
+    height: 160px;
+  }
+}
+
+#image2-happilist {
+  width: 1200px;
+  height: 240px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 1000px;
+    height: 200px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    width: 800px;
+    height: 160px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    width: 600px;
+    height: 120px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    width: 450px;
+    height: 90px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 300px;
+    height: 60px;
+  }
+}
+
+.div-allpj-text {
+  overflow: hidden;
+  height: 50vh;
+}
+
+.logo-allprojectoverlay {
+  width: 854px;
+  height: 308px;
+
+  @media only screen and (max-width: 1050px) {
+    width: 600px;
+    height: 190px;
+  }
+}
+
+.title-overlayall {
+  font-size: 65px;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 35px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    font-size: 18px;
+  }
+}
+
+#image1-allpj {
+  background-image: url(../../../assets/fsdfsd.png);
+}
+
+#image2-allpj {
+  background-image: url(../../../assets/sun.png);
+  // background-image: url(../../../assets/fsdfsd.png);
+  // background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#image3-allpj {
+  background-image: url(../../../assets/fsdfsd.png);
+}
+
+.three-overlay {
+  font-size: 22px;
+
+  @media only screen and (max-width: 950px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    font-size: 9px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    font-size: 5.5px;
+  }
+}
+
+.dot-allpj {
+  width: 29px;
+  height: 28px;
+
+  @media only screen and (max-width: 550px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.desc-overlay-1 {
+  font-size: 22px;
+  width: 65%;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 19px;
+  }
+
+  @media only screen and (max-width: 780px) {
+    font-size: 19px;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 12px;
+    width: 80%;
+  }
+}
+
+.containerfor-overlay {
+  width: 80%;
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
+
+#close-button-allpj {
+  width: 160px;
+  height: 65px;
+
+  @media only screen and (max-width: 600px) {
+    width: 130px;
+    height: 50px;
   }
 }

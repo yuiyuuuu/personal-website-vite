@@ -5,7 +5,7 @@ This project was for more for me to learn animations, frontend libraries, and me
 Things to improve on for future projects: <br/>
 
 - Plan out themes/designs for the project instead of building without an end product in mind. <br/>
-- Use font sizes that are not px so there are not that many media queries for font sizes (rem/em).
+- Use font sizes that are not px (em/rem)
 
 ## Deployed Project
 

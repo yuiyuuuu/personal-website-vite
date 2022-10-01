@@ -227,6 +227,7 @@ const Bullseye = () => {
   }, []);
   return (
     <div style={{ position: "relative", overflowX: "hidden" }}>
+      {/*start of overlay*/}
       <div
         className='all-projects-div'
         style={{
@@ -240,10 +241,10 @@ const Bullseye = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            width: "80%",
             marginBottom: "30vh",
             alignItems: "center",
           }}
+          className='containerfor-overlay'
         >
           <div
             onClick={() => {
@@ -254,10 +255,9 @@ const Bullseye = () => {
               }, 1000);
             }}
             style={{
-              width: "150px",
-              height: "65px",
               position: "fixed",
               top: -50,
+              zIndex: 21,
             }}
             className='visit-website-project-1'
             id='close-button-allpj'
@@ -310,11 +310,6 @@ const Bullseye = () => {
               }}
               id='image1-allpj'
             >
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
-              />
-
               <div
                 style={{
                   position: "absolute",
@@ -339,14 +334,15 @@ const Bullseye = () => {
                 position: "relative",
               }}
               id='div1-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
                 Bullseye Store
               </div>
@@ -355,30 +351,28 @@ const Bullseye = () => {
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
                 Project Redesign{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -387,13 +381,12 @@ const Bullseye = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Bullseye is an E-commerce store inspired by the famous Gopuff's
                 website and business model. Originally a project built by a team
@@ -401,7 +394,7 @@ const Bullseye = () => {
               </div>
 
               <div
-                className='visit-website-project-1'
+                className='visit-website-project-1 visitweb-but'
                 onClick={() => setShow(false)}
               >
                 View Project
@@ -470,14 +463,15 @@ const Bullseye = () => {
                 overflowY: "hidden",
               }}
               id='div2-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
                 HappiList
               </div>
@@ -486,30 +480,28 @@ const Bullseye = () => {
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
                 Group Project{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -518,13 +510,12 @@ const Bullseye = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Positivity and producivity was our goal with HappiList. Jealousy
                 and envy is the objective of every social media app to keep you
@@ -532,7 +523,7 @@ const Bullseye = () => {
               </div>
 
               <div
-                className='visit-website-project-2'
+                className='visit-website-project-2 visitweb-but'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   history("/happilist");
@@ -562,19 +553,10 @@ const Bullseye = () => {
                 />
               </svg>
             </div>
-            <div style={{ height: "100%", width: "38%", position: "relative" }}>
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018375001449177128/ggsgsg.png'
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  userSelect: "none",
-                  zIndex: 20,
-                }}
-                id='image2-allpj'
-                className='shadow-img'
-              />
-            </div>
+            <div
+              style={{ height: "100%", width: "38%", position: "relative" }}
+              id='image2-allpj'
+            ></div>
           </div>
 
           <div
@@ -591,11 +573,6 @@ const Bullseye = () => {
               }}
               id='image3-allpj'
             >
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
-              />
-
               <div
                 style={{
                   position: "absolute",
@@ -620,46 +597,45 @@ const Bullseye = () => {
                 position: "relative",
               }}
               id='div3-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
-                My Personal Website
+                Personal Website
               </div>
 
               <div
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
                 Personal Project{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -668,13 +644,12 @@ const Bullseye = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Bullseye is an E-commerce store inspired by the famous Gopuff's
                 website and business model. Originally a project built by a team
@@ -682,7 +657,7 @@ const Bullseye = () => {
               </div>
 
               <div
-                className='visit-website-project-1'
+                className='visit-website-project-1 visitweb-but'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   history("/personal");
@@ -739,7 +714,7 @@ const Bullseye = () => {
           </div>
         </div>
       </div>
-
+      {/*end of overlay*/}
       {/* start of main*/}
       <div
         style={{
@@ -861,7 +836,7 @@ const Bullseye = () => {
         <div style={{ display: "flex", flexDirection: "column", zIndex: 2 }}>
           <div
             style={{ fontWeight: "600", color: "white" }}
-            className='animation-fade-bot'
+            className='animation-fade-bot namefor-projects'
             id='name--bullseye'
           >
             Bullseye Store
@@ -869,7 +844,7 @@ const Bullseye = () => {
 
           <div
             style={{ fontStyle: "italic", color: "white" }}
-            className='animation-fade-bot'
+            className='animation-fade-bot desctop-forprojects'
             id='desc--bullseye'
           >
             Fullstack E-commerce store built from scratch
@@ -1003,6 +978,7 @@ const Bullseye = () => {
             color: "white",
             userSelect: "none",
           }}
+          className='intro-secondsection-title'
           id='introduction-bullseye'
         >
           Introduction
@@ -1014,6 +990,7 @@ const Bullseye = () => {
             marginTop: "38px",
             lineHeight: 1.5,
           }}
+          className='intro-secondsection-desc'
           id='intro-desc-bullseye'
         >
           Bullseye is an E-commerce store inspired by the famous Gopuff's
@@ -1086,7 +1063,10 @@ const Bullseye = () => {
             flexDirection: "column",
           }}
         >
-          <div style={{ fontWeight: "600" }} id='theproject'>
+          <div
+            style={{ fontWeight: "600" }}
+            className='title-thirdsection-projects'
+          >
             The Project
           </div>
           <div

@@ -180,9 +180,9 @@ const HappiList = () => {
   useEffect(() => {
     const v = document.getElementById("name--happilist");
     const p = document.getElementById("desc--happilist");
-    const i = document.getElementById("home--bullseye");
-    const l = document.getElementById("all--projects-bullseye");
-    const q = document.getElementById("logo--bullseye");
+    const i = document.getElementById("home-bullseye");
+    const l = document.getElementById("all-projects-bullseye");
+    const q = document.getElementById("logo-bullseye");
     const y = document.getElementById("role-happilist");
     const o = document.getElementById("context-happilist");
     const k = document.getElementById("period-happilist");
@@ -219,10 +219,10 @@ const HappiList = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            width: "80%",
             marginBottom: "30vh",
             alignItems: "center",
           }}
+          className='containerfor-overlay'
         >
           <div
             onClick={() => {
@@ -233,10 +233,9 @@ const HappiList = () => {
               }, 1000);
             }}
             style={{
-              width: "150px",
-              height: "65px",
               position: "fixed",
               top: -50,
+              zIndex: 21,
             }}
             className='visit-website-project-1'
             id='close-button-allpj'
@@ -275,6 +274,7 @@ const HappiList = () => {
             </svg>
             Close
           </div>
+
           <div
             className='all-projects-content shadow-pj'
             id='div1-content'
@@ -289,11 +289,6 @@ const HappiList = () => {
               }}
               id='image1-allpj'
             >
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
-              />
-
               <div
                 style={{
                   position: "absolute",
@@ -316,16 +311,18 @@ const HappiList = () => {
                 alignItems: "center",
                 flexDirection: "column",
                 position: "relative",
+                height: "50vh",
               }}
               id='div1-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
                 Bullseye Store
               </div>
@@ -334,20 +331,19 @@ const HappiList = () => {
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -358,6 +354,7 @@ const HappiList = () => {
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -366,13 +363,12 @@ const HappiList = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Bullseye is an E-commerce store inspired by the famous Gopuff
                 website and business model. Originally a project built by a team
@@ -380,7 +376,7 @@ const HappiList = () => {
               </div>
 
               <div
-                className='visit-website-project-1'
+                className='visit-website-project-1 visitweb-but'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   history("/bullseye");
@@ -390,8 +386,6 @@ const HappiList = () => {
               </div>
 
               <svg
-                width='854'
-                height='308'
                 viewBox='0 0 704 178'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -401,6 +395,7 @@ const HappiList = () => {
                   opacity: 0.3,
                   left: -25,
                 }}
+                className='logo-allprojectoverlay'
               >
                 <path
                   fill-rule='evenodd'
@@ -452,14 +447,15 @@ const HappiList = () => {
                 overflowY: "hidden",
               }}
               id='div2-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
                 HappiList
               </div>
@@ -468,30 +464,28 @@ const HappiList = () => {
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
                 Group Project{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -500,13 +494,12 @@ const HappiList = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Positivity and producivity was our goal with HappiList. Jealousy
                 and envy is the objective of every social media app to keep you
@@ -514,7 +507,7 @@ const HappiList = () => {
               </div>
 
               <div
-                className='visit-website-project-2'
+                className='visit-website-project-2 visitweb-but'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   setShow(false);
@@ -544,19 +537,11 @@ const HappiList = () => {
                 />
               </svg>
             </div>
-            <div style={{ height: "100%", width: "38%", position: "relative" }}>
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018375001449177128/ggsgsg.png'
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  userSelect: "none",
-                  zIndex: 20,
-                }}
-                id='image2-allpj'
-                className='shadow-img'
-              />
-            </div>
+            <div
+              style={{ height: "100%", width: "38%", position: "relative" }}
+              id='image2-allpj'
+              className='shadow-pj'
+            ></div>
           </div>
 
           <div
@@ -573,11 +558,6 @@ const HappiList = () => {
               }}
               id='image3-allpj'
             >
-              <img
-                src='https://cdn.discordapp.com/attachments/779278654714675232/1018028987680817174/fsdfsd.png'
-                style={{ height: "100%", width: "100%", userSelect: "none" }}
-              />
-
               <div
                 style={{
                   position: "absolute",
@@ -602,46 +582,45 @@ const HappiList = () => {
                 position: "relative",
               }}
               id='div3-allpj'
+              className='div-allpj-text'
             >
               <div
                 style={{
                   fontWeight: "600",
-                  fontSize: "65px",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   marginTop: "12%",
                 }}
+                className='title-overlayall'
               >
-                My Personal Website
+                Personal Website
               </div>
 
               <div
                 style={{
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#949494",
-                  fontSize: "22px",
                   display: "flex",
                   alignItems: "center",
                   marginTop: "15px",
                   userSelect: "none",
                 }}
+                className='three-overlay'
               >
                 Fullstack Developer{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
                 Personal Project{" "}
                 <svg
-                  width='29'
-                  height='28'
                   viewBox='0 0 29 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
+                  className='dot-allpj'
                 >
                   <circle cx='14' cy='14' r='4' fill='#949494' />
                 </svg>
@@ -650,13 +629,12 @@ const HappiList = () => {
 
               <div
                 style={{
-                  width: "65%",
                   fontFamily: "League Spartan,Helvetica,Arial,sans-serif",
                   color: "#545454",
-                  fontSize: "22px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
+                className='desc-overlay-1'
               >
                 Bullseye is an E-commerce store inspired by the famous Gopuff
                 website and business model. Originally a project built by a team
@@ -664,7 +642,7 @@ const HappiList = () => {
               </div>
 
               <div
-                className='visit-website-project-1'
+                className='visit-website-project-1 visitweb-but'
                 onClick={() => {
                   document.body.style.overflow = "auto";
                   history("/personal");
@@ -759,11 +737,10 @@ const HappiList = () => {
             style={{
               marginTop: "20px",
               cursor: "pointer",
-              marginLeft: "10vh",
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className='animation-fade-top'
-            id='logo--bullseye'
+            id='logo-bullseye'
           >
             <path
               d='M0.873977 0.788862L30.7285 26.1886'
@@ -820,17 +797,17 @@ const HappiList = () => {
           <div style={{ flexGrow: 1 }} />
 
           <div
-            style={{ fontSize: "23px", marginRight: "2vw" }}
+            style={{ marginRight: "2vw" }}
             className='all-projects-p animation-fade-top'
-            id='home--bullseye'
+            id='home-bullseye'
             onClick={() => history("/")}
           >
             Home
           </div>
           <div
-            style={{ fontSize: "23px", marginRight: "8vw" }}
+            style={{ marginRight: "8vw" }}
             className='all-projects-p animation-fade-top'
-            id='all--projects-bullseye'
+            id='all-projects-bullseye'
             onClick={() => {
               setShow(true);
               document.body.style.overflow = "hidden";
@@ -856,24 +833,23 @@ const HappiList = () => {
             }}
           >
             <div
-              style={{ fontSize: "65px", fontWeight: "600", color: "white" }}
+              style={{ fontWeight: "600", color: "white" }}
               id='name--happilist'
-              className='animation-fade-bot'
+              className='animation-fade-bot namefor-projects'
             >
               HappiList
             </div>
 
             <div
-              style={{ fontStyle: "italic", fontSize: "22px", color: "white" }}
+              style={{ fontStyle: "italic", color: "white" }}
               id='desc--happilist'
-              className='animation-fade-bot'
+              className='animation-fade-bot desctop-forprojects'
             >
               Social media app that promotes producivity and positivity
             </div>
           </div>
           <img
             src='https://cdn.discordapp.com/attachments/779278654714675232/1017874316760711258/phone_-removebg11111.png'
-            style={{ width: "230px", height: "427px" }}
             id='img-happilist'
             className='animation-fade-bot'
           />
@@ -922,7 +898,6 @@ const HappiList = () => {
       <div
         style={{
           width: "100%",
-          height: "44vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -931,20 +906,23 @@ const HappiList = () => {
           position: "relative",
           zIndex: 3,
           overflow: "hidden",
+          paddingBottom: "5vh",
         }}
         className='happilist-intro'
       >
-        <div style={{ fontSize: "65px", fontWeight: "600", color: "white" }}>
+        <div
+          style={{ fontWeight: "600", color: "white" }}
+          className='intro-secondsection-title'
+        >
           Detox
         </div>
 
         <div
           style={{
-            width: "40%",
             color: "white",
-            fontSize: "22px",
             marginTop: "38px",
           }}
+          className='intro-secondsection-desc'
         >
           Positivity and producivity was our goal with HappiList. Jealousy and
           envy is the objective of every social media app to keep you on your
@@ -966,7 +944,7 @@ const HappiList = () => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <div className='underline-fade-a'>Video Showcase</div>
+          <div className='underline-fade-a video-showcase'>Video Showcase</div>
         </a>
 
         <svg
@@ -1002,22 +980,23 @@ const HappiList = () => {
             flexDirection: "column",
           }}
         >
-          <div style={{ fontSize: "40px", fontWeight: "600" }}>The Project</div>
+          <div
+            style={{ fontWeight: "600" }}
+            className='title-thirdsection-projects'
+          >
+            The Project
+          </div>
           <div
             style={{
               marginTop: "7vh",
-              fontSize: "27px",
               fontWeight: "600",
             }}
-            className='sub-title-project'
+            className='sub-title-project subtitle-bullseye'
           >
             Dopamine Detoxification
           </div>
           <div className='line-divider' />
-          <div
-            className='p-desc-projects'
-            style={{ marginTop: "30px", width: "70%" }}
-          >
+          <div className='p-desc-projects top2' style={{ marginTop: "30px" }}>
             Unproductive and way too much screen time? Try HappiList's monthly
             28 tasks. Every task is structured to help you break your dopamine
             addiction. From reading to running, we want you{" "}
@@ -1027,19 +1006,13 @@ const HappiList = () => {
             </span>
           </div>
 
-          <div
-            className='p-desc-projects'
-            style={{ marginTop: "30px", width: "70%" }}
-          >
+          <div className='p-desc-projects top2' style={{ marginTop: "30px" }}>
             My role in this project was a fullstack developer. My main
             responsibilities were to build a NoSQL system with Firebase and
             design & build frontend components with React Native.
           </div>
 
-          <div
-            className='p-desc-projects'
-            style={{ marginTop: "30px", width: "70%" }}
-          >
+          <div className='p-desc-projects top2' style={{ marginTop: "30px" }}>
             I build the{" "}
             <span style={{ color: "red" }}>
               chat feature, friends system, feed page, individual profile page,
@@ -1051,28 +1024,29 @@ const HappiList = () => {
 
           <div className='line-divider' />
 
-          <div className='sub-title-project' style={{ marginTop: "30px" }}>
+          <div
+            className='sub-title-project subtitle-bullseye'
+            style={{ marginTop: "30px" }}
+          >
             UI Components
           </div>
 
           <img
             src='https://cdn.discordapp.com/attachments/779278654714675232/1019138485216616468/Frame_2_2.png'
             style={{
-              aspectRatio: 2,
-              height: "58vh",
               marginTop: "7vh",
               userSelect: "none",
             }}
+            id='image1-happilist'
           />
 
           <img
             src='https://cdn.discordapp.com/attachments/779278654714675232/1019137435973718096/searc-removebg-preview.png'
             style={{
-              aspectRatio: 5,
-              height: "13vh",
               userSelect: "none",
               marginTop: "20px",
             }}
+            id='image2-happilist'
           />
 
           {/*Tech stack start */}
@@ -1080,14 +1054,7 @@ const HappiList = () => {
             Tech Stack
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              marginTop: "20px",
-              marginBottom: "5vh",
-            }}
-          >
+          <div className='techstack-container'>
             <a
               href='https://expo.dev/client'
               target='_blank'
