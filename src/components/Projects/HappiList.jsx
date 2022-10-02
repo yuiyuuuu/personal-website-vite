@@ -935,7 +935,7 @@ const HappiList = () => {
           href='https://expo.dev/@happilist/happilist'
           target='_blank'
           rel='noopener noreferrer'
-          className='visit-website-project'
+          className='visit-website-project visitweb-but'
         >
           <div>View Project</div>
         </a>

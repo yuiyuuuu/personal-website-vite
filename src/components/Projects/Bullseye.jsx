@@ -964,7 +964,7 @@ const Bullseye = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "centr",
+          justifyContent: "center",
           paddingTop: "5vh",
           position: "relative",
           zIndex: 3,
@@ -1002,7 +1002,7 @@ const Bullseye = () => {
           href='https://snack-website2.herokuapp.com/'
           target='_blank'
           rel='noopener noreferrer'
-          className='visit-website-project'
+          className='visit-website-project visitweb-but'
         >
           <div>View Website</div>
         </a>
