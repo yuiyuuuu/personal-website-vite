@@ -1232,7 +1232,7 @@ const Main = () => {
               xmlns='http://www.w3.org/2000/svg'
               style={{ zIndex: 6 }}
             >
-              <g clip-path='url(#clip0_20_2)'>
+              <g clipPath='url(#clip0_20_2)'>
                 <rect
                   x='-1'
                   width='53'

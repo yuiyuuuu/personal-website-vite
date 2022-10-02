@@ -212,7 +212,7 @@ const AllProjectsOverlay = () => {
             xmlns='http://www.w3.org/2000/svg'
             style={{ marginRight: "10px" }}
           >
-            <g clip-path='url(#clip0_37_28)'>
+            <g clipPath='url(#clip0_37_28)'>
               <line
                 x1='-0.646447'
                 y1='-0.353553'
