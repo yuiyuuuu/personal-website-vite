@@ -106,7 +106,7 @@ const Contact = () => {
 
   useEffect(() => {
     const height = sizeref.current.offsetHeight;
-    settaSize((100 * height) / window.innerHeight + 65);
+    settaSize((100 * height) / window.innerHeight + 73);
   }, [message]);
 
   useEffect(() => {
