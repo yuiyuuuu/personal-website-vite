@@ -288,6 +288,7 @@ const Contact = () => {
                 href='https://github.com/yuiyuuuu'
                 target='_blank'
                 rel='noopener noreferrer'
+                id='--2'
               >
                 Github
               </a>
