@@ -1473,7 +1473,7 @@
   margin-bottom: 4vh;
 
   @media only screen and (max-width: 500px) {
-    margin-bottom: 8.5vh;
+    margin-top: 3.5vh;
   }
 }
 
@@ -1816,8 +1816,8 @@ textarea {
   text-align: center;
 
   @media only screen and (max-width: 500px) {
-    margin-top: 12vh;
-    font-size: 1em;
+    margin-top: 17vh;
+    font-size: 0.7em;
   }
 }
 
@@ -1829,7 +1829,8 @@ textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 50%;
+  width: 100%;
+  margin-top: 9vh;
 
   @media only screen and (max-width: 750px) {
     width: 100%;

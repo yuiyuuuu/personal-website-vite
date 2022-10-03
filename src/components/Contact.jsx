@@ -45,6 +45,28 @@ const Contact = () => {
   const [taSize, settaSize] = useState(0);
   const sizeref = useRef(null);
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  $(window).resize(() => {
+    setScreenWidth(window.innerWidth);
+  });
+
+  if (screenWidth <= 500) {
+    $(".input-contactform").on("focus", (event) => {
+      event.stopImmediatePropagation();
+      $(".form-group").css("margin-top", "12vh");
+      settaSize((prev) => prev + 24);
+      console.log(taSize);
+
+      $(".input-contactform").on("blur", (event) => {
+        event.stopImmediatePropagation();
+        $(".form-group").css("margin-top", "3.5vh");
+        settaSize((prev) => prev - 24);
+        console.log("taaa", taSize);
+      });
+    });
+  }
+
   const handleSubmit2 = () => {
     gsap.to("#contactform", {
       opacity: 0,
@@ -106,7 +128,7 @@ const Contact = () => {
 
   useEffect(() => {
     const height = sizeref.current.offsetHeight;
-    settaSize((100 * height) / window.innerHeight + 73);
+    settaSize((100 * height) / window.innerHeight + 77);
   }, [message]);
 
   useEffect(() => {
@@ -248,6 +270,39 @@ const Contact = () => {
             >
               Send
             </button>
+
+            <div className='bottommessage options-210'>
+              <a
+                className='optionbottom all-projects-p'
+                style={{ color: "white" }}
+                href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Linkedin
+              </a>
+              <a
+                className='optionbottom all-projects-p'
+                style={{ color: "white" }}
+                href='https://github.com/yuiyuuuu'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Github
+              </a>
+              <a
+                className='optionbottom all-projects-p'
+                style={{ color: "white" }}
+                href='https://codepen.io/scrubbydubby123'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Codepen
+              </a>
+            </div>
+            <div className='bottommessage' style={{ marginTop: "30px" }}>
+              © 2022, Developed by Yingson Yu
+            </div>
           </div>
         </form>
         <div class='lds-roller nodisplay' id='dotspinner'>
@@ -268,38 +323,6 @@ const Contact = () => {
           Thank you. Your message has been received.
         </div>
         <div style={{ flexGrow: 1 }} />
-        <div className='bottommessage options-210'>
-          <a
-            className='optionbottom all-projects-p'
-            style={{ color: "white" }}
-            href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Linkedin
-          </a>
-          <a
-            className='optionbottom all-projects-p'
-            style={{ color: "white" }}
-            href='https://github.com/yuiyuuuu'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Github
-          </a>
-          <a
-            className='optionbottom all-projects-p'
-            style={{ color: "white" }}
-            href='https://codepen.io/scrubbydubby123'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Codepen
-          </a>
-        </div>
-        <div className='bottommessage' style={{ marginTop: "30px" }}>
-          © 2022, Developed by Yingson Yu
-        </div>
       </div>
     </div>
   );
