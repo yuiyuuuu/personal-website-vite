@@ -278,6 +278,7 @@ const Contact = () => {
                 href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
                 target='_blank'
                 rel='noopener noreferrer'
+                id='--1'
               >
                 Linkedin
               </a>
@@ -296,6 +297,7 @@ const Contact = () => {
                 href='https://codepen.io/scrubbydubby123'
                 target='_blank'
                 rel='noopener noreferrer'
+                id='--3'
               >
                 Codepen
               </a>
