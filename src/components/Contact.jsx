@@ -56,13 +56,11 @@ const Contact = () => {
       event.stopImmediatePropagation();
       $(".form-group").css("margin-top", "12vh");
       settaSize((prev) => prev + 24);
-      console.log(taSize);
 
       $(".input-contactform").on("blur", (event) => {
         event.stopImmediatePropagation();
         $(".form-group").css("margin-top", "3.5vh");
         settaSize((prev) => prev - 24);
-        console.log("taaa", taSize);
       });
     });
   }

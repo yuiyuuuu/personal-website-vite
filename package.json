@@ -11,7 +11,8 @@
     "dev": "vite --mode=development",
     "devhero": "vite --mode=production",
     "build2": "vite build --mode=development",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vite": "vite"
   },
   "author": "",
   "license": "ISC",

@@ -17,13 +17,9 @@ const PersonalWebsite = () => {
   const history = useNavigate();
 
   function fadeInAllProjects() {
-    const a = document.getElementById("div1-content");
-    const b = document.getElementById("div2-content");
-    const c = document.getElementById("div3-content");
-
-    a.classList.add("shadow-pj");
-    b.classList.add("shadow-pj");
-    c.classList.add("shadow-pj");
+    $("#div1-content").addClass("shadow-pj");
+    $("#div2-content").addClass("shadow-pj");
+    $("#div3-content").addClass("shadow-pj");
 
     gsap.fromTo(
       "#image1-allpj",
@@ -116,13 +112,9 @@ const PersonalWebsite = () => {
   }
 
   function fadeOutAllProjects() {
-    const a = document.getElementById("div1-content");
-    const b = document.getElementById("div2-content");
-    const c = document.getElementById("div3-content");
-
-    a.classList.remove("shadow-pj");
-    b.classList.remove("shadow-pj");
-    c.classList.remove("shadow-pj");
+    $("#div1-content").removeClass("shadow-pj");
+    $("#div2-content").removeClass("shadow-pj");
+    $("#div3-content").removeClass("shadow-pj");
     gsap.to("#image1-allpj", {
       opacity: 0,
       duration: 0.4,
