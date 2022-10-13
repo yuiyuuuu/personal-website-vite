@@ -42,7 +42,7 @@ const initRed = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initRed();
       }, 250);
     }
   };
@@ -84,7 +84,7 @@ const initRed = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initRed();
       }, 250);
     }
   };
@@ -126,7 +126,7 @@ const initRed = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initRed();
       }, 250);
     }
   };
@@ -168,7 +168,7 @@ const initRed = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initRed();
       }, 250);
     }
   };

@@ -1,3 +1,6 @@
+a:visited {
+  text-decoration: none;
+}
 .parent {
   height: 100vh;
   width: 100%;
@@ -1713,6 +1716,7 @@ textarea {
   left: 0;
   background-color: blue;
   z-index: 200;
+  pointer-events: none;
 }
 
 .overlay-transform-left {
@@ -1855,4 +1859,78 @@ textarea {
     margin-left: 20px;
     font-size: 12px;
   }
+}
+
+.container-experimental {
+  aspect-ratio: 4;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.li-experimental {
+  width: 25%;
+  box-shadow: 5px 0px 10px lightgray;
+  margin-right: 0px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover > .circle-experimental {
+    // transform: scale(1.1) translate(-50%, -75%);
+    height: 60%;
+    width: 60%;
+  }
+}
+
+.circle-experimental {
+  height: 55%;
+  width: 55%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -75%);
+  background: red;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+#experimental-works {
+  font-size: 37px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#discord {
+  background-image: url(../../assets/discord_gif.gif);
+  background-size: cover;
+  background-position: top;
+}
+
+#mc {
+  background-image: url(../../assets/mcgif.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+#space- {
+  background-image: url(../../assets/space-final.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+#eyes {
+  background-image: url(../../assets/eyes_final.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+.experimental-title,
+.experimental-desc {
+  color: black;
 }

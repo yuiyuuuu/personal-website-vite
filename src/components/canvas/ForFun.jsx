@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import "./tagcanvas.scss";
 
+//tagcanvas is from https://www.goat1000.com/tagcanvas.php#links
+
 const skills = [
   { href: "#git_", title: "React.js" },
   { href: "#json_", title: "Express.js" },

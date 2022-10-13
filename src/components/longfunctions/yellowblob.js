@@ -43,7 +43,7 @@ const initYellow = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initYellow();
       }, 250);
     }
   };
@@ -85,7 +85,7 @@ const initYellow = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initYellow();
       }, 50);
     }
   };
@@ -127,7 +127,7 @@ const initYellow = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initYellow();
       }, 250);
     }
   };
@@ -169,7 +169,7 @@ const initYellow = (vpHeight, vpWidth) => {
       }, 3000);
     } else {
       setTimeout(() => {
-        init();
+        initYellow();
       }, 50);
     }
   };

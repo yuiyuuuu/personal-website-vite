@@ -307,6 +307,55 @@ const Projects = () => {
             </div>
           </div>
         </a>
+
+        <div id='experimental-works'>Experimental Works</div>
+
+        <a
+          className='container-experimental'
+          href='https://minecraft-experimental.herokuapp.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <div className='li-experimental'>
+            <div className='circle-experimental' id='mc'></div>
+            <div className='experimental-title'>Minecraft with Three.js</div>
+            <div className='experimental-desc'>React and Three.js</div>
+          </div>
+          <a
+            className='li-experimental'
+            href='https://codepen.io/scrubbydubby123/pen/GRdwzaG'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className='circle-experimental' id='discord'></div>
+            <div className='experimental-title'>Discord Sidebar Clone</div>
+            <div className='experimental-desc'>React, SCSS, jQuery</div>
+          </a>
+          <a
+            className='li-experimental'
+            href='https://codepen.io/scrubbydubby123/pen/ZEorRVP'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className='circle-experimental' id='space-'></div>
+            <div className='experimental-title'>Space with Three.js</div>
+            <div className='experimental-desc'>
+              Javascript classes and Three.js
+            </div>
+          </a>
+          <a
+            className='li-experimental'
+            href='https://codepen.io/scrubbydubby123/pen/wvjEEzr'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className='circle-experimental' id='eyes'></div>
+            <div className='experimental-title'>Rotating Eyes</div>
+            <div className='experimental-desc'>
+              Eyes that follow your cursor
+            </div>
+          </a>
+        </a>
       </div>
     </div>
   );
