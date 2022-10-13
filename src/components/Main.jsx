@@ -248,6 +248,7 @@ const Main = () => {
       { path: "#green-blob2" },
       { repeat: 9999, duration: 3300, yoyo: true }
     );
+
     tween.start();
     tween4.start();
     tween2.start();
@@ -265,28 +266,788 @@ const Main = () => {
     setvpWidth(width);
   }, [parentDiv?.clientHeight, parentDiv?.clientWidth]);
 
+  // //red blob
+  // useEffect(() => {
+  //   if (!shouldStart) return;
+  //   initRed(vpHeight, vpWidth);
+  // }, [vpHeight, vpWidth, document.hidden, shouldStart]);
+
+  // //YELLOW BLOB
+  // useEffect(() => {
+  //   if (!shouldStart) return;
+  //   initYellow(vpHeight, vpWidth);
+  // }, [vpHeight, vpWidth, document.hidden, shouldStart]);
+
+  // // //BLUE BLOB
+  // useEffect(() => {
+  //   if (!shouldStart) return;
+  //   initBlue(vpHeight, vpWidth);
+  // }, [vpHeight, vpWidth, document.hidden, shouldStart]);
+
+  // // //GREEN BLOB
+  // useEffect(() => {
+  //   if (!shouldStart) return;
+  //   init(vpHeight, vpWidth);
+  // }, [vpHeight, vpWidth, document.hidden, shouldStart]);
+
   //red blob
   useEffect(() => {
     if (!shouldStart) return;
-    initRed(vpHeight, vpWidth);
+    let previous = "moveDownRight";
+    let previousX = 50;
+    let previousY = 50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500 - scrollPos) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        const scrollPos = window.scrollY;
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        const scrollPos = window.scrollY;
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("blob-animated")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blob-animated", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 2000) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetY > vpHeight - 400 - scrollPos) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
   }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   //YELLOW BLOB
   useEffect(() => {
     if (!shouldStart) return;
-    initYellow(vpHeight, vpWidth);
+    let previous = "moveUpLeft";
+    let previousX = -50;
+    let previousY = -50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        const scrollPos = window.scrollY;
+        if (!document.hidden) {
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500 - scrollPos) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 50);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 3000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("yellow-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#yellow-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 3,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 2000) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 3000);
+          }
+
+          if (offsetY > vpHeight - 400 - scrollPos) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 3000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 50);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
   }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   // //BLUE BLOB
   useEffect(() => {
     if (!shouldStart) return;
-    initBlue(vpHeight, vpWidth);
+    let previous = "moveUpRight";
+    let previousX = 50;
+    let previousY = -50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500 - scrollPos) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 2000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 300);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 2000);
+          }
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 300);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 2000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("blue-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#blue-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 2000) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 2000);
+          }
+
+          if (offsetY > vpHeight - 400 - scrollPos) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
   }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   // //GREEN BLOB
   useEffect(() => {
     if (!shouldStart) return;
-    init(vpHeight, vpWidth);
+    let previous = "moveDownLeft";
+    let previousX = -50;
+    let previousY = 50;
+    const init = () => {
+      if (vpHeight === 0 || vpWidth === 0) return;
+
+      const moveDownRight = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("green-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#green-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveDownRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY > vpHeight - 500 - scrollPos) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 2000);
+          }
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveDownRight(posy + 100, posx + 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 300);
+        }
+      };
+
+      const moveUpRight = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("green-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#green-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveUpRight";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX >= vpWidth - 501) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 2000);
+          }
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveUpRight(posy - 100, posx + 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 300);
+        }
+      };
+
+      const moveUpLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("green-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#green-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveUpLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetY <= vpHeight - 1170 - scrollPos) {
+            return setTimeout(() => {
+              moveDownLeft(posy + 100, posx - 100);
+            }, 2000);
+          }
+
+          if (offsetX <= vpWidth - 1870) {
+            return setTimeout(() => {
+              moveUpRight(posy - 100, posx + 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveUpLeft(posy - 100, posx - 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+
+      const moveDownLeft = (posy, posx) => {
+        if (!document.hidden) {
+          const scrollPos = window.scrollY;
+          const offsets = document
+            .getElementById("green-blob-svg")
+            .getBoundingClientRect();
+          const offsetX = offsets.x;
+          const offsetY = offsets.y;
+
+          gsap.to("#green-blob-svg", {
+            x: posx,
+            y: posy,
+            duration: 2,
+            ease: "none",
+          });
+
+          previous = "moveDownLeft";
+          previousX = posx;
+          previousY = posy;
+
+          if (offsetX <= vpWidth - 2000) {
+            return setTimeout(() => {
+              moveDownRight(posy + 100, posx + 100);
+            }, 2000);
+          }
+
+          if (offsetY > vpHeight - 400 - scrollPos) {
+            return setTimeout(() => {
+              moveUpLeft(posy - 100, posx - 100);
+            }, 2000);
+          }
+
+          return setTimeout(() => {
+            moveDownLeft(posy + 100, posx - 100);
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            init();
+          }, 250);
+        }
+      };
+      switch (previous) {
+        case "moveDownRight":
+          return moveDownRight(previousY, previousX);
+        case "moveDownLeft":
+          return moveDownLeft(previousY, previousX);
+        case "moveUpLeft":
+          return moveUpLeft(previousY, previousX);
+        case "moveUpRight":
+          return moveUpRight(previousY, previousX);
+      }
+    };
+    init();
   }, [vpHeight, vpWidth, document.hidden, shouldStart]);
 
   return (
@@ -574,6 +1335,17 @@ const Main = () => {
                 <path
                   id='blob2'
                   d='M115.5 -116.3C140.5 -90.5 145.3 -45.3 143 -2.2C140.8 40.8 131.6 81.6 106.6 119.2C81.6 156.9 40.8 191.4 -11.7 203.1C-64.1 214.8 -128.2 203.6 -178.2 165.9C-228.2 128.2 -264.1 64.1 -260.6 3.5C-257 -57 -214.1 -114.1 -164.1 -139.9C-114.1 -165.7 -57 -160.4 -5.9 -154.5C45.3 -148.6 90.5 -142.2 115.5 -116.3'
+                  fill='#b92379'
+                ></path>
+              </g>
+
+              <g
+                transform='translate(416.6669148785935 326.3145676460829)'
+                style={{ visibility: "hidden" }}
+              >
+                <path
+                  id='blob3'
+                  d='M118.1 -127.4C158.4 -77.8 200.2 -38.9 216.1 15.9C232 70.7 222.1 141.4 181.8 170.8C141.4 200.1 70.7 188 7 181.1C-56.8 174.1 -113.6 172.3 -138.6 142.9C-163.6 113.6 -156.8 56.8 -152.2 4.6C-147.6 -47.6 -145.2 -95.2 -120.2 -144.9C-95.2 -194.6 -47.6 -246.3 -4.4 -241.9C38.9 -237.6 77.8 -177.1 118.1 -127.4'
                   fill='#b92379'
                 ></path>
               </g>

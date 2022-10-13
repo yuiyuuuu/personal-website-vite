@@ -52,9 +52,7 @@ const Projects = () => {
         }}
         id='test'
       >
-        <div
-          style={{ fontSize: "37px", fontWeight: "600", marginBottom: "7vh" }}
-        >
+        <div style={{ marginBottom: "7vh" }} className='title-forprojects '>
           My Latest Projects
         </div>
         <a href='/bullseye'>
@@ -308,7 +306,9 @@ const Projects = () => {
           </div>
         </a>
 
-        <div id='experimental-works'>Experimental Works</div>
+        <div id='experimental-works' className='title-forprojects '>
+          Experimental Works
+        </div>
 
         <a
           className='container-experimental'
@@ -316,10 +316,14 @@ const Projects = () => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <div className='li-experimental'>
+          <div className='li-experimental' id='mc-container'>
             <div className='circle-experimental' id='mc'></div>
-            <div className='experimental-title'>Minecraft with Three.js</div>
-            <div className='experimental-desc'>React and Three.js</div>
+            <div className='experimental-title minecraftia oneem'>
+              Minecraft with Three.js
+            </div>
+            <div className='experimental-desc minecraftia'>
+              React and Three.js
+            </div>
           </div>
           <a
             className='li-experimental'
@@ -328,8 +332,12 @@ const Projects = () => {
             rel='noopener noreferrer'
           >
             <div className='circle-experimental' id='discord'></div>
-            <div className='experimental-title'>Discord Sidebar Clone</div>
-            <div className='experimental-desc'>React, SCSS, jQuery</div>
+            <div className='experimental-title discorduni'>
+              Discord Sidebar Clone
+            </div>
+            <div className='experimental-desc discorduni'>
+              React, SCSS, jQuery
+            </div>
           </a>
           <a
             className='li-experimental'

@@ -7,6 +7,7 @@ const initBlue = (vpHeight, vpWidth) => {
   if (vpHeight === 0 || vpWidth === 0) return;
 
   const moveDownRight = (posy, posx) => {
+    console.log("downright");
     if (!document.hidden) {
       const scrollPos = window.scrollY;
       const offsets = document
@@ -49,6 +50,7 @@ const initBlue = (vpHeight, vpWidth) => {
   };
 
   const moveUpRight = (posy, posx) => {
+    console.log("upright");
     if (!document.hidden) {
       const scrollPos = window.scrollY;
       const offsets = document
@@ -91,6 +93,7 @@ const initBlue = (vpHeight, vpWidth) => {
   };
 
   const moveUpLeft = (posy, posx) => {
+    console.log("upleft");
     if (!document.hidden) {
       const scrollPos = window.scrollY;
       const offsets = document
@@ -133,6 +136,8 @@ const initBlue = (vpHeight, vpWidth) => {
   };
 
   const moveDownLeft = (posy, posx) => {
+    console.log("downleft");
+    console.log(previousX, +" " + previousY);
     if (!document.hidden) {
       const scrollPos = window.scrollY;
       const offsets = document
