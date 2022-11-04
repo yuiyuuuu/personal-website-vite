@@ -20,7 +20,7 @@ Things to improve on for future projects: <br/>
 ## Deployed Project
 
 https://yingsonyu.herokuapp.com/</br>
-http://www.yingsonyu.com/
+https://www.yingsonyu.com/
 
 ## Tech Stack :books:
 
