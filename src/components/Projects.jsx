@@ -320,7 +320,7 @@ const Projects = () => {
           <div
             className="container-projects-img boxshadow-projects"
             style={{ marginLeft: "10vh", position: "relative", zIndex: 3 }}
-            id="third-project"
+            id="fourth-project"
           >
             <div className="overlay-projects" id="mycha-overlay" />
             <div
@@ -364,7 +364,7 @@ const Projects = () => {
                 zIndex: 3,
                 userSelect: "none",
               }}
-              id="name-personal"
+              id="name-mycha"
               className="title-projects"
             >
               Mycha Chicago
@@ -377,7 +377,7 @@ const Projects = () => {
                 userSelect: "none",
                 fontStyle: "italic",
               }}
-              id="desc-personal"
+              id="desc-mycha"
               className="description-projects"
             >
               Business website for Mycha
@@ -388,14 +388,14 @@ const Projects = () => {
               style={{
                 userSelect: "none",
               }}
-              id="personal-view-but"
+              id="mycha-view-but"
             >
               View Project
             </div>
 
             <div
-              id="number-3"
-              style={{ position: "absolute", top: -40, left: -10 }}
+              id="number-4"
+              style={{ position: "absolute", top: -40, right: -10 }}
               data-text="04"
             >
               04
