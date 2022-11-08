@@ -95,7 +95,6 @@ const Contact = () => {
   };
 
   const handleSubmit3 = (e) => {
-    console.log(handleSubmit);
     $("#error-email").addClass("nodisplay");
     $("#error-name").addClass("nodisplay");
     $("#error-message").addClass("nodisplay");
@@ -144,25 +143,17 @@ const Contact = () => {
         paddingTop: "5vh",
         paddingBottom: "6vh",
       }}
-      id='parentcontact'
+      id="parentcontact"
     >
-      <div
-        style={{
-          width: "75%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          color: "white",
-        }}
-      >
-        <div className='message-top2'>Contact Me</div>
+      <div className="contact-container">
+        <div className="message-top2">Contact Me</div>
         <div
-          className='message-top'
+          className="message-top"
           style={{ fontStyle: "italic", textAlign: "center" }}
         >
           Feel Free to send an email to{" "}
           <a
-            href='mailto:yingsonyu@gmail.com'
+            href="mailto:yingsonyu@gmail.com"
             style={{
               textDecoration: "underline",
               fontStyle: "italic",
@@ -172,7 +163,7 @@ const Contact = () => {
             yingsonyu@gmail.com
           </a>
         </div>
-        <div className='message-top' style={{ marginBottom: "4vh" }}>
+        <div className="message-top" style={{ marginBottom: "4vh" }}>
           Otherwise, you can send a message below!
         </div>
 
@@ -183,7 +174,7 @@ const Contact = () => {
             alignItems: "center",
             flexDirection: "column",
           }}
-          method='POST'
+          method="POST"
           onSubmit={
             message !== "" && name !== "" && validEmail
               ? (e) => {
@@ -193,71 +184,71 @@ const Contact = () => {
                 }
               : (e) => handleSubmit3(e)
           }
-          id='contactform'
+          id="contactform"
         >
-          <div className='form-group' id='nameform'>
+          <div className="form-group" id="nameform">
             <label
-              for='name-contactform'
-              className='label-contactform'
-              id='name-label-contact'
+              htmlFor="name-contactform"
+              className="label-contactform"
+              id="name-label-contact"
             >
               Name
             </label>
             <input
-              id='name-contactform'
-              className='input-contactform'
-              type='text'
+              id="name-contactform"
+              className="input-contactform"
+              type="text"
               onChange={(e) => setName(e.target.value)}
-              name='name'
+              name="name"
             />
-            <div className='errortext nodisplay' id='error-name'>
+            <div className="errortext nodisplay" id="error-name">
               Do you not have a name?
             </div>
           </div>
 
-          <div className='form-group' id='emailform'>
+          <div className="form-group" id="emailform">
             <label
-              for='email-contactform'
-              className='label-contactform'
-              id='email-label-contact'
+              htmlFor="email-contactform"
+              className="label-contactform"
+              id="email-label-contact"
             >
               Email
             </label>
             <input
-              id='email-contactform'
-              className='input-contactform'
-              type='email'
+              id="email-contactform"
+              className="input-contactform"
+              type="email"
               onChange={(e) => setEmail(e.target.value)}
-              name='email'
+              name="email"
             />
-            <div className='errortext nodisplay' id='error-email'>
+            <div className="errortext nodisplay" id="error-email">
               Please enter a valid email!
             </div>
           </div>
 
-          <div className='form-group' id='textarea-container'>
+          <div className="form-group" id="textarea-container">
             <label
-              for='message-contactform'
-              className='label-contactform-textarea'
-              id='message-label-contact'
+              htmlFor="message-contactform"
+              className="label-contactform-textarea"
+              id="message-label-contact"
             >
               Message
             </label>
             <textarea
-              id='message-contactform'
-              className='input-contactform'
+              id="message-contactform"
+              className="input-contactform"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              name='message'
+              name="message"
               ref={sizeref}
             />
-            <div className='errortext nodisplay' id='error-message'>
+            <div className="errortext nodisplay" id="error-message">
               Message must not be empty!
             </div>
             <button
-              type='submit'
+              type="submit"
               disabled={state.submitting}
-              id='submit-contactform'
+              id="submit-contactform"
               style={{
                 top: "50%",
                 position: "relative",
@@ -269,44 +260,44 @@ const Contact = () => {
               Send
             </button>
 
-            <div className='bottommessage options-210'>
+            <div className="bottommessage options-210">
               <a
-                className='optionbottom all-projects-p'
+                className="optionbottom all-projects-p"
                 style={{ color: "white" }}
-                href='https://www.linkedin.com/in/yingson-yu-3b0a581b9/'
-                target='_blank'
-                rel='noopener noreferrer'
-                id='--1'
+                href="https://www.linkedin.com/in/yingson-yu-3b0a581b9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="--1"
               >
                 Linkedin
               </a>
               <a
-                className='optionbottom all-projects-p'
+                className="optionbottom all-projects-p"
                 style={{ color: "white" }}
-                href='https://github.com/yuiyuuuu'
-                target='_blank'
-                rel='noopener noreferrer'
-                id='--2'
+                href="https://github.com/yuiyuuuu"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="--2"
               >
                 Github
               </a>
               <a
-                className='optionbottom all-projects-p'
+                className="optionbottom all-projects-p"
                 style={{ color: "white" }}
-                href='https://codepen.io/scrubbydubby123'
-                target='_blank'
-                rel='noopener noreferrer'
-                id='--3'
+                href="https://codepen.io/scrubbydubby123"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="--3"
               >
                 Codepen
               </a>
             </div>
-            <div className='bottommessage' style={{ marginTop: "30px" }}>
+            <div className="bottommessage" style={{ marginTop: "30px" }}>
               © 2022, Developed by Yingson Yu
             </div>
           </div>
         </form>
-        <div class='lds-roller nodisplay' id='dotspinner'>
+        <div className="lds-roller nodisplay" id="dotspinner">
           <div></div>
           <div></div>
           <div></div>
@@ -318,8 +309,8 @@ const Contact = () => {
         </div>
         <div
           style={{ color: "white", fontSize: "30px", marginTop: "35px" }}
-          className='nodisplay'
-          id='thankyoumessage'
+          className="nodisplay"
+          id="thankyoumessage"
         >
           Thank you. Your message has been received.
         </div>

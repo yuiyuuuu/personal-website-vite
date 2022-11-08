@@ -7,7 +7,6 @@ const initBlue = (vpHeight, vpWidth) => {
   if (vpHeight === 0 || vpWidth === 0) return;
 
   const moveDownRight = (posy, posx) => {
-    console.log("downright");
     if (!document.hidden) {
       const scrollPos = window.scrollY;
       const offsets = document
