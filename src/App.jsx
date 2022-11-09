@@ -7,6 +7,7 @@ import HappiList from "./components/Projects/HappiList";
 import PersonalWebsite from "./components/Projects/PersonalWebsite";
 import Mycha from "./components/Projects/Mycha";
 import TestSVg from "./components/Projects/TestSVg";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/test" element={<TestSVg />} />
           <Route exact path="/forfun" element={<ForFun />} />
           <Route exact path="/mycha" element={<Mycha />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
