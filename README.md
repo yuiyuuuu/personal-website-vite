@@ -1,5 +1,7 @@
 ## Notes
 
+LOOKING TO UPDATE SOON. Bug fixes, improvements, and new projects.
+
 This project was for more for me to learn animations, frontend libraries, and media queries. Had alot of fun and learned alot throughout testing new libraries. Three.js was my favorite by far, but I didn't add it to the final product. I do plan on adding Three.js to a future project due to how insanely easy it is to use to build insane 3D animations. </br>
 
 In this project, I learned: </br>
